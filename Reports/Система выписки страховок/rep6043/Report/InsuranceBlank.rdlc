@@ -1,0 +1,727 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition">
+  <Description>Ingostrah Print Blank</Description>
+  <Author>Igor Kropotov</Author>
+  <DataSources>
+    <DataSource Name="DummyDataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:DataSourceID>87c01392-2a69-448f-b9ac-08596c6f210c</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="InsHeader">
+      <Fields>
+        <Field Name="DateBeg">
+          <DataField>DateBeg</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="DateCreate">
+          <DataField>DateCreate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="DateEnd">
+          <DataField>DateEnd</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="Duration">
+          <DataField>Duration</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Id">
+          <DataField>Id</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="InsuredFio">
+          <DataField>InsuredFio</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Number">
+          <DataField>Number</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PrimiumRate">
+          <DataField>PrimiumRate</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PrimiumTotal">
+          <DataField>PrimiumTotal</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="RealCourseToRub">
+          <DataField>RealCourseToRub</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DummyDataSource</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <rd:DataSetInfo>
+        <rd:DataSetName>rep6043.Report</rd:DataSetName>
+        <rd:TableName>InsHeader</rd:TableName>
+        <rd:ObjectDataSourceType>rep6043.Report.InsHeader, rep6043, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+      </rd:DataSetInfo>
+    </DataSet>
+  </DataSets>
+  <Body>
+    <ReportItems>
+      <Tablix Name="list1">
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>7.87402in</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>3.77953in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Rectangle Name="list1_Contents">
+                      <ReportItems>
+                        <Subreport Name="subreport1">
+                          <ReportName>InsuranceConditionList</ReportName>
+                          <Parameters>
+                            <Parameter Name="InsuranceID">
+                              <Value>=Fields!Id.Value</Value>
+                            </Parameter>
+                          </Parameters>
+                          <KeepTogether>true</KeepTogether>
+                          <Top>3.1cm</Top>
+                          <Left>9.2cm</Left>
+                          <Height>2.7cm</Height>
+                          <Width>10.1cm</Width>
+                          <Style>
+                            <Border />
+                          </Style>
+                        </Subreport>
+                        <Textbox Name="textbox1">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>НОМЕР ПОЛИСА
+POLICY №</Value>
+                                  <Style>
+                                    <FontSize>5pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>textbox1</rd:DefaultName>
+                          <Top>2.3cm</Top>
+                          <Left>0.4cm</Left>
+                          <Height>0.5cm</Height>
+                          <Width>2.95cm</Width>
+                          <ZIndex>1</ZIndex>
+                          <Style />
+                        </Textbox>
+                        <Textbox Name="textbox2">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>СТРАХОВАТЕЛЬ
+INSURED</Value>
+                                  <Style>
+                                    <FontSize>5pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Top>2.3cm</Top>
+                          <Left>3.6cm</Left>
+                          <Height>0.5cm</Height>
+                          <Width>3.25cm</Width>
+                          <ZIndex>2</ZIndex>
+                          <Style />
+                        </Textbox>
+                        <Textbox Name="textbox3">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>НАЧАЛО ПОЕЗДКИ
+BEGIN OF JOURNEY
+
+</Value>
+                                  <Style>
+                                    <FontSize>5pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Top>2.3cm</Top>
+                          <Left>9.5cm</Left>
+                          <Height>0.5cm</Height>
+                          <Width>2.25cm</Width>
+                          <ZIndex>3</ZIndex>
+                          <Style />
+                        </Textbox>
+                        <Textbox Name="textbox4">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>КОНЕЦ ПОЕЗДКИ
+END OF JOURNEY
+
+</Value>
+                                  <Style>
+                                    <FontSize>5pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Top>2.3cm</Top>
+                          <Left>12.1cm</Left>
+                          <Height>0.5cm</Height>
+                          <Width>2cm</Width>
+                          <ZIndex>4</ZIndex>
+                          <Style />
+                        </Textbox>
+                        <Textbox Name="textbox5">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>КОЛ-ВО ДНЕЙ
+NUMBER OF DAYS
+
+</Value>
+                                  <Style>
+                                    <FontSize>5pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Top>2.3cm</Top>
+                          <Left>14.0825cm</Left>
+                          <Height>0.5cm</Height>
+                          <Width>1.9cm</Width>
+                          <ZIndex>5</ZIndex>
+                          <Style />
+                        </Textbox>
+                        <Textbox Name="textbox6">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>ДАТА И МЕСТО ВЫДАЧИ ПОЛИСА
+DATE AND PLACE OF ISSUING
+
+</Value>
+                                  <Style>
+                                    <FontSize>5pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Top>2.3cm</Top>
+                          <Left>16.1cm</Left>
+                          <Height>0.5cm</Height>
+                          <Width>3.4cm</Width>
+                          <ZIndex>6</ZIndex>
+                          <Style />
+                        </Textbox>
+                        <Textbox Name="textbox7">
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>*Расходы на транспортировку, эвакуацию и репатриацию- в пределах страховой суммы
+The expenses for medical transportation, evacuation and repatriation are covered within the sum insured
+
+</Value>
+                                  <Style>
+                                    <FontSize>5pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Top>5.8cm</Top>
+                          <Left>9.2cm</Left>
+                          <Height>0.4cm</Height>
+                          <Width>9.25cm</Width>
+                          <ZIndex>7</ZIndex>
+                          <Style />
+                        </Textbox>
+                        <Textbox Name="textbox8">
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>="ОБЩАЯ ПРЕМИЯ / TOTAL PREMIUM: " + IIf(Parameters!PrintInsuredSumm.Value = true, Round(Fields!PrimiumTotal.Value * Fields!RealCourseToRub.Value, 2).ToString() + "руб" ,"по счету/invoice")</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Top>6.32361cm</Top>
+                          <Left>6.9cm</Left>
+                          <Height>0.4cm</Height>
+                          <Width>9.35cm</Width>
+                          <ZIndex>8</ZIndex>
+                          <Style />
+                        </Textbox>
+                        <Textbox Name="textbox9">
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>ТЕРРИТОРИЯ ДЕЙСТВИЯ / VALID IN</Value>
+                                  <Style>
+                                    <FontSize>5pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Top>6.7cm</Top>
+                          <Left>6.95cm</Left>
+                          <Height>0.2cm</Height>
+                          <Width>6.25cm</Width>
+                          <ZIndex>9</ZIndex>
+                          <Style />
+                        </Textbox>
+                        <Subreport Name="subreport2">
+                          <ReportName>InsurancePersonList</ReportName>
+                          <Parameters>
+                            <Parameter Name="InsuranceID">
+                              <Value>=Fields!Id.Value</Value>
+                            </Parameter>
+                          </Parameters>
+                          <KeepTogether>true</KeepTogether>
+                          <Top>3.1cm</Top>
+                          <Left>0.4cm</Left>
+                          <Height>2cm</Height>
+                          <Width>8.7cm</Width>
+                          <ZIndex>10</ZIndex>
+                          <Style>
+                            <Border />
+                          </Style>
+                        </Subreport>
+                        <Textbox Name="Number">
+                          <CanShrink>true</CanShrink>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!Number.Value</Value>
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Number</rd:DefaultName>
+                          <Top>1.8cm</Top>
+                          <Left>0.4cm</Left>
+                          <Height>0.4cm</Height>
+                          <Width>3.1cm</Width>
+                          <ZIndex>11</ZIndex>
+                          <Style />
+                        </Textbox>
+                        <Textbox Name="InsuranceFIO">
+                          <CanShrink>true</CanShrink>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!InsuredFio.Value</Value>
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>InsuranceFIO</rd:DefaultName>
+                          <Top>1.8cm</Top>
+                          <Left>3.6cm</Left>
+                          <Height>0.4cm</Height>
+                          <Width>5.8cm</Width>
+                          <ZIndex>12</ZIndex>
+                          <Style />
+                        </Textbox>
+                        <Textbox Name="BegDate">
+                          <CanShrink>true</CanShrink>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Format(Fields!DateBeg.Value, "dd.MM.yyyy")</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>BegDate</rd:DefaultName>
+                          <Top>1.8cm</Top>
+                          <Left>9.5cm</Left>
+                          <Height>0.4cm</Height>
+                          <Width>2.45cm</Width>
+                          <ZIndex>13</ZIndex>
+                          <Style />
+                        </Textbox>
+                        <Textbox Name="EndDate">
+                          <CanShrink>true</CanShrink>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Format(Fields!DateEnd.Value, "dd.MM.yyyy")</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>EndDate</rd:DefaultName>
+                          <Top>1.8cm</Top>
+                          <Left>12.1cm</Left>
+                          <Height>0.4cm</Height>
+                          <Width>2cm</Width>
+                          <ZIndex>14</ZIndex>
+                          <Style />
+                        </Textbox>
+                        <Textbox Name="Duration">
+                          <CanShrink>true</CanShrink>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!Duration.Value</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Duration</rd:DefaultName>
+                          <Top>1.8cm</Top>
+                          <Left>14.4cm</Left>
+                          <Height>0.4cm</Height>
+                          <Width>1.5cm</Width>
+                          <ZIndex>15</ZIndex>
+                          <Style />
+                        </Textbox>
+                        <Textbox Name="CreateDate">
+                          <CanShrink>true</CanShrink>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Format(Fields!DateCreate.Value, "dd.MM.yyyy") + " Moscow"</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>CreateDate</rd:DefaultName>
+                          <Top>1.8cm</Top>
+                          <Left>16cm</Left>
+                          <Height>0.4cm</Height>
+                          <Width>3.5cm</Width>
+                          <ZIndex>16</ZIndex>
+                          <Style />
+                        </Textbox>
+                        <Image Name="image1">
+                          <Source>Embedded</Source>
+                          <Value>ig_stamp</Value>
+                          <MIMEType>image/png</MIMEType>
+                          <Sizing>Fit</Sizing>
+                          <Top>6.3cm</Top>
+                          <Left>16.5cm</Left>
+                          <Height>3cm</Height>
+                          <Width>3cm</Width>
+                          <ZIndex>17</ZIndex>
+                          <Style />
+                        </Image>
+                        <Textbox Name="textbox10">
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Круглосуточный сервисный центр для оказания бесплатной медицинской помощи /  24-hours emergency center</Value>
+                                  <Style>
+                                    <FontSize>6pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>textbox10</rd:DefaultName>
+                          <Top>6.8cm</Top>
+                          <Left>12.3cm</Left>
+                          <Height>0.6cm</Height>
+                          <Width>6.19735cm</Width>
+                          <ZIndex>18</ZIndex>
+                          <Style />
+                        </Textbox>
+                        <Textbox Name="textbox11">
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>(Moscow) +7 495-921-46-61
+(Kiev) </Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Value>+38 044 239 88 20</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Value xml:space="preserve">
+</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>textbox11</rd:DefaultName>
+                          <Top>7.5cm</Top>
+                          <Left>12.3cm</Left>
+                          <Height>0.7cm</Height>
+                          <Width>5.39683cm</Width>
+                          <ZIndex>19</ZIndex>
+                          <Style />
+                        </Textbox>
+                        <Textbox Name="textbox12">
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Страхователь Правила страхования получил
+ПОДПИСЬ СТРАХОВАТЕЛЯ / ЗАСТРАХОВАННОГО
+SIGNATURE OF INSURED / INSURED PERSON
+</Value>
+                                  <Style>
+                                    <FontSize>6pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>textbox12</rd:DefaultName>
+                          <Top>8.3cm</Top>
+                          <Left>12.3cm</Left>
+                          <Height>0.8cm</Height>
+                          <Width>5.2cm</Width>
+                          <ZIndex>20</ZIndex>
+                          <Style />
+                        </Textbox>
+                        <Textbox Name="textbox13">
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>ПОДИСЬ СТРАХОВЩИКА / АГЕНТА
+SIGNATURE OF THE INSURER / AGENT</Value>
+                                  <Style>
+                                    <FontSize>6pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Top>7.9cm</Top>
+                          <Left>0.3cm</Left>
+                          <Height>0.7cm</Height>
+                          <Width>6.19735cm</Width>
+                          <ZIndex>21</ZIndex>
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <Subreport Name="subreport3">
+                          <ReportName>InsuranceTerretoryList</ReportName>
+                          <Parameters>
+                            <Parameter Name="InsuranceId">
+                              <Value>=Fields!Id.Value</Value>
+                            </Parameter>
+                          </Parameters>
+                          <KeepTogether>true</KeepTogether>
+                          <Top>6.9cm</Top>
+                          <Left>6.95cm</Left>
+                          <Height>2cm</Height>
+                          <Width>5cm</Width>
+                          <ZIndex>22</ZIndex>
+                          <Style>
+                            <Border />
+                          </Style>
+                        </Subreport>
+                      </ReportItems>
+                      <KeepTogether>true</KeepTogether>
+                      <Style />
+                    </Rectangle>
+                    <rd:Selected>true</rd:Selected>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember />
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <Group Name="list1_Details_Group">
+                <DataElementName>Item</DataElementName>
+              </Group>
+              <DataElementName>Item_Collection</DataElementName>
+              <DataElementOutput>Output</DataElementOutput>
+              <KeepTogether>true</KeepTogether>
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <DataSetName>InsHeader</DataSetName>
+        <Height>9.60001cm</Height>
+        <Width>20.00001cm</Width>
+        <Style />
+      </Tablix>
+    </ReportItems>
+    <Height>9.60001cm</Height>
+    <Style />
+  </Body>
+  <ReportParameters>
+    <ReportParameter Name="PrintInsuredSumm">
+      <DataType>Boolean</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>false</Value>
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_0</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <Width>20.00001cm</Width>
+  <Page>
+    <PageHeight>29.7cm</PageHeight>
+    <PageWidth>21cm</PageWidth>
+    <LeftMargin>1cm</LeftMargin>
+    <ColumnSpacing>0cm</ColumnSpacing>
+    <Style />
+  </Page>
+  <EmbeddedImages>
+    <EmbeddedImage Name="ig_stamp">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>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</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <Language>en-US</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportID>5c44159f-bde1-4f63-a10c-40939d3dcca4</rd:ReportID>
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
+</Report>

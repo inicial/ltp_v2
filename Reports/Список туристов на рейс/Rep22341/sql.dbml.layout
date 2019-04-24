@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 14.625, 8.5" name="sql">
+  <DataContextMoniker Name="/sqlDataContext" />
+  <nestedChildShapes>
+    <classShape Id="e3dbea80-45eb-44c2-a891-aaf7cac15ae7" isExpanded="false" absoluteBounds="0.75, 0.75, 2, 0.45">
+      <DataClassMoniker Name="/sqlDataContext/tbl_Dogovor" />
+      <nestedChildShapes>
+        <elementListCompartment Id="009c36eb-c2a9-4f62-a81a-c7bc75f008e7" absoluteBounds="0.765, 1.21, 1.9700000000000002, 13.325887044270832" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d2af2f9a-3c3b-4a96-b026-bf53ad85a177" isExpanded="false" absoluteBounds="4.125, 0.75, 2, 0.45">
+      <DataClassMoniker Name="/sqlDataContext/tbl_DogovorList" />
+      <nestedChildShapes>
+        <elementListCompartment Id="12ee84c7-d6ca-4d3a-b3f4-ec15ca11aafe" absoluteBounds="4.1400000000000006, 1.21, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 0.975); (4.125 : 0.975)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/sqlDataContext/tbl_Dogovor/tbl_Dogovor_tbl_DogovorList" />
+      <nodes>
+        <classShapeMoniker Id="e3dbea80-45eb-44c2-a891-aaf7cac15ae7" />
+        <classShapeMoniker Id="d2af2f9a-3c3b-4a96-b026-bf53ad85a177" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="c5edb819-e6f7-4985-a97f-cfcfe1b5ef45" isExpanded="false" absoluteBounds="0.75, 2.125, 2, 0.45">
+      <DataClassMoniker Name="/sqlDataContext/tbl_Turist" />
+      <nestedChildShapes>
+        <elementListCompartment Id="669b1e6b-e945-47f9-a6d1-4c4f7b7381a7" absoluteBounds="0.76499999999999968, 2.585, 1.9700000000000002, 4.4800211588541661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="dcf182bc-8d42-4883-8c94-7ddcc94fdee4" isExpanded="false" absoluteBounds="4, 3.125, 2, 0.45">
+      <DataClassMoniker Name="/sqlDataContext/TuristService" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bc1989cf-fab9-4899-b53c-20ea07df189f" absoluteBounds="4.015, 3.585, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.5937475 : 1.2); (4.5937475 : 3.125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/sqlDataContext/tbl_DogovorList/tbl_DogovorList_TuristService" />
+      <nodes>
+        <classShapeMoniker Id="d2af2f9a-3c3b-4a96-b026-bf53ad85a177" />
+        <classShapeMoniker Id="dcf182bc-8d42-4883-8c94-7ddcc94fdee4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.75 : 2.575); (1.75 : 3.35); (4 : 3.35)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/sqlDataContext/tbl_Turist/tbl_Turist_TuristService" />
+      <nodes>
+        <classShapeMoniker Id="c5edb819-e6f7-4985-a97f-cfcfe1b5ef45" />
+        <classShapeMoniker Id="dcf182bc-8d42-4883-8c94-7ddcc94fdee4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.75 : 1.2); (1.75 : 2.125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sqlDataContext/tbl_Dogovor/tbl_Dogovor_tbl_Turist" />
+      <nodes>
+        <classShapeMoniker Id="e3dbea80-45eb-44c2-a891-aaf7cac15ae7" />
+        <classShapeMoniker Id="c5edb819-e6f7-4985-a97f-cfcfe1b5ef45" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="eb308187-d380-4e3b-be4e-9f880de04c7d" isExpanded="false" absoluteBounds="6.75, 3.25, 2, 0.45">
+      <DataClassMoniker Name="/sqlDataContext/Charter" />
+      <nestedChildShapes>
+        <elementListCompartment Id="de2ff58f-0826-48c8-b187-12b406a0683b" absoluteBounds="6.7650000000000006, 3.71, 1.9700000000000002, 3.903116861979167" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="90fce61d-2f0d-49d1-8ddf-1b1215cfc4cc" isExpanded="false" absoluteBounds="6.75, 2.25, 2, 0.45">
+      <DataClassMoniker Name="/sqlDataContext/AirService" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f93282c5-5a69-4eea-b231-7d1afef4962a" absoluteBounds="6.7650000000000006, 2.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7d254d41-57e6-4418-b85d-c48b5cad8dfb" isExpanded="false" absoluteBounds="9.5, 5, 2, 0.45">
+      <DataClassMoniker Name="/sqlDataContext/AirSeason" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3b3c0cf4-2949-45ea-b5d0-029a1b0dbb62" absoluteBounds="9.515, 5.4600000000000009, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="10a04ead-b1d1-4d12-9760-5f388e101c02" isExpanded="false" absoluteBounds="9.5, 4.375, 2, 0.45">
+      <DataClassMoniker Name="/sqlDataContext/Airport" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0a488e6d-fb9b-436b-9781-77bc662f2611" absoluteBounds="9.515, 4.835, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4bb59ea8-f6d6-4663-a7fb-c27a601c50cf" isExpanded="false" absoluteBounds="9.5, 5.75, 2, 0.45">
+      <DataClassMoniker Name="/sqlDataContext/Airline" />
+      <nestedChildShapes>
+        <elementListCompartment Id="885899a4-86b0-4df8-b18f-44c00f3a16c6" absoluteBounds="9.515, 6.2100000000000009, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0bfe6a82-f0ad-4abd-9750-725d6df54b13" isExpanded="false" absoluteBounds="9.5, 6.5, 2, 0.45">
+      <DataClassMoniker Name="/sqlDataContext/Aircraft" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cad41e1c-8f5a-4d90-8e05-7ec9fd3f4e99" absoluteBounds="9.515, 6.9600000000000009, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7.7187475 : 3.7); (7.7187475 : 5.15704999396463); (9.5 : 5.15704999396463)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sqlDataContext/Charter/Charter_AirSeason" />
+      <nodes>
+        <classShapeMoniker Id="eb308187-d380-4e3b-be4e-9f880de04c7d" />
+        <classShapeMoniker Id="7d254d41-57e6-4418-b85d-c48b5cad8dfb" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(9.5 : 5.975); (8.23437375 : 5.975); (8.23437375 : 3.7)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sqlDataContext/Airline/Airline_Charter" />
+      <nodes>
+        <classShapeMoniker Id="4bb59ea8-f6d6-4663-a7fb-c27a601c50cf" />
+        <classShapeMoniker Id="eb308187-d380-4e3b-be4e-9f880de04c7d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(9.5 : 6.725); (7.23437375 : 6.725); (7.23437375 : 3.7)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sqlDataContext/Aircraft/Aircraft_Charter" />
+      <nodes>
+        <classShapeMoniker Id="0bfe6a82-f0ad-4abd-9750-725d6df54b13" />
+        <classShapeMoniker Id="eb308187-d380-4e3b-be4e-9f880de04c7d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(9.5 : 4.375); (8.75 : 3.7)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sqlDataContext/Airport/Airport_Charter" />
+      <nodes>
+        <classShapeMoniker Id="10a04ead-b1d1-4d12-9760-5f388e101c02" />
+        <classShapeMoniker Id="eb308187-d380-4e3b-be4e-9f880de04c7d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(9.5 : 4.375); (8.75 : 3.7)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sqlDataContext/Airport/Airport_Charter1" />
+      <nodes>
+        <classShapeMoniker Id="10a04ead-b1d1-4d12-9760-5f388e101c02" />
+        <classShapeMoniker Id="eb308187-d380-4e3b-be4e-9f880de04c7d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.87053571428571 : 3.25); (7.87053571428571 : 2.95); (6.5 : 2.95); (6.5 : 1.118752); (6.125 : 1.118752)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/sqlDataContext/Charter/Charter_tbl_DogovorList" />
+      <nodes>
+        <classShapeMoniker Id="eb308187-d380-4e3b-be4e-9f880de04c7d" />
+        <classShapeMoniker Id="d2af2f9a-3c3b-4a96-b026-bf53ad85a177" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.75 : 2.25); (7.75 : 0.975); (6.125 : 0.975)]" manuallyRouted="true" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/sqlDataContext/AirService/AirService_tbl_DogovorList" />
+      <nodes>
+        <classShapeMoniker Id="90fce61d-2f0d-49d1-8ddf-1b1215cfc4cc" />
+        <classShapeMoniker Id="d2af2f9a-3c3b-4a96-b026-bf53ad85a177" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="cb9ef26f-1e78-49d4-a71b-4cdaa2d5abc6" isExpanded="false" absoluteBounds="12.375, 4.25, 2, 0.45">
+      <DataClassMoniker Name="/sqlDataContext/CityDictionary" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bfaa2ddd-b9ce-4c0f-bf88-d40d2d66acab" absoluteBounds="12.39, 4.7100000000000009, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(12.375 : 4.5375); (11.5 : 4.5375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sqlDataContext/CityDictionary/CityDictionary_Airport" />
+      <nodes>
+        <classShapeMoniker Id="cb9ef26f-1e78-49d4-a71b-4cdaa2d5abc6" />
+        <classShapeMoniker Id="10a04ead-b1d1-4d12-9760-5f388e101c02" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="69a0bd63-2e96-4ca1-9f51-045044bdf907" absoluteBounds="0.875, 4.875, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/sqlDataContext/LTA_AviaOutTurist" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e1d7e7b9-f111-49f8-8df4-ade1b9598c0e" absoluteBounds="0.89000000000000012, 5.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="84514a53-e880-4856-9c69-021279914b5f" isExpanded="false" absoluteBounds="6.75, 7.25, 2, 0.45">
+      <DataClassMoniker Name="/sqlDataContext/tbl_Partner" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dea945ce-54bb-4ac0-86c7-f1a752ac6032" absoluteBounds="6.765, 7.7100000000000009, 1.9700000000000002, 13.133585611979166" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6.75 : 7.475); (6.109375 : 7.475); (6.109375 : 1.2)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/sqlDataContext/tbl_Partner/tbl_Partner_tbl_DogovorList" />
+      <nodes>
+        <classShapeMoniker Id="84514a53-e880-4856-9c69-021279914b5f" />
+        <classShapeMoniker Id="d2af2f9a-3c3b-4a96-b026-bf53ad85a177" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

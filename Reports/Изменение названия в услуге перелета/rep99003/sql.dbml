@@ -1,0 +1,289 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="lanta" Class="sqlDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=192.168.10.4;Initial Catalog=lanta;Persist Security Info=True;User ID=sa" SettingsObjectName="rep99003.Properties.Settings" SettingsPropertyName="lantaConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tbl_Country" Member="tbl_Countries">
+    <Type Name="tbl_Country">
+      <Column Name="CN_KEY" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="CN_NAME" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Association Name="tbl_Country_CityDictionary" Member="CityDictionaries" ThisKey="CN_KEY" OtherKey="CT_CNKEY" Type="CityDictionary" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CityDictionary" Member="CityDictionaries">
+    <Type Name="CityDictionary">
+      <Column Name="CT_CNKEY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="CT_KEY" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="CT_NAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="CT_NameLat" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="CityDictionary_Charter" Member="ChartersFrom" ThisKey="CT_KEY" OtherKey="CH_CITYKEYFROM" Type="Charter" />
+      <Association Name="CityDictionary_Charter1" Member="ChartersTo" ThisKey="CT_KEY" OtherKey="CH_CITYKEYTO" Type="Charter" />
+      <Association Name="tbl_Country_CityDictionary" Member="tbl_Country" ThisKey="CT_CNKEY" OtherKey="CN_KEY" Type="tbl_Country" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Charter" Member="Charters">
+    <Type Name="Charter">
+      <Column Name="CH_KEY" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CH_CITYKEYFROM" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CH_PORTCODEFROM" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="CH_CITYKEYTO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CH_PORTCODETO" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="CH_DATEFROM" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CH_DATETO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CH_DAYS" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
+      <Column Name="CH_TIMEFROM" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CH_TIMETO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CH_NEXTDAYARRIV" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CH_AIRLINECODE" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="CH_FLIGHT" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="CH_AIRCRAFT" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="CH_SERVICE" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="CH_STOPS" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CH_TIMECHANGES" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="ROWID" Type="System.Data.Linq.Binary" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="CH_StdKey" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Association Name="Charter_AirSeason" Member="AirSeasons" ThisKey="CH_KEY" OtherKey="AS_CHKEY" Type="AirSeason" />
+      <Association Name="Charter_tbl_DogovorList" Member="tbl_DogovorLists" ThisKey="CH_KEY" OtherKey="DL_CODE" Type="tbl_DogovorList" />
+      <Association Name="CityDictionary_Charter" Member="CityFrom" ThisKey="CH_CITYKEYFROM" OtherKey="CT_KEY" Type="CityDictionary" IsForeignKey="true" />
+      <Association Name="CityDictionary_Charter1" Member="CityTo" ThisKey="CH_CITYKEYTO" OtherKey="CT_KEY" Type="CityDictionary" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AirSeason" Member="AirSeasons">
+    <Type Name="AirSeason">
+      <Column Name="AS_CHKEY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AS_DATEFROM" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AS_DATETO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AS_WEEK" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
+      <Column Name="AS_TIMEFROM" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AS_TIMETO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ROWID" Type="System.Data.Linq.Binary" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="AS_NextDayArriv" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="AS_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AS_Remark" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Association Name="Charter_AirSeason" Member="Charter" ThisKey="AS_CHKEY" OtherKey="CH_KEY" Type="Charter" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AirService" Member="AirServices">
+    <Type Name="AirService">
+      <Column Name="AS_CODE" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="AS_NAMERUS" Type="System.String" DbType="VarChar(60) NOT NULL" CanBeNull="false" />
+      <Column Name="AS_NAMELAT" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="AS_KEY" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AS_GROUP" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="ROWID" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Column Name="AS_StdKey" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Association Name="AirService_tbl_DogovorList" Member="tbl_DogovorLists" ThisKey="AS_KEY" OtherKey="DL_SUBCODE1" Type="tbl_DogovorList" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_DogovorList" Member="tbl_DogovorLists">
+    <Type Name="tbl_DogovorList">
+      <Column Name="DL_DGCOD" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="DL_TURDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DL_KEY" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DL_PAKETKEY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DL_TRKEY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DL_SVKEY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DL_NAME" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="DL_DAY" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="DL_CODE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DL_SUBCODE1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DL_SUBCODE2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DL_NMEN" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="DL_NDAYS" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="DL_CNKEY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DL_CTKEY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DL_PARTNERKEY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DL_COST" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="DL_REALNETTO" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="DL_BRUTTO" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="DL_PAYED" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="DL_WAIT" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="DL_WARNING" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DL_TIMEBEG" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DL_CONTROL" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DL_CREATOR" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DL_OWNER" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DL_ATTRIBUTE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DL_ISPAYED" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="DL_DATEBEG" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DL_DATEEND" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DL_DISCOUNT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DL_QUOTEKEY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DL_AGENT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ROWID" Type="System.Data.Linq.Binary" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="DL_AgentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DL_Comment" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
+      <Column Name="DL_Reserved" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DL_DGKEY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DL_FORMULANETTO" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
+      <Column Name="DL_FORMULABRUTTO" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
+      <Column Name="DL_BLOCKED" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="DL_NameLat" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="DL_PRTDOGKEY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DL_TAXZONEID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DL_Long" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="DL_IsDeleted" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="DL_SalePrice" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="DL_SaleDiscount" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="DL_FormulaDiscount" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
+      <Association Name="Charter_tbl_DogovorList" Member="Charter" ThisKey="DL_CODE" OtherKey="CH_KEY" Type="Charter" IsForeignKey="true" />
+      <Association Name="AirService_tbl_DogovorList" Member="AirService" ThisKey="DL_SUBCODE1" OtherKey="AS_KEY" Type="AirService" IsForeignKey="true" />
+      <Association Name="tbl_Dogovor_tbl_DogovorList" Member="tbl_Dogovor" ThisKey="DL_DGKEY" OtherKey="DG_Key" Type="tbl_Dogovor" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LTS_SpamServer" Member="LTS_SpamServers">
+    <Type Name="LTS_SpamServer">
+      <Column Name="LSS_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LSS_MailFrom" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="LSS_MailTo" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="LSS_Subject" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="LSS_Body" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="LSS_DTEndPeriod" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LSS_ServiceSend" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LSS_PRKey" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Dogovor" Member="tbl_Dogovors">
+    <Type Name="tbl_Dogovor">
+      <Column Name="DG_CODE" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="DG_TURDATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DG_TRKEY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DG_CNKEY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DG_CTKEY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DG_NMEN" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="DG_PRICE" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="DG_PAYED" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="DG_NDAY" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="DG_MAINMEN" Type="System.String" DbType="VarChar(70)" CanBeNull="true" />
+      <Column Name="DG_MAINMENPHONE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DG_MAINMENADRESS" Type="System.String" DbType="VarChar(320)" CanBeNull="true" />
+      <Column Name="DG_MAINMENPASPORT" Type="System.String" DbType="VarChar(70)" CanBeNull="true" />
+      <Column Name="DG_PARTNERKEY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DG_OPERATOR" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="DG_PRINTDOGOVOR" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="DG_PRINTVAUCHER" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="DG_TYPECOUNT" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="DG_DISCOUNT" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="DG_DISCOUNTSUM" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="DG_CREATOR" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DG_OWNER" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DG_SOR_CODE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DG_CRDATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DG_RATE" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="DG_ADVERTISE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DG_LOCKED" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="DG_CAUSEDISC" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DG_VISADATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DG_PPAYMENTDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DG_PAYMENTDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DG_TURPUTDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DG_DOCUMENT" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="DG_TURPUTPLACE" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="DG_PROCENT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DG_OLDTOURDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ROWID" Type="System.Data.Linq.Binary" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="DG_TurDateBfrAnnul" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DG_ARKey" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DG_Key" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DG_CodePartner" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="DG_FilialKey" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DG_IsOutDoc" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DG_AgentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DG_DISCSUMBFRANN" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="DG_PRICEBFRANN" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="DG_TRANSFERRED" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="DG_NOTES" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="DG_DCRCLIENT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DG_DCRPAYMENT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DG_ISMAKEDISCOUNT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DG_RazmerP" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="DG_LEADDEPARTMENT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DG_MAINMENEMAIL" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DG_MAINMENCOMMENT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DG_DUPUSERKEY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DG_BTKEY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DG_INVOICECOST" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="DG_ConfirmedDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="DG_PRTDOGKEY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DG_CTDepartureKey" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DG_SalePrice" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="DG_SaleDiscount" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="DG_PDTType" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="DG_NATIONALCURRENCYPRICE" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="DG_NATIONALCURRENCYDISCOUNTSUM" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="DG_DAKey" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DG_NATIONALCURRENCYPAYED" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Association Name="tbl_Dogovor_tbl_DogovorList" Member="tbl_DogovorLists" ThisKey="DG_Key" OtherKey="DL_DGKEY" Type="tbl_DogovorList" />
+      <Association Name="tbl_Partner_tbl_Dogovor" Member="tbl_Partner" ThisKey="DG_PARTNERKEY" OtherKey="PR_KEY" Type="tbl_Partner" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Partners" Member="tbl_Partners">
+    <Type Name="tbl_Partner">
+      <Column Name="PR_KEY" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PR_FULLNAME" Type="System.String" DbType="VarChar(160)" CanBeNull="true" />
+      <Column Name="PR_NAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PR_NAMEENG" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="PR_BOSSNAME" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="PR_BOSS" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PR_MALE" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="PR_MAINMEN" Type="System.String" DbType="VarChar(45)" CanBeNull="true" />
+      <Column Name="PR_MAINMENPHONE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PR_DISCOUNT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PR_ACCOUNT" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="PR_ADRESS" Type="System.String" DbType="VarChar(160)" CanBeNull="true" />
+      <Column Name="PR_PHONES" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
+      <Column Name="PR_FAX" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="PR_EMAIL" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PR_CTKEY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PR_CREATOR" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PR_AGENTDOGOVOR" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="PR_TYPE" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="PR_CITY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PR_WEBAGENT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PR_AGENTDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PR_AGENTDOGOVOR2" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="PR_AGENTDATE2" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PR_FAX1" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="PR_REMARK" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
+      <Column Name="PR_CREATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PR_UPDATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PR_ART" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PR_USERLAST" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PR_COD" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="ROWID" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Column Name="LastUser" Type="System.String" DbType="Char(30)" CanBeNull="true" />
+      <Column Name="LastUpdate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="pr_IsActive" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PR_Filial" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PR_DateLastContact" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PR_ExchangePwd" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="PR_GUID" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="PR_ExchangeData" Type="System.Data.Linq.Binary" DbType="Binary(50)" CanBeNull="true" />
+      <Column Name="MaskedFax" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="PR_DOGOVORTYPE" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="PR_ICQ" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PR_GDS_PREFIX" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PR_GDS_SUFFIX" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PR_OWNER" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PR_IPAddress" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="PR_Deleted" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="PR_LICENSENUMBER" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PR_ADDITIONALINFO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PR_LEGALADDRESS" Type="System.String" DbType="VarChar(160)" CanBeNull="true" />
+      <Column Name="PR_INN" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PR_FOREIGNACCINFO" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="PR_KPP" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="PR_CODEOKONH" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="PR_CODEOKPO" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="PR_HOMEPAGE" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PR_PGKEY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PR_BLOCKEDFORANNUL" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="PR_POSTINDEX" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="PR_LEGALPOSTINDEX" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="PR_RegisterSeries" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="PR_RegisterNumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PR_Http" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
+      <Column Name="pr_description" Type="System.String" DbType="Text" CanBeNull="true" />
+      <Column Name="PR_WebServiceUrl" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="PR_PrivatePerson" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_Partner_tbl_Dogovor" Member="tbl_Dogovors" ThisKey="PR_KEY" OtherKey="DG_PARTNERKEY" Type="tbl_Dogovor" />
+    </Type>
+  </Table>
+</Database>

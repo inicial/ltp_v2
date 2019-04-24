@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.125, 8.5" name="Arhiv">
+  <DataContextMoniker Name="/ArhivDataContext" />
+  <nestedChildShapes>
+    <classShape Id="ba400dcd-0442-4f82-8fe3-622f1300feaa" isExpanded="false" absoluteBounds="6.375, 0.625, 2, 0.45">
+      <DataClassMoniker Name="/ArhivDataContext/tbl_Partner" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a57741fc-f27a-4f5b-83f2-2070b879605d" absoluteBounds="6.3900000000000006, 1.085, 1.9700000000000002, 11.05438232421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0736ce25-39d1-4d29-8917-25dc77db35f8" absoluteBounds="0.625, 0.75, 2, 2.24658447265625">
+      <DataClassMoniker Name="/ArhivDataContext/ArhiveDocument" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9d83b32c-c4c9-4455-9d8c-b2f2c30c60b7" absoluteBounds="0.64000000000000012, 1.21, 1.9700000000000002, 1.68658447265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(1.33423076923077 : 2.99658447265625); (1.33423076923077 : 3.24658447265625); (1.54858974358974 : 3.24658447265625 : JumpStart); (1.71525641025641 : 3.24658447265625 : JumpEnd); (1.92961538461538 : 3.24658447265625); (1.92961538461538 : 2.99658447265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ArhivDataContext/ArhiveDocument/ArhiveDocument_ArhiveDocument" />
+      <nodes>
+        <classShapeMoniker Id="0736ce25-39d1-4d29-8917-25dc77db35f8" />
+        <classShapeMoniker Id="0736ce25-39d1-4d29-8917-25dc77db35f8" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="b3c6e75a-6a1f-4565-a439-9eb0698a201c" absoluteBounds="8.875, 1.625, 2, 1.5891951497395831">
+      <DataClassMoniker Name="/ArhivDataContext/dict_Document" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d5816d14-d3cc-4a43-8ee4-2d3470923ab8" absoluteBounds="8.89, 2.085, 1.9700000000000002, 1.0291951497395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.375 : 1.075); (8.875 : 1.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ArhivDataContext/tbl_Partner/tbl_Partner_dict_Document" />
+      <nodes>
+        <classShapeMoniker Id="ba400dcd-0442-4f82-8fe3-622f1300feaa" />
+        <classShapeMoniker Id="b3c6e75a-6a1f-4565-a439-9eb0698a201c" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="e89fd020-e98e-4ed2-9c25-4e50d5031932" absoluteBounds="4.375, 1.375, 2, 2.0822371419270831">
+      <DataClassMoniker Name="/ArhivDataContext/DocumentType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="40da49d9-39ee-40da-b022-f3c28bd77201" absoluteBounds="4.39, 1.835, 1.9700000000000002, 1.5222371419270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.375 : 2.18579223632812); (2.625 : 2.18579223632812)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ArhivDataContext/DocumentType/DocumentType_ArhiveDocument" />
+      <nodes>
+        <classShapeMoniker Id="e89fd020-e98e-4ed2-9c25-4e50d5031932" />
+        <classShapeMoniker Id="0736ce25-39d1-4d29-8917-25dc77db35f8" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.08423076923077 : 3.45723714192708); (5.08423076923077 : 3.70723714192708); (5.67961538461539 : 3.70723714192708); (5.67961538461539 : 3.45723714192708)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ArhivDataContext/DocumentType/DocumentType_DocumentType" />
+      <nodes>
+        <classShapeMoniker Id="e89fd020-e98e-4ed2-9c25-4e50d5031932" />
+        <classShapeMoniker Id="e89fd020-e98e-4ed2-9c25-4e50d5031932" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="52f2297e-b7a6-4d63-9918-b49341e850dc" absoluteBounds="1.125, 4.375, 2, 1.9178898111979166">
+      <DataClassMoniker Name="/ArhivDataContext/LTArh_History" />
+      <nestedChildShapes>
+        <elementListCompartment Id="14a929cc-7b78-453d-920e-4c592214a085" absoluteBounds="1.1399999999999997, 4.835, 1.9700000000000002, 1.3578898111979165" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.33980769230769 : 2.99658447265625); (2.33980769230769 : 4.375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ArhivDataContext/ArhiveDocument/ArhiveDocument_LTArh_History" />
+      <nodes>
+        <classShapeMoniker Id="0736ce25-39d1-4d29-8917-25dc77db35f8" />
+        <classShapeMoniker Id="52f2297e-b7a6-4d63-9918-b49341e850dc" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.63192307692308 : 2.99658447265625); (1.63192307692308 : 4.375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ArhivDataContext/ArhiveDocument/ArhiveDocument_LTArh_History1" />
+      <nodes>
+        <classShapeMoniker Id="0736ce25-39d1-4d29-8917-25dc77db35f8" />
+        <classShapeMoniker Id="52f2297e-b7a6-4d63-9918-b49341e850dc" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

@@ -1,0 +1,766 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="lanta" Class="sqlDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=192.168.10.4;Initial Catalog=lanta;User ID=sa" SettingsObjectName="rep25991.Properties.Settings" SettingsPropertyName="lantaConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tbl_Dogovor" Member="tbl_Dogovors">
+    <Type Name="tbl_Dogovor">
+      <Column Name="DG_CODE" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="DG_TURDATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="DG_TRKEY" Type="System.Int32" DbType="Int" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DG_CNKEY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="DG_CTKEY" AccessModifier="Private" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="DG_PRINTVAUCHER" Type="System.Int16" DbType="SmallInt" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DG_Key" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="DG_NDAY" Type="System.Single" DbType="float not null" CanBeNull="false" />
+      <Column Name="DG_PRICE" Type="System.Decimal" DbType="money not null" CanBeNull="false" />
+      <Column Name="DG_PAYED" Type="System.Decimal" DbType="money not null" CanBeNull="false" />
+      <Column Name="DG_SOR_CODE" Type="System.Int32" DbType="int not null" CanBeNull="false" />
+      <Association Name="tbl_Dogovor_tbl_DogovorList" Member="tbl_DogovorLists" ThisKey="DG_Key" OtherKey="DL_DGKEY" Type="tbl_DogovorList" />
+      <Association Name="tbl_Dogovor_tbl_Turist" Member="tbl_Turists" ThisKey="DG_Key" OtherKey="TU_DGKEY" Type="tbl_Turist" />
+      <Association Name="tbl_Dogovor_LT_V_Voucher" Member="LT_V_Vouchers" ThisKey="DG_Key" OtherKey="V_DGKey" Type="LT_V_Voucher" />
+      <Association Name="tbl_TurList_tbl_Dogovor" Member="tbl_TurList" ThisKey="DG_TRKEY" OtherKey="TL_KEY" Type="tbl_TurList" IsForeignKey="true" />
+      <Association Name="tbl_Country_tbl_Dogovor" Member="tbl_Country" ThisKey="DG_CNKEY" OtherKey="CN_KEY" Type="tbl_Country" IsForeignKey="true" />
+      <Association Name="Order_Status_tbl_Dogovor" Member="Order_Status" ThisKey="DG_SOR_CODE" OtherKey="OS_CODE" Type="Order_Status" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="COUNTRY" Member="COUNTRies">
+    <Type Name="COUNTRY">
+      <Column Name="CN_KEY" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="CN_NAME" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Association Name="COUNTRY_tbl_Country" Member="tbl_Country" Storage="_tbl_Countries" ThisKey="CN_KEY" OtherKey="CN_KEY" Type="tbl_Country" Cardinality="One" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_DogovorList" Member="tbl_DogovorLists">
+    <Type Name="tbl_DogovorList">
+      <Column Name="DL_DGCOD" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="DL_KEY" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="DL_SVKEY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="DL_NAME" Type="System.String" DbType="VarChar(255)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DL_DAY" Type="System.Int16" DbType="SmallInt" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DL_CODE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="DL_SUBCODE1" Type="System.Int32" DbType="Int" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DL_SUBCODE2" Type="System.Int32" DbType="Int" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DL_NMEN" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="DL_NDAYS" Type="System.Int16" DbType="SmallInt" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DL_CNKEY" Type="System.Int32" DbType="Int" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DL_CTKEY" Type="System.Int32" DbType="Int" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DL_PARTNERKEY" Type="System.Int32" DbType="Int" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DL_Comment" Type="System.String" DbType="VarChar(254)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DL_DGKEY" Type="System.Int32" DbType="int" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DL_NameLat" Type="System.String" DbType="VarChar(255)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DL_COST" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="DL_ATTRIBUTE" Type="System.Int32" DbType="int" CanBeNull="true" />
+      <Association Name="tbl_DogovorList_TuristService" Member="TuristServices" ThisKey="DL_KEY" OtherKey="TU_DLKEY" Type="TuristService" />
+      <Association Name="tbl_DogovorList_LT_V_Service" Member="LT_V_Services" ThisKey="DL_KEY" OtherKey="VS_DLKey" Type="LT_V_Service" />
+      <Association Name="tbl_Dogovor_tbl_DogovorList" Member="tbl_Dogovor" ThisKey="DL_DGKEY" OtherKey="DG_Key" Type="tbl_Dogovor" IsForeignKey="true" />
+      <Association Name="tbl_Partner_tbl_DogovorList" Member="tbl_Partner" ThisKey="DL_PARTNERKEY" OtherKey="PR_KEY" Type="tbl_Partner" IsForeignKey="true" />
+      <Association Name="HotelDictionary_tbl_DogovorList" Member="HotelDictionary" ThisKey="DL_CODE" OtherKey="HD_KEY" Type="HotelDictionary" IsForeignKey="true" />
+      <Association Name="HotelRoom_tbl_DogovorList" Member="HotelRoom" ThisKey="DL_SUBCODE1" OtherKey="HR_KEY" Type="HotelRoom" IsForeignKey="true" />
+      <Association Name="Pansion_tbl_DogovorList" Member="Pansion" ThisKey="DL_SUBCODE2" OtherKey="PN_KEY" Type="Pansion" IsForeignKey="true" />
+      <Association Name="Service_tbl_DogovorList" Member="Service" ThisKey="DL_SVKEY" OtherKey="SV_KEY" Type="Service" IsForeignKey="true" />
+      <Association Name="Charter_tbl_DogovorList" Member="Charter" ThisKey="DL_CODE" OtherKey="CH_KEY" Type="Charter" IsForeignKey="true" />
+      <Association Name="Transfer_tbl_DogovorList" Member="Transfer" ThisKey="DL_CODE" OtherKey="TF_KEY" Type="Transfer" IsForeignKey="true" />
+      <Association Name="Transport_tbl_DogovorList" Member="Transport" ThisKey="DL_SUBCODE1" OtherKey="TR_KEY" Type="Transport" IsForeignKey="true" />
+      <Association Name="ExcurDictionary_tbl_DogovorList" Member="ExcurDictionary" ThisKey="DL_CODE" OtherKey="ED_KEY" Type="ExcurDictionary" IsForeignKey="true" />
+      <Association Name="tbl_Country_tbl_DogovorList" Member="tbl_Country" ThisKey="DL_CNKEY" OtherKey="CN_KEY" Type="tbl_Country" IsForeignKey="true" />
+      <Association Name="LT_V_ServicesSkip_tbl_DogovorList" Member="LT_V_ServicesSkip" ThisKey="DL_KEY" OtherKey="LSS_DLKey" Type="LT_V_ServicesSkip" IsForeignKey="true" />
+      <Association Name="ServiceList_tbl_DogovorList" Member="ServiceList" ThisKey="DL_CODE" OtherKey="SL_KEY" Type="ServiceList" IsForeignKey="true" />
+      <Association Name="AddDescript1_tbl_DogovorList" Member="AddDescript1" ThisKey="DL_SUBCODE1" OtherKey="A1_KEY" Type="AddDescript1" IsForeignKey="true" />
+      <Association Name="AddDescript2_tbl_DogovorList" Member="AddDescript2" ThisKey="DL_SUBCODE2" OtherKey="A2_KEY" Type="AddDescript2" IsForeignKey="true" />
+      <Association Name="lanta_2011_hotelFIT_adon_tbl_DogovorList" Member="lanta_2011_hotelFIT_adon" ThisKey="DL_CODE" OtherKey="sl_key" Type="lanta_2011_hotelFIT_adon" IsForeignKey="true" />
+      <Association Name="CityDictionary_tbl_DogovorList" Member="CityDictionary" ThisKey="DL_CTKEY" OtherKey="CT_KEY" Type="CityDictionary" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Turist" Member="tbl_Turists">
+    <Type Name="tbl_Turist">
+      <Column Name="TU_DGCOD" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="TU_KEY" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TU_NAMERUS" Type="System.String" DbType="VarChar(35)" CanBeNull="true" />
+      <Column Name="TU_NAMELAT" Type="System.String" DbType="VarChar(35)" CanBeNull="true" />
+      <Column Name="TU_SHORTNAME" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="TU_SEX" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="TU_FNAMERUS" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="TU_FNAMELAT" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="TU_SNAMERUS" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="TU_SNAMELAT" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="TU_BIRTHDAY" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TU_BIRTHCOUNTRY" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="TU_BIRTHCITY" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="TU_CITIZEN" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TU_POSTINDEX" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="TU_POSTCITY" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="TU_POSTSTREET" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="TU_POSTBILD" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="TU_POSTFLAT" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="TU_PHONE" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="TU_PHONECODE" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="TU_PASPORTTYPE" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="TU_PASPORTNUM" Type="System.String" DbType="VarChar(13)" CanBeNull="true" />
+      <Column Name="TU_PASPORTDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TU_PASPORTDATEEND" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TU_PASPORTBYWHOM" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="TU_PLACE" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="TU_ISANKETA" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="TU_CREATOR" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TU_OWNER" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TU_PASPRUSER" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="TU_PASPRUNUM" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="TU_PASPRUDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TU_PASPRUBYWHOM" Type="System.String" DbType="VarChar(45)" CanBeNull="true" />
+      <Column Name="TU_INSURPOLIS" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="TU_INSURSUM" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TU_DISCOUNT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TU_TYPEDISCOUNT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TU_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TU_ISMAIN" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="ROWID" Type="System.Data.Linq.Binary" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="TU_AgentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TL_ADVDESC" Type="System.String" DbType="Text" CanBeNull="true" />
+      <Column Name="TL_ATTDESC" Type="System.String" DbType="Text" CanBeNull="true" />
+      <Column Name="TL_DOPDESC" Type="System.String" DbType="Text" CanBeNull="true" />
+      <Column Name="TL_FULLDESC" Type="System.String" DbType="Text" CanBeNull="true" />
+      <Column Name="TL_SMALLDESC" Type="System.String" DbType="Text" CanBeNull="true" />
+      <Column Name="TU_DGKEY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TU_RealSex" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="TU_EMAIL" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="tbl_Turist_TuristService" Member="TuristServices" ThisKey="TU_KEY" OtherKey="TU_TUKEY" Type="TuristService" />
+      <Association Name="tbl_Turist_LT_V_Person" Member="LT_V_Persons" ThisKey="TU_KEY" OtherKey="VT_TUKey" Type="LT_V_Person" />
+      <Association Name="tbl_Dogovor_tbl_Turist" Member="tbl_Dogovor" ThisKey="TU_DGKEY" OtherKey="DG_Key" Type="tbl_Dogovor" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TuristService" Member="TuristServices">
+    <Type Name="TuristService">
+      <Column Name="TU_TUKEY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TU_DLKEY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TU_NUMDOC" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="TU_NUMROOM" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="TU_SEAT" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="TU_AREA" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="TU_DOCDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ROWID" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Column Name="TU_IDKEY" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Association Name="tbl_DogovorList_TuristService" Member="tbl_DogovorList" ThisKey="TU_DLKEY" OtherKey="DL_KEY" Type="tbl_DogovorList" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="tbl_Turist_TuristService" Member="tbl_Turist" ThisKey="TU_TUKEY" OtherKey="TU_KEY" Type="tbl_Turist" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_TurList" Member="tbl_TurLists">
+    <Type Name="tbl_TurList">
+      <Column Name="TL_KEY" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="TL_NAME" Type="System.String" DbType="VarChar(160) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="TL_NameLat" Type="System.String" DbType="VarChar(160)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="TL_CNKEY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Association Name="tbl_TurList_tbl_Dogovor" Member="tbl_Dogovors" ThisKey="TL_KEY" OtherKey="DG_TRKEY" Type="tbl_Dogovor" />
+      <Association Name="tbl_TurList_LT_V_Voucher" Member="LT_V_Vouchers" ThisKey="TL_KEY" OtherKey="V_TRKey" Type="LT_V_Voucher" />
+      <Association Name="tbl_TurList_TurDate" Member="TurDates" ThisKey="TL_KEY" OtherKey="TD_TRKEY" Type="TurDate" />
+      <Association Name="tbl_TurList_TurService" Member="TurServices" ThisKey="TL_KEY" OtherKey="TS_TRKEY" Type="TurService" />
+      <Association Name="tbl_TurList_LT_V_MappingTurList" Member="LT_V_MappingTurLists" ThisKey="TL_KEY" OtherKey="VT_TLKey" Type="LT_V_MappingTurList" />
+      <Association Name="tbl_Country_tbl_TurList" Member="tbl_Country" ThisKey="TL_CNKEY" OtherKey="CN_KEY" Type="tbl_Country" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Partners" Member="tbl_Partners">
+    <Type Name="tbl_Partner">
+      <Column Name="PR_KEY" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="PR_FULLNAME" Type="System.String" DbType="VarChar(160)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="PR_NAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="PR_NAMEENG" Type="System.String" DbType="VarChar(80)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="PR_ADRESS" Type="System.String" DbType="VarChar(160)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="PR_PHONES" Type="System.String" DbType="VarChar(254)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="PR_FAX" Type="System.String" DbType="VarChar(20)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="PR_EMAIL" Type="System.String" DbType="VarChar(50)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="PR_CTKEY" Type="System.Int32" DbType="Int" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="PR_FAX1" Type="System.String" DbType="VarChar(20)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="PR_LEGALADDRESS" Type="System.String" DbType="VarChar(160)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="PR_POSTINDEX" Type="System.String" DbType="VarChar(6)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="PR_LEGALPOSTINDEX" Type="System.String" DbType="VarChar(6)" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="tbl_Partner_tbl_DogovorList" Member="tbl_DogovorLists" ThisKey="PR_KEY" OtherKey="DL_PARTNERKEY" Type="tbl_DogovorList" />
+      <Association Name="tbl_Partner_LT_V_Voucher" Member="LT_V_Vouchers" ThisKey="PR_KEY" OtherKey="V_PRKey" Type="LT_V_Voucher" />
+      <Association Name="tbl_Partner_LT_V_MappingPartner" Member="LT_V_MappingPartner" ThisKey="PR_KEY" OtherKey="VMP_PRKey" Type="LT_V_MappingPartner" Cardinality="One" />
+      <Association Name="tbl_Partner_TurService" Member="TurServices" ThisKey="PR_KEY" OtherKey="TS_PARTNERKEY" Type="TurService" />
+      <Association Name="CityDictionary_tbl_Partner" Member="CityDictionary" ThisKey="PR_CTKEY" OtherKey="CT_KEY" Type="CityDictionary" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Country" Member="tbl_Countries">
+    <Type Name="tbl_Country">
+      <Column Name="CN_KEY" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="CN_NAME" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="CN_NAMELAT" Type="System.String" DbType="VarChar(25)" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="tbl_Country_tbl_Dogovor" Member="tbl_Dogovors" ThisKey="CN_KEY" OtherKey="DG_CNKEY" Type="tbl_Dogovor" />
+      <Association Name="tbl_Country_tbl_DogovorList" Member="tbl_DogovorLists" ThisKey="CN_KEY" OtherKey="DL_CNKEY" Type="tbl_DogovorList" />
+      <Association Name="tbl_Country_tbl_TurList" Member="tbl_TurLists" ThisKey="CN_KEY" OtherKey="TL_CNKEY" Type="tbl_TurList" />
+      <Association Name="tbl_Country_CityDictionary" Member="CityDictionaries" ThisKey="CN_KEY" OtherKey="CT_CNKEY" Type="CityDictionary" />
+      <Association Name="tbl_Country_LT_V_Voucher" Member="LT_V_Vouchers" ThisKey="CN_KEY" OtherKey="V_CNKey" Type="LT_V_Voucher" />
+      <Association Name="COUNTRY_tbl_Country" Member="COUNTRY" ThisKey="CN_KEY" OtherKey="CN_KEY" Type="COUNTRY" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CityDictionary" Member="CityDictionaries">
+    <Type Name="CityDictionary">
+      <Column Name="CT_CNKEY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="CT_KEY" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="CT_NAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="CT_NAMELAT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="CityDictionary_tbl_DogovorList" Member="tbl_DogovorLists" ThisKey="CT_KEY" OtherKey="DL_CTKEY" Type="tbl_DogovorList" />
+      <Association Name="CityDictionary_tbl_Partner" Member="tbl_Partners" ThisKey="CT_KEY" OtherKey="PR_CTKEY" Type="tbl_Partner" />
+      <Association Name="CityDictionary_HotelDictionary" Member="HotelDictionaries" ThisKey="CT_KEY" OtherKey="HD_CTKEY" Type="HotelDictionary" />
+      <Association Name="tbl_Country_CityDictionary" Member="tbl_Country" ThisKey="CT_CNKEY" OtherKey="CN_KEY" Type="tbl_Country" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Charter" Member="Charters">
+    <Type Name="Charter">
+      <Column Name="CH_KEY" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CH_CITYKEYFROM" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CH_PORTCODEFROM" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="CH_CITYKEYTO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CH_PORTCODETO" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="CH_DATEFROM" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CH_DATETO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CH_DAYS" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
+      <Column Name="CH_TIMEFROM" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CH_TIMETO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CH_NEXTDAYARRIV" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CH_AIRLINECODE" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="CH_FLIGHT" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="CH_AIRCRAFT" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="CH_SERVICE" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="CH_STOPS" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CH_TIMECHANGES" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="ROWID" Type="System.Data.Linq.Binary" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="CH_StdKey" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Association Name="Charter_tbl_DogovorList" Member="tbl_DogovorLists" ThisKey="CH_KEY" OtherKey="DL_CODE" Type="tbl_DogovorList" />
+      <Association Name="Charter_AirSeason" Member="AirSeasons" ThisKey="CH_KEY" OtherKey="AS_CHKEY" Type="AirSeason" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AirSeason" Member="AirSeasons">
+    <Type Name="AirSeason">
+      <Column Name="AS_CHKEY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AS_DATEFROM" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AS_DATETO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AS_WEEK" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
+      <Column Name="AS_TIMEFROM" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AS_TIMETO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ROWID" Type="System.Data.Linq.Binary" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="AS_NextDayArriv" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="AS_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AS_Remark" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Association Name="Charter_AirSeason" Member="Charter" ThisKey="AS_CHKEY" OtherKey="CH_KEY" Type="Charter" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HotelDictionary" Member="HotelDictionaries">
+    <Type Name="HotelDictionary">
+      <Column Name="HD_CNKEY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="HD_CTKEY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="HD_KEY" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="HD_NAME" Type="System.String" DbType="VarChar(60) NOT NULL" CanBeNull="false" />
+      <Column Name="HD_STARS" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="HD_ADDRESS" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
+      <Column Name="HD_PHONE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="HD_FAX" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="HD_SITE" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="HD_DESCRIPT" Type="System.String" DbType="Text" CanBeNull="true" />
+      <Column Name="HD_PERSONNAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="HD_PERSONAPP" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="HD_CODE" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="HD_RSKEY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HD_EMAIL" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="HD_HTTP" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
+      <Column Name="HD_DESCROOM" Type="System.String" DbType="Text" CanBeNull="true" />
+      <Column Name="HD_DESCMEAL" Type="System.String" DbType="Text" CanBeNull="true" />
+      <Column Name="HD_DESCSERVICE" Type="System.String" DbType="Text" CanBeNull="true" />
+      <Column Name="HD_DESCSPORT" Type="System.String" DbType="Text" CanBeNull="true" />
+      <Column Name="HD_DESCEXCUR" Type="System.String" DbType="Text" CanBeNull="true" />
+      <Column Name="HD_DESCHEALTH" Type="System.String" DbType="Text" CanBeNull="true" />
+      <Column Name="HD_DISTANCE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="HD_WEB" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HD_DESCRAZVL" Type="System.String" DbType="Text" CanBeNull="true" />
+      <Column Name="HD_WEBIMAGE" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="HD_WEBIMAGE1" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="HD_WEBIMAGE2" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="HD_WEBIMAGE3" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="HD_WEBIMAGE4" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="HD_WEBIMAGE5" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="HD_WEBIMAGE6" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="HD_WEBIMAGE7" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="HD_WEBIMAGE8" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="HD_REMARK" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="HD_REMARK1" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="HD_REMARK2" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="HD_REMARK3" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="HD_REMARK4" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="HD_REMARK5" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="HD_REMARK6" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="HD_REMARK7" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="HD_REMARK8" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="ROWID" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Column Name="HD_StdKey" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="HD_UpdateDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="HD_UNICODE" Type="System.String" DbType="Char(5)" CanBeNull="true" />
+      <Column Name="HD_Order" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HD_IsCruise" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="HD_COHId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HD_NAMELAT" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="HD_PayHour1" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="HD_PayHour2" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="HD_Travel" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
+      <Column Name="HD_PayHourNote" Type="System.String" DbType="Text" CanBeNull="true" />
+      <Column Name="HD_PayHour" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="hd_rank" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HD_HTTPAdditional" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Association Name="HotelDictionary_tbl_DogovorList" Member="tbl_DogovorLists" ThisKey="HD_KEY" OtherKey="DL_CODE" Type="tbl_DogovorList" />
+      <Association Name="Resort_HotelDictionary" Member="Resort" ThisKey="HD_RSKEY" OtherKey="RS_KEY" Type="Resort" IsForeignKey="true" />
+      <Association Name="CityDictionary_HotelDictionary" Member="CityDictionary" ThisKey="HD_CTKEY" OtherKey="CT_KEY" Type="CityDictionary" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HotelRooms" Member="HotelRooms">
+    <Type Name="HotelRoom">
+      <Column Name="HR_KEY" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="HR_RMKEY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="HR_RCKEY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="HR_MAIN" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="HR_AGEFROM" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="HR_AGETO" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="HR_ACKEY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HR_StdKey" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="HR_CINNUM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HR_UNICODE" Type="System.String" DbType="VarChar(125)" CanBeNull="true" />
+      <Column Name="HR_DoNotGetILCosts" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="version" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Association Name="HotelRoom_tbl_DogovorList" Member="tbl_DogovorLists" ThisKey="HR_KEY" OtherKey="DL_SUBCODE1" Type="tbl_DogovorList" />
+      <Association Name="Room_HotelRoom" Member="Room" ThisKey="HR_RMKEY" OtherKey="RM_KEY" Type="Room" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="Accmdmentype_HotelRoom" Member="Accmdmentype" ThisKey="HR_ACKEY" OtherKey="AC_KEY" Type="Accmdmentype" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="RoomsCategory_HotelRoom" Member="RoomsCategory" ThisKey="HR_RCKEY" OtherKey="RC_KEY" Type="RoomsCategory" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Rooms" Member="Rooms">
+    <Type Name="Room">
+      <Column Name="RM_KEY" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RM_CODE" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="RM_NAME" Type="System.String" DbType="VarChar(60) NOT NULL" CanBeNull="false" />
+      <Column Name="RM_NAMELAT" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="RM_NPLACES" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="RM_ORDER" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RM_CREATOR" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RM_UPDATEDATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ROWID" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Column Name="RM_StdKey" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="RM_NPlacesEx" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="RM_CINNUM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RM_UNICODE" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="RM_Description" Type="System.String" DbType="Text" CanBeNull="true" />
+      <Association Name="Room_HotelRoom" Member="HotelRooms" ThisKey="RM_KEY" OtherKey="HR_RMKEY" Type="HotelRoom" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Accmdmentype" Member="Accmdmentypes">
+    <Type Name="Accmdmentype">
+      <Column Name="AC_KEY" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AC_CODE" Type="System.String" DbType="VarChar(70)" CanBeNull="true" />
+      <Column Name="AC_NAME" Type="System.String" DbType="VarChar(70)" CanBeNull="true" />
+      <Column Name="AC_MAIN" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="AC_AGEFROM" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="AC_AGETO" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="AC_CREATOR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AC_UPDATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AC_NMenExBed" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ROWID" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Column Name="AC_Order" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AC_NRealPlaces" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AC_StdKey" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="AC_CINNUM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AC_AgeFrom2" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="AC_AgeTo2" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="AC_UNICODE" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="AC_NAMELAT" Type="System.String" DbType="VarChar(70)" CanBeNull="true" />
+      <Column Name="AC_PERROOM" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="AC_Description" Type="System.String" DbType="Text" CanBeNull="true" />
+      <Association Name="Accmdmentype_HotelRoom" Member="HotelRooms" ThisKey="AC_KEY" OtherKey="HR_ACKEY" Type="HotelRoom" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Pansion" Member="Pansions">
+    <Type Name="Pansion">
+      <Column Name="PN_KEY" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PN_NAME" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="PN_CODE" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="ROWID" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Column Name="PN_StdKey" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="PN_Order" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PN_NAMELAT" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="PN_GlobalCode" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="PN_Description" Type="System.String" DbType="Text" CanBeNull="true" />
+      <Association Name="Pansion_tbl_DogovorList" Member="tbl_DogovorLists" ThisKey="PN_KEY" OtherKey="DL_SUBCODE2" Type="tbl_DogovorList" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RoomsCategory" Member="RoomsCategories">
+    <Type Name="RoomsCategory">
+      <Column Name="RC_KEY" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RC_CODE" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="RC_NAME" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="RC_NAMELAT" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="RC_ORDER" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RC_CREATOR" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RC_UPDATEDATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ROWID" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Column Name="RC_StdKey" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="RC_GulNum" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RC_CINNUM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RC_UNICODE" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="RC_Description" Type="System.String" DbType="Text" CanBeNull="true" />
+      <Association Name="RoomsCategory_HotelRoom" Member="HotelRooms" ThisKey="RC_KEY" OtherKey="HR_RCKEY" Type="HotelRoom" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Resorts" Member="Resorts">
+    <Type Name="Resort">
+      <Column Name="RS_KEY" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RS_CNKEY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RS_NAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RS_NAMELAT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ROWID" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Column Name="RS_UPDATEDATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="Resort_HotelDictionary" Member="HotelDictionaries" ThisKey="RS_KEY" OtherKey="HD_RSKEY" Type="HotelDictionary" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LT_V_Services" Member="LT_V_Services">
+    <Type Name="LT_V_Service">
+      <Column Name="VS_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="VS_VId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="VS_DLKey" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="VS_PrintLine" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="VS_Name" Type="System.String" DbType="NText NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="VS_Code" Type="System.Int32" DbType="int" CanBeNull="true" />
+      <Column Name="VS_Code1" Type="System.Int32" DbType="int" CanBeNull="true" />
+      <Column Name="VS_Code2" Type="System.Int32" DbType="int" CanBeNull="true" />
+      <Association Name="LT_V_Voucher_LT_V_Service" Member="LT_V_Voucher" ThisKey="VS_VId" OtherKey="V_Id" Type="LT_V_Voucher" IsForeignKey="true" />
+      <Association Name="tbl_DogovorList_LT_V_Service" Member="tbl_DogovorList" ThisKey="VS_DLKey" OtherKey="DL_KEY" Type="tbl_DogovorList" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LT_V_Person" Member="LT_V_Persons">
+    <Type Name="LT_V_Person">
+      <Column Name="VT_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="VT_VId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="VT_TUKey" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="VT_Name" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Association Name="LT_V_Voucher_LT_V_Person" Member="LT_V_Voucher" ThisKey="VT_VId" OtherKey="V_Id" Type="LT_V_Voucher" IsForeignKey="true" />
+      <Association Name="tbl_Turist_LT_V_Person" Member="tbl_Turist" ThisKey="VT_TUKey" OtherKey="TU_KEY" Type="tbl_Turist" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LT_V_Voucher" Member="LT_V_Vouchers">
+    <Type Name="LT_V_Voucher">
+      <Column Name="V_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="V_CRDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="V_DateBeg" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="V_DateEnd" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="V_DGKey" Type="System.Int32" DbType="Int NOT NULL" IsReadOnly="true" CanBeNull="false" />
+      <Column Name="V_Number" Type="System.String" DbType="VarChar(20) NOT NULL" IsReadOnly="true" CanBeNull="false" />
+      <Column Name="V_BronNumber" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="V_PRKey" Type="System.Int32" DbType="Int NOT NULL" IsReadOnly="true" CanBeNull="false" />
+      <Column Name="V_PartnerName" Type="System.String" DbType="VarChar(60) NOT NULL" CanBeNull="false" />
+      <Column Name="V_PartnerContact" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="V_CNKey" Type="System.Int32" DbType="Int NOT NULL" IsReadOnly="true" CanBeNull="false" />
+      <Column Name="V_CountryName" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="V_ContactPerson" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="V_TRKey" Type="System.Int32" DbType="Int NOT NULL" IsReadOnly="true" CanBeNull="false" />
+      <Column Name="V_TourName" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="V_AnnulDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="V_PrintDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="V_VCId" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Column Name="V_Reis" Type="System.String" DbType="varchar(200) not null" CanBeNull="false" />
+      <Column Name="V_PrintByWeb" Type="System.Boolean" DbType="bit not null" CanBeNull="false" />
+      <Association Name="LT_V_Voucher_LT_V_Service" Member="LT_V_Services" ThisKey="V_Id" OtherKey="VS_VId" Type="LT_V_Service" />
+      <Association Name="LT_V_Voucher_LT_V_Person" Member="LT_V_Persons" ThisKey="V_Id" OtherKey="VT_VId" Type="LT_V_Person" />
+      <Association Name="tbl_Country_LT_V_Voucher" Member="tbl_Country" ThisKey="V_CNKey" OtherKey="CN_KEY" Type="tbl_Country" IsForeignKey="true" />
+      <Association Name="tbl_Dogovor_LT_V_Voucher" Member="tbl_Dogovor" ThisKey="V_DGKey" OtherKey="DG_Key" Type="tbl_Dogovor" IsForeignKey="true" />
+      <Association Name="tbl_Partner_LT_V_Voucher" Member="tbl_Partner" ThisKey="V_PRKey" OtherKey="PR_KEY" Type="tbl_Partner" IsForeignKey="true" />
+      <Association Name="tbl_TurList_LT_V_Voucher" Member="tbl_TurList" ThisKey="V_TRKey" OtherKey="TL_KEY" Type="tbl_TurList" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LT_V_MappingPartner" Member="LT_V_MappingPartner">
+    <Type Name="LT_V_MappingPartner">
+      <Column Name="VMP_PRKey" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="VMP_Image" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="VMP_DateFormat" Type="System.String" DbType="varchar(20) not null" CanBeNull="false" />
+      <Column Name="VMP_ContactPerson" Type="System.String" DbType="varchar(200) not null" CanBeNull="false" />
+      <Column Name="VMP_ReisOut" Type="System.Boolean" DbType="bit not null" CanBeNull="false" />
+      <Column Name="VMP_TuristFormat" Type="System.String" DbType="varchar(max) not null" CanBeNull="false" />
+      <Association Name="tbl_Partner_LT_V_MappingPartner" Member="tbl_Partner" ThisKey="VMP_PRKey" OtherKey="PR_KEY" Type="tbl_Partner" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Service" Member="Services">
+    <Type Name="Service">
+      <Column Name="SV_KEY" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SV_NAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SV_NAMELAT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SV_TYPE" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="SV_CONTROL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SV_ISCITY" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="SV_ISSUBCODE1" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="SV_ISSUBCODE2" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="SV_ROUNDBRUTTO" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="ROWID" Type="System.Data.Linq.Binary" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="SV_StdKey" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="SV_Code" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="SV_IsDuration" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="SV_UseManualInput" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="IsDeleted" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="DateIns" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AgentCodeIns" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="DateChange" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AgentCodeChng" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="IntoTKT" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="SV_QUOTED" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="SV_IsIndividual" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Association Name="Service_tbl_DogovorList" Member="tbl_DogovorLists" ThisKey="SV_KEY" OtherKey="DL_SVKEY" Type="tbl_DogovorList" />
+      <Association Name="Service_TurService" Member="TurServices" ThisKey="SV_KEY" OtherKey="TS_SVKEY" Type="TurService" />
+      <Association Name="Service_LT_V_ServiceNotUse" Member="LT_V_ServiceNotUse" ThisKey="SV_KEY" OtherKey="SV_Key" Type="LT_V_ServiceNotUse" Cardinality="One" />
+      <Association Name="Service_LT_V_ShablonFormatService" Member="LT_V_ShablonFormatServices" ThisKey="SV_KEY" OtherKey="SHFS_SVKey" Type="LT_V_ShablonFormatService" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Transfer" Member="Transfers">
+    <Type Name="Transfer">
+      <Column Name="TF_KEY" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TF_NAME" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TF_NAMELAT" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="TF_TIMEBEG" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TF_TIMEEND" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TF_TIME" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="TF_PLACEFROM" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="TF_PLACETO" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="TF_ISMAIN" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="TF_CTKEY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ROWID" Type="System.Data.Linq.Binary" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="TF_StdKey" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Association Name="Transfer_tbl_DogovorList" Member="tbl_DogovorLists" ThisKey="TF_KEY" OtherKey="DL_CODE" Type="tbl_DogovorList" />
+      <Association Name="Transfer_TurService" Member="TurServices" ThisKey="TF_KEY" OtherKey="TS_CODE" Type="TurService" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Transport" Member="Transports">
+    <Type Name="Transport">
+      <Column Name="TR_KEY" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TR_NAME" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="TR_NAMELAT" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="TR_NMEN" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="ROWID" Type="System.Data.Linq.Binary" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="TR_StdKey" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Association Name="Transport_tbl_DogovorList" Member="tbl_DogovorLists" ThisKey="TR_KEY" OtherKey="DL_SUBCODE1" Type="tbl_DogovorList" />
+      <Association Name="Transport_TurService" Member="TurServices" ThisKey="TR_KEY" OtherKey="TS_SUBCODE1" Type="TurService" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ExcurDictionary" Member="ExcurDictionaries">
+    <Type Name="ExcurDictionary">
+      <Column Name="ED_CNKEY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ED_CTKEY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ED_KEY" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ED_NAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ED_NAMELAT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ED_TIMEBEG" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ED_TIMEEND" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ED_TIME" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="ED_PLACEFROM" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="ED_PLACETO" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="ED_REMARK" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="ED_COMMENT" Type="System.String" DbType="Text" CanBeNull="true" />
+      <Column Name="ROWID" Type="System.Data.Linq.Binary" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="ED_StdKey" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Association Name="ExcurDictionary_tbl_DogovorList" Member="tbl_DogovorLists" ThisKey="ED_KEY" OtherKey="DL_CODE" Type="tbl_DogovorList" />
+      <Association Name="ExcurDictionary_TurService" Member="TurServices" ThisKey="ED_KEY" OtherKey="TS_CODE" Type="TurService" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LTV_AccessDogovor" Member="LTV_AccessDogovors">
+    <Type Name="LTV_AccessDogovor">
+      <Column Name="VDG_DGCod" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Order_Status" Member="Order_Status">
+    <Type Name="Order_Status">
+      <Column Name="OS_CODE" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="OS_NAME_RUS" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="ROWID" Type="System.Data.Linq.Binary" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="OS_GLOBAL" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OS_NameLat" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Association Name="Order_Status_tbl_Dogovor" Member="tbl_Dogovors" ThisKey="OS_CODE" OtherKey="DG_SOR_CODE" Type="tbl_Dogovor" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TurDate" Member="TurDates">
+    <Type Name="TurDate">
+      <Column Name="TD_TRKEY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="TD_DATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="TD_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Never" />
+      <Association Name="tbl_TurList_TurDate" Member="tbl_TurList" ThisKey="TD_TRKEY" OtherKey="TL_KEY" Type="tbl_TurList" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TurService" Member="TurServices">
+    <Type Name="TurService">
+      <Column Name="TS_TRKEY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TS_SVKEY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TS_PKKEY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TS_NAME" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="TS_DAY" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="TS_CODE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TS_SUBCODE1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TS_SUBCODE2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TS_NDAYS" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="TS_CNKEY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TS_CTKEY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TS_PARTNERKEY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TS_COST" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TS_PROFIT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TS_TIMEBEG" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TS_ATTRIBUTE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ROWID" Type="System.Data.Linq.Binary" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="TS_Key" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TS_NameLat" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="TS_PRTDOGKEY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TS_TAXZONEID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TS_WebAttribute" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TS_Wait" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Association Name="tbl_TurList_TurService" Member="tbl_TurList" ThisKey="TS_TRKEY" OtherKey="TL_KEY" Type="tbl_TurList" IsForeignKey="true" />
+      <Association Name="Service_TurService" Member="Service" ThisKey="TS_SVKEY" OtherKey="SV_KEY" Type="Service" IsForeignKey="true" />
+      <Association Name="tbl_Partner_TurService" Member="tbl_Partner" ThisKey="TS_PARTNERKEY" OtherKey="PR_KEY" Type="tbl_Partner" IsForeignKey="true" />
+      <Association Name="Transfer_TurService" Member="Transfer" ThisKey="TS_CODE" OtherKey="TF_KEY" Type="Transfer" IsForeignKey="true" />
+      <Association Name="Transport_TurService" Member="Transport" ThisKey="TS_SUBCODE1" OtherKey="TR_KEY" Type="Transport" IsForeignKey="true" />
+      <Association Name="ExcurDictionary_TurService" Member="ExcurDictionary" ThisKey="TS_CODE" OtherKey="ED_KEY" Type="ExcurDictionary" IsForeignKey="true" />
+      <Association Name="AddDescript1_TurService" Member="AddDescript1" ThisKey="TS_SUBCODE1" OtherKey="A1_KEY" Type="AddDescript1" IsForeignKey="true" />
+      <Association Name="ServiceList_TurService" Member="ServiceList" ThisKey="TS_CODE" OtherKey="SL_KEY" Type="ServiceList" IsForeignKey="true" />
+      <Association Name="AddDescript2_TurService" Member="AddDescript2" ThisKey="TS_SUBCODE2" OtherKey="A2_KEY" Type="AddDescript2" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LT_V_MappingTurService" Member="LT_V_MappingTurServices">
+    <Type Name="LT_V_MappingTurService">
+      <Column Name="VS_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="VS_VTId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="VS_SVKey" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="VS_Index" Storage="_VS_Day" Type="System.Int32" DbType="int not null" CanBeNull="false" />
+      <Column Name="VS_SHSId" Type="System.Int32" DbType="int not null" CanBeNull="false" />
+      <Association Name="LT_V_MappingTurList_LT_V_MappingTurService" Member="LT_V_MappingTurList" ThisKey="VS_VTId" OtherKey="VT_Id" Type="LT_V_MappingTurList" IsForeignKey="true" />
+      <Association Name="LT_V_ShablonService_LT_V_MappingTurService" Member="LT_V_ShablonService" ThisKey="VS_SHSId" OtherKey="SHS_Id" Type="LT_V_ShablonService" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LT_V_MappingTurList" Member="LT_V_MappingTurLists">
+    <Type Name="LT_V_MappingTurList">
+      <Column Name="VT_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="VT_Name" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="VT_TLKey" Type="System.Int32" DbType="int not null" CanBeNull="false" />
+      <Association Name="LT_V_MappingTurList_LT_V_MappingTurService" Member="LT_V_MappingTurServices" ThisKey="VT_Id" OtherKey="VS_VTId" Type="LT_V_MappingTurService" />
+      <Association Name="tbl_TurList_LT_V_MappingTurList" Member="tbl_TurList" ThisKey="VT_TLKey" OtherKey="TL_KEY" Type="tbl_TurList" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LT_V_ServiceNotUse" Member="LT_V_ServiceNotUses">
+    <Type Name="LT_V_ServiceNotUse">
+      <Column Name="SV_Key" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Service_LT_V_ServiceNotUse" Member="Service" ThisKey="SV_Key" OtherKey="SV_KEY" Type="Service" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LT_V_ServicesSkip" Member="LT_V_ServicesSkips">
+    <Type Name="LT_V_ServicesSkip">
+      <Column Name="LSS_DLKey" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="LT_V_ServicesSkip_tbl_DogovorList" Member="tbl_DogovorList" ThisKey="LSS_DLKey" OtherKey="DL_KEY" Type="tbl_DogovorList" Cardinality="One" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ServiceList" Member="ServiceLists">
+    <Type Name="ServiceList">
+      <Column Name="SL_SVKEY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="SL_KEY" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="SL_NAME" Type="System.String" DbType="VarChar(60)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="SL_NAMELAT" Type="System.String" DbType="VarChar(60)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="SL_TIMEBEG" Type="System.DateTime" DbType="DateTime" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="SL_TIMEEND" Type="System.DateTime" DbType="DateTime" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="SL_TIME" Type="System.String" DbType="VarChar(5)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="SL_CNKEY" Type="System.Int32" DbType="Int" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="SL_CTKEY" Type="System.Int32" DbType="Int" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="SL_PLACEFROM" Type="System.String" DbType="VarChar(40)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="SL_PLACETO" Type="System.String" DbType="VarChar(40)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="SL_CODE" Type="System.String" DbType="VarChar(7)" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AddDescript1" Member="AddDescript1s">
+    <Type Name="AddDescript1">
+      <Column Name="A1_KEY" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="A1_SVKEY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="A1_CODE" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
+      <Column Name="A1_NAME" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="A1_NAMELAT" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="ROWID" Type="System.Data.Linq.Binary" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="A1_StdKey" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Association Name="AddDescript1_tbl_DogovorList" Member="tbl_DogovorLists" ThisKey="A1_KEY" OtherKey="DL_SUBCODE1" Type="tbl_DogovorList" />
+      <Association Name="AddDescript1_TurService" Member="TurServices" ThisKey="A1_KEY" OtherKey="TS_SUBCODE1" Type="TurService" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LT_V_Shablon" Member="LT_V_Shablons">
+    <Type Name="LT_V_Shablon">
+      <Column Name="SH_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SH_Name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="LT_V_Shablon_LT_V_ShablonService" Member="LT_V_ShablonServices" ThisKey="SH_Id" OtherKey="SHS_SHId" Type="LT_V_ShablonService" />
+      <Association Name="LT_V_Shablon_LT_V_ShablonTourGroup" Member="LT_V_ShablonTourGroups" ThisKey="SH_Id" OtherKey="SHTR_SHId" Type="LT_V_ShablonTourGroup" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LT_V_ShablonTourNames" Member="LT_V_ShablonTourNames">
+    <Type Name="LT_V_ShablonTourNames">
+      <Column Name="SHTN_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SHTN_Name" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="SHTN_CNKey" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="LT_V_ShablonTourNames_LT_V_ShablonTourGroup" Member="LT_V_ShablonTourGroups" ThisKey="SHTN_Id" OtherKey="SHTR_SHTNId" Type="LT_V_ShablonTourGroup" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LT_V_ShablonFormatService" Member="LT_V_ShablonFormatServices">
+    <Type Name="LT_V_ShablonFormatService">
+      <Column Name="SHFS_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SHFS_SVKey" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SHFS_FormatOut" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="LT_V_ShablonFormatService_LT_V_ShablonService" Member="LT_V_ShablonServices" ThisKey="SHFS_Id" OtherKey="SHS_SHFSId" Type="LT_V_ShablonService" />
+      <Association Name="Service_LT_V_ShablonFormatService" Member="Service" ThisKey="SHFS_SVKey" OtherKey="SV_KEY" Type="Service" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LT_V_ShablonService" Member="LT_V_ShablonServices">
+    <Type Name="LT_V_ShablonService">
+      <Column Name="SHS_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SHS_SHId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SHS_SHFSId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SHS_LineOut" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SHS_UseCommentToBron" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SHS_IsMultiVariant" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SHS_IsGroupToOneVoucher" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="LT_V_ShablonService_LT_V_MappingTurService" Member="LT_V_MappingTurServices" ThisKey="SHS_Id" OtherKey="VS_SHSId" Type="LT_V_MappingTurService" />
+      <Association Name="LT_V_Shablon_LT_V_ShablonService" Member="LT_V_Shablon" ThisKey="SHS_SHId" OtherKey="SH_Id" Type="LT_V_Shablon" IsForeignKey="true" />
+      <Association Name="LT_V_ShablonFormatService_LT_V_ShablonService" Member="LT_V_ShablonFormatService" ThisKey="SHS_SHFSId" OtherKey="SHFS_Id" Type="LT_V_ShablonFormatService" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LT_V_ShablonTourGroup" Member="LT_V_ShablonTourGroups">
+    <Type Name="LT_V_ShablonTourGroup">
+      <Column Name="SHTR_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SHTR_SHId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SHTR_SHTNId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="LT_V_Shablon_LT_V_ShablonTourGroup" Member="LT_V_Shablon" ThisKey="SHTR_SHId" OtherKey="SH_Id" Type="LT_V_Shablon" IsForeignKey="true" />
+      <Association Name="LT_V_ShablonTourNames_LT_V_ShablonTourGroup" Member="LT_V_ShablonTourNames" Storage="_LT_V_ShablonTourName" ThisKey="SHTR_SHTNId" OtherKey="SHTN_Id" Type="LT_V_ShablonTourNames" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AddDescript2" Member="AddDescript2s">
+    <Type Name="AddDescript2">
+      <Column Name="A2_KEY" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="A2_SVKEY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="A2_CODE" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
+      <Column Name="A2_NAME" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="A2_NAMELAT" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="ROWID" Type="System.Data.Linq.Binary" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="A2_StdKey" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Association Name="AddDescript2_tbl_DogovorList" Member="tbl_DogovorLists" ThisKey="A2_KEY" OtherKey="DL_SUBCODE2" Type="tbl_DogovorList" />
+      <Association Name="AddDescript2_TurService" Member="TurServices" ThisKey="A2_KEY" OtherKey="TS_SUBCODE2" Type="TurService" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LT_GroupToBaseTour" Member="LT_GroupToBaseTours">
+    <Type Name="LT_GroupToBaseTour">
+      <Column Name="GT_Key" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GT_RootTLKey" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GT_ParentTLKey" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_TurList_LT_GroupToBaseTour" Member="RootTour" ThisKey="GT_RootTLKey" OtherKey="TL_KEY" Type="tbl_TurList" IsForeignKey="true" />
+      <Association Name="tbl_TurList_LT_GroupToBaseTour1" Member="ChieldTour" ThisKey="GT_ParentTLKey" OtherKey="TL_KEY" Type="tbl_TurList" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.lanta_2011_hotelFIT_adon" Member="lanta_2011_hotelFIT_adons">
+    <Type Name="lanta_2011_hotelFIT_adon">
+      <Column Name="sl_key" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="HotelName" Type="System.String" DbType="NChar(100)" CanBeNull="true" />
+      <Column Name="hotelstar" Type="System.String" DbType="NChar(4)" CanBeNull="true" />
+      <Column Name="hdadress" Type="System.String" DbType="NChar(150)" CanBeNull="true" />
+      <Column Name="hdpfone" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
+      <Column Name="hdcity" Type="System.String" DbType="NChar(100)" CanBeNull="true" />
+      <Column Name="hdcountru" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="hdroom" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="hdpansion" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Association Name="lanta_2011_hotelFIT_adon_tbl_DogovorList" Member="tbl_DogovorLists" ThisKey="sl_key" OtherKey="DL_CODE" Type="tbl_DogovorList" />
+    </Type>
+  </Table>
+</Database>

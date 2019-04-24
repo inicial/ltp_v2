@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 14.75, 8.625" name="sql">
+  <DataContextMoniker Name="/sqlDataContext" />
+  <nestedChildShapes>
+    <classShape Id="e57c26b9-d7a0-4885-8cf5-fe7308fb1fbb" isExpanded="false" absoluteBounds="3.875, 1.125, 2, 0.45">
+      <DataClassMoniker Name="/sqlDataContext/tbl_DogovorList" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f1f8a6be-14e1-48cf-bcd1-d5eba580e142" absoluteBounds="3.8900000000000006, 1.585, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="eaaefa10-79ca-4e00-ad21-6a2228cbbd26" isExpanded="false" absoluteBounds="0.5, 0.5, 2, 0.45">
+      <DataClassMoniker Name="/sqlDataContext/tbl_Dogovor" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8d446576-c976-4e51-b783-cea5521afa42" absoluteBounds="0.51499999999999968, 0.96, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.5 : 0.725); (4.875 : 0.725); (4.875 : 1.125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/sqlDataContext/tbl_Dogovor/tbl_Dogovor_tbl_DogovorList" />
+      <nodes>
+        <classShapeMoniker Id="eaaefa10-79ca-4e00-ad21-6a2228cbbd26" />
+        <classShapeMoniker Id="e57c26b9-d7a0-4885-8cf5-fe7308fb1fbb" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="24e04153-f193-478a-807a-fc7ed5994f23" isExpanded="false" absoluteBounds="1.25, 1.25, 2, 0.45">
+      <DataClassMoniker Name="/sqlDataContext/tbl_Turist" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7d6fa105-697c-49b2-be82-c380a724b274" absoluteBounds="1.2649999999999997, 1.71, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2979d6a4-962c-4d93-ad08-652e17dd4066" isExpanded="false" absoluteBounds="3.875, 2, 2, 0.45">
+      <DataClassMoniker Name="/sqlDataContext/TuristService" />
+      <nestedChildShapes>
+        <elementListCompartment Id="96ae7aff-84a1-4622-a1bd-e293f983a3d0" absoluteBounds="3.8900000000000006, 2.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.4062525 : 1.575); (5.4062525 : 2)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sqlDataContext/tbl_DogovorList/tbl_DogovorList_TuristService" />
+      <nodes>
+        <classShapeMoniker Id="e57c26b9-d7a0-4885-8cf5-fe7308fb1fbb" />
+        <classShapeMoniker Id="2979d6a4-962c-4d93-ad08-652e17dd4066" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.25 : 1.7); (3.875 : 2)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sqlDataContext/tbl_Turist/tbl_Turist_TuristService" />
+      <nodes>
+        <classShapeMoniker Id="24e04153-f193-478a-807a-fc7ed5994f23" />
+        <classShapeMoniker Id="2979d6a4-962c-4d93-ad08-652e17dd4066" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="35492586-831b-4b06-9921-2cb69d6aa46c" isExpanded="false" absoluteBounds="0.5, 3.75, 2, 0.45">
+      <DataClassMoniker Name="/sqlDataContext/INS_INSURANCE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7368432e-5f84-4cee-bb70-3b16cd4bf043" absoluteBounds="0.51499999999999968, 4.21, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3d0c254c-88fc-4eca-ab49-aaf4863b5777" isExpanded="false" absoluteBounds="3.875, 5.375, 2, 0.45">
+      <DataClassMoniker Name="/sqlDataContext/INS_CONDITION" />
+      <nestedChildShapes>
+        <elementListCompartment Id="14c79577-15a0-45aa-9639-131e97d9dd81" absoluteBounds="3.8900000000000006, 5.835, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(1.5 : 4.2); (1.5 : 5.6); (3.875 : 5.6)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sqlDataContext/INS_INSURANCE/INS_INSURANCE_INS_CONDITION" />
+      <nodes>
+        <classShapeMoniker Id="35492586-831b-4b06-9921-2cb69d6aa46c" />
+        <classShapeMoniker Id="3d0c254c-88fc-4eca-ab49-aaf4863b5777" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="63cbf94b-1453-4706-9773-28e1d10fa912" isExpanded="false" absoluteBounds="4.375, 7, 2, 0.45">
+      <DataClassMoniker Name="/sqlDataContext/INS_SL_REF" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7d9d5d17-8c12-4ff2-9a52-bb497231f0df" absoluteBounds="4.39, 7.46, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c8ec0f47-6090-4dae-b7c7-8c2ff799159e" isExpanded="false" absoluteBounds="7.25, 7.125, 2, 0.45">
+      <DataClassMoniker Name="/sqlDataContext/INS_RISK" />
+      <nestedChildShapes>
+        <elementListCompartment Id="841ba1a7-b6e2-4b5b-abc5-d5762001e9c7" absoluteBounds="7.265, 7.585, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.21875 : 7.125); (8.21875 : 5.6); (5.875 : 5.6)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sqlDataContext/INS_RISK/INS_RISK_INS_CONDITION" />
+      <nodes>
+        <classShapeMoniker Id="c8ec0f47-6090-4dae-b7c7-8c2ff799159e" />
+        <classShapeMoniker Id="3d0c254c-88fc-4eca-ab49-aaf4863b5777" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.25 : 7.2875); (6.375 : 7.2875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sqlDataContext/INS_RISK/INS_RISK_INS_SL_REF" />
+      <nodes>
+        <classShapeMoniker Id="c8ec0f47-6090-4dae-b7c7-8c2ff799159e" />
+        <classShapeMoniker Id="63cbf94b-1453-4706-9773-28e1d10fa912" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="ceafa708-af27-4b37-93aa-151c88a1fabb" isExpanded="false" absoluteBounds="11.75, 5.375, 2, 0.45">
+      <DataClassMoniker Name="/sqlDataContext/INS_COUNTRY_REF" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6d1339e5-f0d4-489d-95da-679f169f063b" absoluteBounds="11.765, 5.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a70b2598-b2dd-41df-823f-78a710e33f7d" isExpanded="false" absoluteBounds="3.875, 4.5, 2, 0.45">
+      <DataClassMoniker Name="/sqlDataContext/INS_TERRITORy" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ef78cf72-1b4f-4cbd-b10e-a8ee168cf060" absoluteBounds="3.8900000000000006, 4.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.0312525 : 4.2); (2.0312525 : 4.725); (3.875 : 4.725)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sqlDataContext/INS_INSURANCE/INS_INSURANCE_INS_TERRITORy" />
+      <nodes>
+        <classShapeMoniker Id="35492586-831b-4b06-9921-2cb69d6aa46c" />
+        <classShapeMoniker Id="a70b2598-b2dd-41df-823f-78a710e33f7d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.875 : 0.95); (1.875 : 1.25)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/sqlDataContext/tbl_Dogovor/tbl_Dogovor_tbl_Turist" />
+      <nodes>
+        <classShapeMoniker Id="eaaefa10-79ca-4e00-ad21-6a2228cbbd26" />
+        <classShapeMoniker Id="24e04153-f193-478a-807a-fc7ed5994f23" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="2da74903-13ea-4b06-80a9-4ff4e40dc097" isExpanded="false" absoluteBounds="6.5, 3.75, 2, 0.45">
+      <DataClassMoniker Name="/sqlDataContext/INS_AgeCoef" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c66e7e40-695a-4a21-be30-dbd0e62974e9" absoluteBounds="6.5150000000000006, 4.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8c23b1e1-59af-4e1c-896e-f84e0c43a4ac" isExpanded="false" absoluteBounds="3.875, 3.75, 2, 0.45">
+      <DataClassMoniker Name="/sqlDataContext/INS_PERSON" />
+      <nestedChildShapes>
+        <elementListCompartment Id="050bb1e2-7121-4e6c-bfd2-b5184bd5c945" absoluteBounds="3.8900000000000006, 4.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.5 : 4.02630126953125); (3.875 : 4.02630126953125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sqlDataContext/INS_INSURANCE/INS_INSURANCE_INS_PERSON" />
+      <nodes>
+        <classShapeMoniker Id="35492586-831b-4b06-9921-2cb69d6aa46c" />
+        <classShapeMoniker Id="8c23b1e1-59af-4e1c-896e-f84e0c43a4ac" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.218748 : 1.7); (2.218748 : 3.5); (2.75 : 3.5); (2.75 : 3.975); (3.875 : 3.975)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/sqlDataContext/tbl_Turist/tbl_Turist_INS_PERSON" />
+      <nodes>
+        <classShapeMoniker Id="24e04153-f193-478a-807a-fc7ed5994f23" />
+        <classShapeMoniker Id="8c23b1e1-59af-4e1c-896e-f84e0c43a4ac" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="4ec1ef65-5550-4811-85df-dda14b159929" absoluteBounds="12.5, 0.625, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/sqlDataContext/COUNTRY" />
+      <nestedChildShapes>
+        <elementListCompartment Id="28e82d15-f867-4929-83f4-81bc3b06f3ac" absoluteBounds="12.515, 1.085, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(12.5 : 0.9); (4.95833333333333 : 0.899999999999999 : JumpStart); (4.79166666666667 : 0.9 : JumpEnd); (2.5 : 0.9)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/sqlDataContext/COUNTRY/COUNTRY_tbl_Dogovor" />
+      <nodes>
+        <classShapeMoniker Id="4ec1ef65-5550-4811-85df-dda14b159929" />
+        <classShapeMoniker Id="eaaefa10-79ca-4e00-ad21-6a2228cbbd26" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(0.5 : 3.90957692307692); (0.25 : 3.90957692307692); (0.25 : 4.04353846153846); (0.5 : 4.04353846153846)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sqlDataContext/INS_INSURANCE/INS_INSURANCE_INS_INSURANCE" />
+      <nodes>
+        <classShapeMoniker Id="35492586-831b-4b06-9921-2cb69d6aa46c" />
+        <classShapeMoniker Id="35492586-831b-4b06-9921-2cb69d6aa46c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(13.125 : 1.81899251302083); (13.125 : 5.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sqlDataContext/COUNTRY/COUNTRY_INS_COUNTRY_REF" />
+      <nodes>
+        <classShapeMoniker Id="4ec1ef65-5550-4811-85df-dda14b159929" />
+        <classShapeMoniker Id="ceafa708-af27-4b37-93aa-151c88a1fabb" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="2e09d02c-aec6-4f83-b865-17e935bbe4ea" isExpanded="false" absoluteBounds="9.25, 5.375, 2, 0.45">
+      <DataClassMoniker Name="/sqlDataContext/INS_COUNTRIES_ING" />
+      <nestedChildShapes>
+        <elementListCompartment Id="aaf6e11a-41d7-48e0-ac44-73945bf49ea3" absoluteBounds="9.265, 5.835, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(11.25 : 5.6); (11.75 : 5.6)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sqlDataContext/INS_COUNTRIES_ING/INS_COUNTRIES_ING_INS_COUNTRY_REF" />
+      <nodes>
+        <classShapeMoniker Id="2e09d02c-aec6-4f83-b865-17e935bbe4ea" />
+        <classShapeMoniker Id="ceafa708-af27-4b37-93aa-151c88a1fabb" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(10.25 : 5.375); (10.25 : 4.725); (5.875 : 4.725)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sqlDataContext/INS_COUNTRIES_ING/INS_COUNTRIES_ING_INS_TERRITORy" />
+      <nodes>
+        <classShapeMoniker Id="2e09d02c-aec6-4f83-b865-17e935bbe4ea" />
+        <classShapeMoniker Id="a70b2598-b2dd-41df-823f-78a710e33f7d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(12.5 : 1.35); (5.875 : 1.35)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sqlDataContext/COUNTRY/COUNTRY_tbl_DogovorList" />
+      <nodes>
+        <classShapeMoniker Id="4ec1ef65-5550-4811-85df-dda14b159929" />
+        <classShapeMoniker Id="e57c26b9-d7a0-4885-8cf5-fe7308fb1fbb" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="d1db408d-853f-4517-b91c-6f1ee385e8ed" isExpanded="false" absoluteBounds="10.125, 7.125, 2, 0.45">
+      <DataClassMoniker Name="/sqlDataContext/INS_TARIFF" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8e9a0807-bd47-47ef-8e59-5dfd603ddf5e" absoluteBounds="10.14, 7.585, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(9.25 : 7.35); (10.125 : 7.35)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sqlDataContext/INS_RISK/INS_RISK_INS_TARIFF" />
+      <nodes>
+        <classShapeMoniker Id="c8ec0f47-6090-4dae-b7c7-8c2ff799159e" />
+        <classShapeMoniker Id="d1db408d-853f-4517-b91c-6f1ee385e8ed" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="924b6eec-8cdf-4f08-96d0-708d9a0bf36a" isExpanded="false" absoluteBounds="4.375, 7.875, 2, 0.45">
+      <DataClassMoniker Name="/sqlDataContext/RealCourse" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fff73f97-46a7-4fa6-b4f0-f79231661cf9" absoluteBounds="4.3900000000000006, 8.335, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

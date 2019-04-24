@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="lanta" Class="ArhivDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=192.168.10.4;Initial Catalog=lanta;Persist Security Info=True;User ID=sa" SettingsObjectName="Arhivarius.Properties.Settings" SettingsPropertyName="lantaConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tbl_Partners" Member="tbl_Partners">
+    <Type Name="tbl_Partner">
+      <Column Name="PR_KEY" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PR_FULLNAME" Type="System.String" DbType="VarChar(160)" CanBeNull="true" />
+      <Column Name="PR_NAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PR_NAMEENG" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="PR_BOSSNAME" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="PR_BOSS" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PR_MALE" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="PR_MAINMEN" Type="System.String" DbType="VarChar(45)" CanBeNull="true" />
+      <Column Name="PR_MAINMENPHONE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PR_DISCOUNT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PR_ACCOUNT" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="PR_ADRESS" Type="System.String" DbType="VarChar(160)" CanBeNull="true" />
+      <Column Name="PR_PHONES" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
+      <Column Name="PR_FAX" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="PR_EMAIL" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PR_CTKEY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PR_CREATOR" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PR_AGENTDOGOVOR" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="PR_TYPE" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="PR_CITY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PR_WEBAGENT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PR_AGENTDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PR_AGENTDOGOVOR2" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="PR_AGENTDATE2" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PR_FAX1" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="PR_REMARK" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
+      <Column Name="PR_CREATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PR_UPDATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PR_ART" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PR_USERLAST" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PR_COD" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="ROWID" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Column Name="LastUser" Type="System.String" DbType="Char(30)" CanBeNull="true" />
+      <Column Name="LastUpdate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="pr_IsActive" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PR_Filial" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PR_DateLastContact" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PR_ExchangePwd" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="PR_GUID" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="PR_ExchangeData" Type="System.Data.Linq.Binary" DbType="Binary(50)" CanBeNull="true" />
+      <Column Name="MaskedFax" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="PR_DOGOVORTYPE" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="PR_ICQ" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PR_GDS_PREFIX" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PR_GDS_SUFFIX" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PR_OWNER" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PR_IPAddress" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="PR_Deleted" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="PR_LICENSENUMBER" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PR_ADDITIONALINFO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PR_LEGALADDRESS" Type="System.String" DbType="VarChar(160)" CanBeNull="true" />
+      <Column Name="PR_INN" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PR_FOREIGNACCINFO" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="PR_KPP" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="PR_CODEOKONH" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="PR_CODEOKPO" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="PR_HOMEPAGE" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PR_PGKEY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PR_BLOCKEDFORANNUL" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="PR_POSTINDEX" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="PR_LEGALPOSTINDEX" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="PR_RegisterSeries" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="PR_RegisterNumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PR_Http" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
+      <Column Name="pr_description" Type="System.String" DbType="Text" CanBeNull="true" />
+      <Column Name="PR_WebServiceUrl" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Association Name="tbl_Partner_dict_Document" Member="dict_Documents" ThisKey="PR_KEY" OtherKey="PartnerKey" Type="dict_Document" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LTArh_Arhive" Member="ArhiveDocuments">
+    <Type Name="ArhiveDocument">
+      <Column Name="ARH_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ARH_CRDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ARH_ARDTKey" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ARH_Number" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="ARH_ARHID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ARH_Comment" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ARH_UserName" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="ARH_PkgNum" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ARH_CodeKey" Type="System.Int32" DbType="int" CanBeNull="true" />
+      <Association Name="ArhiveDocument_ArhiveDocument" Member="Chield" ThisKey="ARH_Id" OtherKey="ARH_ARHID" Type="ArhiveDocument" />
+      <Association Name="ArhiveDocument_LTArh_History" Member="HistoryChield" ThisKey="ARH_Id" OtherKey="LTARH_CodeId" Type="LTArh_History" />
+      <Association Name="ArhiveDocument_LTArh_History1" Member="HistoryParent" ThisKey="ARH_Id" OtherKey="LTARH_ParentCodeId" Type="LTArh_History" />
+      <Association Name="ArhiveDocument_ArhiveDocument" Member="Parent" ThisKey="ARH_ARHID" OtherKey="ARH_Id" Type="ArhiveDocument" IsForeignKey="true" />
+      <Association Name="DocumentType_ArhiveDocument" Member="DocumentType" ThisKey="ARH_ARDTKey" OtherKey="ARDT_Id" Type="DocumentType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="" Member="dict_Documents">
+    <Type Name="dict_Document">
+      <Column Name="Number" Type="System.String" CanBeNull="false" />
+      <Column Name="Id" Type="System.Int32" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PartnerKey" Type="System.Int32" CanBeNull="true" />
+      <Column Name="Info" Type="System.String" CanBeNull="false" />
+      <Column Name="CreateDate" Type="System.DateTime" CanBeNull="false" />
+      <Association Name="tbl_Partner_dict_Document" Member="tbl_Partner" ThisKey="PartnerKey" OtherKey="PR_KEY" Type="tbl_Partner" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LTArh_DocType" Member="DocumentTypes">
+    <Type Name="DocumentType">
+      <Column Name="ARDT_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ARDT_CanHaveChildren" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ARDT_IsRoot" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ARDT_Name" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ARDT_Code" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="ARDT_GroupId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ARDT_ParentGroupId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ARDT_Sql" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="DocumentType_DocumentType" Member="CheldDocType" ThisKey="ARDT_GroupId" OtherKey="ARDT_ParentGroupId" Type="DocumentType" />
+      <Association Name="DocumentType_DocumentType" Member="ParentDocType" ThisKey="ARDT_ParentGroupId" OtherKey="ARDT_GroupId" Type="DocumentType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LTArh_History" Member="LTArh_Histories">
+    <Type Name="LTArh_History">
+      <Column Name="LTARH_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LTARH_Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LTARH_Mod" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="LTARH_UserName" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="LTARH_CodeId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LTARH_Comment" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="LTARH_ParentCodeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="ArhiveDocument_LTArh_History" Member="ArhiveDocument" ThisKey="LTARH_CodeId" OtherKey="ARH_Id" Type="ArhiveDocument" IsForeignKey="true" />
+      <Association Name="ArhiveDocument_LTArh_History1" Member="ArhiveDocument1" ThisKey="LTARH_ParentCodeId" OtherKey="ARH_Id" Type="ArhiveDocument" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

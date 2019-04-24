@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Configuration" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Configuration" msdata:IsDataSet="true" msdata:Locale="en-US" msprop:Generator_UserDSName="Configuration" msprop:Generator_DataSetName="Configuration">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Service" msprop:Generator_UserTableName="Service" msprop:Generator_RowDeletedName="ServiceRowDeleted" msprop:Generator_RowChangedName="ServiceRowChanged" msprop:Generator_RowClassName="ServiceRow" msprop:Generator_RowChangingName="ServiceRowChanging" msprop:Generator_RowEvArgName="ServiceRowChangeEvent" msprop:Generator_RowEvHandlerName="ServiceRowChangeEventHandler" msprop:Generator_TableClassName="ServiceDataTable" msprop:Generator_TableVarName="tableService" msprop:Generator_RowDeletingName="ServiceRowDeleting" msprop:Generator_TablePropName="Service">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="extBody" msprop:Generator_UserColumnName="extBody" msprop:Generator_ColumnVarNameInTable="columnextBody" msprop:Generator_ColumnPropNameInRow="extBody" msprop:Generator_ColumnPropNameInTable="extBodyColumn" type="xs:string" minOccurs="0" msdata:Ordinal="0" />
+            </xs:sequence>
+            <xs:attribute name="WorkInterval" msprop:Generator_UserColumnName="WorkInterval" msprop:Generator_ColumnVarNameInTable="columnWorkInterval" msprop:Generator_ColumnPropNameInRow="WorkInterval" msprop:Generator_ColumnPropNameInTable="WorkIntervalColumn" type="xs:int" default="60" />
+            <xs:attribute name="MailTo" msprop:Generator_UserColumnName="MailTo" msprop:Generator_ColumnVarNameInTable="columnMailTo" msprop:Generator_ColumnPropNameInRow="MailTo" msprop:Generator_ColumnPropNameInTable="MailToColumn" type="xs:string" />
+            <xs:attribute name="MailFrom" msprop:Generator_UserColumnName="MailFrom" msprop:Generator_ColumnVarNameInTable="columnMailFrom" msprop:Generator_ColumnPropNameInRow="MailFrom" msprop:Generator_ColumnPropNameInTable="MailFromColumn" type="xs:string" />
+            <xs:attribute name="Subject" msprop:Generator_UserColumnName="Subject" msprop:Generator_ColumnVarNameInTable="columnSubject" msprop:Generator_ColumnPropNameInRow="Subject" msprop:Generator_ColumnPropNameInTable="SubjectColumn" type="xs:string" />
+            <xs:attribute name="ServiceID" msprop:Generator_UserColumnName="ServiceID" msprop:Generator_ColumnVarNameInTable="columnServiceID" msprop:Generator_ColumnPropNameInRow="ServiceID" msprop:Generator_ColumnPropNameInTable="ServiceIDColumn" type="xs:string" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="SQL" msprop:Generator_UserTableName="SQL" msprop:Generator_RowDeletedName="SQLRowDeleted" msprop:Generator_RowChangedName="SQLRowChanged" msprop:Generator_RowClassName="SQLRow" msprop:Generator_RowChangingName="SQLRowChanging" msprop:Generator_RowEvArgName="SQLRowChangeEvent" msprop:Generator_RowEvHandlerName="SQLRowChangeEventHandler" msprop:Generator_TableClassName="SQLDataTable" msprop:Generator_TableVarName="tableSQL" msprop:Generator_RowDeletingName="SQLRowDeleting" msprop:Generator_TablePropName="SQL">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="extBody" msprop:Generator_UserColumnName="extBody" msprop:Generator_ColumnVarNameInTable="columnextBody" msprop:Generator_ColumnPropNameInRow="extBody" msprop:Generator_ColumnPropNameInTable="extBodyColumn" type="xs:string" minOccurs="0" msdata:Ordinal="2" />
+              <xs:element name="SQLCmd" msprop:Generator_UserColumnName="SQLCmd" msprop:Generator_ColumnPropNameInRow="SQLCmd" msprop:Generator_ColumnVarNameInTable="columnSQLCmd" msprop:Generator_ColumnPropNameInTable="SQLCmdColumn" type="xs:string" minOccurs="0" msdata:Ordinal="3" />
+            </xs:sequence>
+            <xs:attribute name="RequiredPresent" msprop:Generator_UserColumnName="RequiredPresent" msprop:Generator_ColumnPropNameInRow="RequiredPresent" msprop:Generator_ColumnVarNameInTable="columnRequiredPresent" msprop:Generator_ColumnPropNameInTable="RequiredPresentColumn" type="xs:boolean" msdata:DefaultValue="false" use="required" />
+            <xs:attribute name="SqlID" msprop:Generator_UserColumnName="SqlID" msprop:Generator_ColumnPropNameInRow="SqlID" msprop:Generator_ColumnVarNameInTable="columnSqlID" msprop:Generator_ColumnPropNameInTable="SqlIDColumn" type="xs:string" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="RunAT" msprop:Generator_UserTableName="RunAT" msprop:Generator_RowDeletedName="RunATRowDeleted" msprop:Generator_RowChangedName="RunATRowChanged" msprop:Generator_RowClassName="RunATRow" msprop:Generator_RowChangingName="RunATRowChanging" msprop:Generator_RowEvArgName="RunATRowChangeEvent" msprop:Generator_RowEvHandlerName="RunATRowChangeEventHandler" msprop:Generator_TableClassName="RunATDataTable" msprop:Generator_TableVarName="tableRunAT" msprop:Generator_RowDeletingName="RunATRowDeleting" msprop:Generator_TablePropName="RunAT">
+          <xs:complexType>
+            <xs:attribute name="DayOfWeek" msdata:Caption="WeekDay" msprop:Generator_UserColumnName="DayOfWeek" msprop:Generator_ColumnVarNameInTable="columnDayOfWeek" msprop:Generator_ColumnPropNameInRow="DayOfWeek" msprop:Generator_ColumnPropNameInTable="DayOfWeekColumn" type="xs:int" />
+            <xs:attribute name="Begin" msdata:Caption="HourFrom" msprop:Generator_UserColumnName="Begin" msprop:Generator_ColumnVarNameInTable="columnBegin" msprop:Generator_ColumnPropNameInRow="Begin" msprop:Generator_ColumnPropNameInTable="BeginColumn" type="xs:string" />
+            <xs:attribute name="End" msdata:Caption="HourTo" msprop:Generator_UserColumnName="End" msprop:Generator_ColumnVarNameInTable="columnEnd" msprop:Generator_ColumnPropNameInRow="End" msprop:Generator_ColumnPropNameInTable="EndColumn" type="xs:string" />
+            <xs:attribute name="IsUse" msdata:Caption="HourTo" msprop:Generator_UserColumnName="IsUse" msprop:nullValue="True" msprop:Generator_ColumnVarNameInTable="columnIsUse" msprop:Generator_ColumnPropNameInTable="IsUseColumn" msprop:Generator_ColumnPropNameInRow="IsUse" type="xs:boolean" use="required" />
+            <xs:attribute name="Interval" msdata:Caption="HourTo" msprop:Generator_UserColumnName="Interval" msprop:nullValue="60" msprop:Generator_ColumnPropNameInRow="Interval" msprop:Generator_ColumnPropNameInTable="IntervalColumn" msprop:Generator_ColumnVarNameInTable="columnInterval" type="xs:int" />
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

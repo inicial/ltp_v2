@@ -1,0 +1,90 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="TLW.SpamMashine.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="dbConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=192.168.10.4;Initial Catalog=lanta;Persist Security Info=True;User ID=sysadm;pwd=ieheg&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=192.168.10.4;Initial Catalog=lanta;Persist Security Info=True;User ID=sysadm;pwd=ieheg</Value>
+    </Setting>
+    <Setting Name="BottomToInternal" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">
+          &lt;center&gt;
+          &lt;br&gt;
+          &lt;br&gt;
+          По вопросам работы системы автоматического оповещения обращайтесь по адресу:&lt;a href="mailto:imt.man5@lantatur.ru"&gt;kropotov@lantatur.ru&lt;/a&gt;
+          &lt;/center&gt;
+          &lt;/body&gt;
+          &lt;/html&gt;
+        </Value>
+    </Setting>
+    <Setting Name="ErrorMailFrom" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Spamus_Service_ERR@lantatur.ru</Value>
+    </Setting>
+    <Setting Name="ErrorMailIfMailAddressError" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">mar.man6@lantatur.ru</Value>
+    </Setting>
+    <Setting Name="HeadToInternal" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">
+          &lt;html&gt;
+          &lt;head&gt;
+          &lt;title&gt;Автоматическое извещение об изменениях в путевке&lt;/title&gt;
+          &lt;/head&gt;
+          &lt;body&gt;
+          &lt;center&gt;
+          &lt;img src="http://www.lantatur.ru/img/logo.gif"&gt;&lt;br&gt;
+          Сервис автоматического оповещения
+          &lt;/center&gt;
+          &lt;br&gt;
+        </Value>
+    </Setting>
+    <Setting Name="SubjectBeg" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Ланта-тур вояж:</Value>
+    </Setting>
+    <Setting Name="BottomToExternal" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">
+          &lt;/body&gt;
+          &lt;/html&gt;
+        </Value>
+    </Setting>
+    <Setting Name="ErrorMailToAdmin" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">itm.man5@zmail.lantatur.ru</Value>
+    </Setting>
+    <Setting Name="ExecuteInterval" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">10</Value>
+    </Setting>
+    <Setting Name="HeadToExternal" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">
+          &lt;html&gt;
+          &lt;head&gt;
+          &lt;title&gt;Автоматическое извещение об изменениях в путевке&lt;/title&gt;
+          &lt;/head&gt;
+          &lt;body&gt;
+          &lt;center&gt;
+          &lt;img src="http://www.lantatur.ru/img/logo.gif"&gt;&lt;br&gt;
+          Полную информацию смотрите на сайте &lt;a href="http://www.lantatur.ru/OrderListBonus/"&gt;www.lantatur.ru&lt;/a&gt;&lt;br&gt;
+          &lt;/center&gt;&lt;br&gt;
+        </Value>
+    </Setting>
+    <Setting Name="SMTP_Server2" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">zmail.lantatur.ru</Value>
+    </Setting>
+    <Setting Name="SMTP_Server2_UsedForAddress" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">mar.doc@lantatur.ru</Value>
+    </Setting>
+    <Setting Name="SMTP_Server" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">127.0.0.1</Value>
+    </Setting>
+    <Setting Name="lantaConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=192.168.10.4;Initial Catalog=lanta;Persist Security Info=True;User ID=sa&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=192.168.10.4;Initial Catalog=lanta;Persist Security Info=True;User ID=sa</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

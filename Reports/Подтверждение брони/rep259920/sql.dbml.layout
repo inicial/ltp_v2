@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 12, 15.125" name="sql">
+  <DataContextMoniker Name="/sqlDataContext" />
+  <nestedChildShapes>
+    <classShape Id="5fee21a9-f9c1-4beb-b6e8-f46a748151d5" absoluteBounds="4.625, 1, 2, 13.885887044270833">
+      <DataClassMoniker Name="/sqlDataContext/tbl_Dogovor" />
+      <nestedChildShapes>
+        <elementListCompartment Id="58638c81-f61e-4724-a511-dab404a1c135" absoluteBounds="4.64, 1.46, 1.9700000000000002, 13.325887044270832" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5193aeef-2b4d-430b-90fc-c6c2f0ee613d" absoluteBounds="2.125, 1.75, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/sqlDataContext/History" />
+      <nestedChildShapes>
+        <elementListCompartment Id="22ec97a2-9914-4436-8970-9649627f1069" absoluteBounds="2.1399999999999997, 2.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0ae347a4-7583-49de-9425-d837c3d690b2" absoluteBounds="7, 1.5, 2, 10.232159830729165">
+      <DataClassMoniker Name="/sqlDataContext/tbl_DogovorList" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d1e8b925-cf3b-4158-9296-58e5c76aae00" absoluteBounds="7.015, 1.96, 1.9700000000000002, 9.6721598307291661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6.625 : 6.61607991536458); (7 : 6.61607991536458)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sqlDataContext/tbl_Dogovor/tbl_Dogovor_tbl_DogovorList" />
+      <nodes>
+        <classShapeMoniker Id="5fee21a9-f9c1-4beb-b6e8-f46a748151d5" />
+        <classShapeMoniker Id="0ae347a4-7583-49de-9425-d837c3d690b2" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="0bf25c6d-1a1a-4365-aedb-950991b1afbc" absoluteBounds="9.75, 1, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/sqlDataContext/Lanta_RouteCertificateAdmin" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1cb70fe4-ca28-4d9e-a6d8-aca379ac8b72" absoluteBounds="9.765, 1.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6.625 : 1.21875); (9.75 : 1.21875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sqlDataContext/tbl_Dogovor/tbl_Dogovor_Lanta_RouteCertificateAdmin" />
+      <nodes>
+        <classShapeMoniker Id="5fee21a9-f9c1-4beb-b6e8-f46a748151d5" />
+        <classShapeMoniker Id="0bf25c6d-1a1a-4365-aedb-950991b1afbc" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

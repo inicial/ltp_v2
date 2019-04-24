@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="lanta" Class="AccountDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=192.168.10.4;Initial Catalog=lanta;Persist Security Info=True;User ID=sa" SettingsObjectName="ltp_v2.AccountCreator.Properties.Settings" SettingsPropertyName="lantaConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.LTA_Account" Member="LTA_Accounts">
+    <Type Name="LTA_Account">
+      <Column Name="AC_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AC_ATID" Type="System.Int32" DbType="Int NOT NULL" IsReadOnly="true" CanBeNull="false" />
+      <Column Name="AC_Number" Type="System.String" DbType="VarChar(11)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="AC_CRDate" Type="System.DateTime" DbType="DateTime NOT NULL" IsReadOnly="true" CanBeNull="false" />
+      <Column Name="AC_PRKey" Type="System.Int32" DbType="Int NOT NULL" IsReadOnly="true" CanBeNull="false" />
+      <Column Name="AC_Course" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="AC_Rate" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="AC_BaseRate" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="AC_Param1" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="AC_TotalPrice" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="AC_DCKey" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AC_USID" Type="System.Int32" DbType="Int" IsReadOnly="true" CanBeNull="false" />
+      <Column Name="AC_IsAnull" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AC_SuplierRRKey" Type="System.Int32" DbType="Int NOT NULL" IsReadOnly="true" CanBeNull="false" />
+      <Column Name="TotalPriceString" Type="System.String" DbType="varchar(max)" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="LTA_Account_LTA_AccountService" Member="LTA_AccountServices" ThisKey="AC_ID" OtherKey="AS_ACID" Type="LTA_AccountService" />
+      <Association Name="LTA_Account_LTA_AccountDocument" Member="LTA_AccountDocuments" ThisKey="AC_ID" OtherKey="ACF_ACId" Type="LTA_AccountDocument" />
+      <Association Name="LTA_AccountType_LTA_Account" Member="LTA_AccountType" ThisKey="AC_ATID" OtherKey="AT_ID" Type="LTA_AccountType" IsForeignKey="true" />
+      <Association Name="dict_Partner_LTA_Account" Member="Buyer" Storage="_tbl_Partner" ThisKey="AC_PRKey" OtherKey="PR_KEY" Type="dict_Partner" IsForeignKey="true" />
+      <Association Name="dict_Partner_LTA_Account1" Member="Supplier" ThisKey="AC_SuplierRRKey" OtherKey="PR_KEY" Type="dict_Partner" IsForeignKey="true" />
+      <Association Name="FIN_DOCUMENT_LTA_Account" Member="FIN_DOCUMENT" AccessModifier="Internal" ThisKey="AC_DCKey" OtherKey="DC_KEY" Type="FIN_DOCUMENT" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LTA_AccountType" Member="LTA_AccountTypes">
+    <Type Name="LTA_AccountType">
+      <Column Name="AT_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AT_Name" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="AT_NumPrefix" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="AT_LastKey" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AT_BasePRKey" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="LTA_AccountType_LTA_Account" Member="LTA_Accounts" ThisKey="AT_ID" OtherKey="AC_ATID" Type="LTA_Account" />
+      <Association Name="LTA_AccountType_dict_AccountDefaultService" Member="dict_AccountDefaultServices" Storage="_LTA_AccountDefaultServices" ThisKey="AT_ID" OtherKey="ADS_ATID" Type="dict_AccountDefaultService" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LTA_AccountDefaultService" Member="dict_AccountDefaultServices">
+    <Type Name="dict_AccountDefaultService">
+      <Column Name="ADS_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ADS_ATID" Type="System.Int32" DbType="Int NOT NULL" IsReadOnly="true" CanBeNull="false" />
+      <Column Name="ADS_Name" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="ADS_Price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Association Name="LTA_AccountType_dict_AccountDefaultService" Member="LTA_AccountType" ThisKey="ADS_ATID" OtherKey="AT_ID" Type="LTA_AccountType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LTA_AccountService" Member="LTA_AccountServices">
+    <Type Name="LTA_AccountService">
+      <Column Name="AS_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AS_ACID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AS_Name" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="AS_Count" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AS_CountType" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="AS_Price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="AS_TotalPrice" Type="System.Double" DbType="Float NOT NULL" IsReadOnly="true" CanBeNull="false" />
+      <Association Name="LTA_Account_LTA_AccountService" Member="LTA_Account" ThisKey="AS_ACID" OtherKey="AC_ID" Type="LTA_Account" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Partners" Member="dict_Partners">
+    <Type Name="dict_Partner">
+      <Column Name="PR_KEY" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="PR_FULLNAME" Type="System.String" DbType="VarChar(160)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="PR_ACCOUNT" Type="System.String" DbType="VarChar(200)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="PR_ADRESS" Type="System.String" DbType="VarChar(160)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="PR_PHONES" Type="System.String" DbType="VarChar(254)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="PR_FAX" Type="System.String" DbType="VarChar(20)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="PR_EMAIL" Type="System.String" DbType="VarChar(50)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="PR_CITY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="PR_FAX1" Type="System.String" DbType="VarChar(20)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="PR_LEGALADDRESS" Type="System.String" DbType="VarChar(160)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="PR_INN" Type="System.String" DbType="VarChar(50)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="PR_KPP" Type="System.String" DbType="VarChar(30)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="PR_CODEOKONH" Type="System.String" DbType="VarChar(30)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="PR_CODEOKPO" Type="System.String" DbType="VarChar(30)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="PR_POSTINDEX" Type="System.String" DbType="VarChar(6)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="PR_LEGALPOSTINDEX" Type="System.String" DbType="VarChar(6)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="PR_Name" Type="System.String" DbType="varchar(50) not null" CanBeNull="false" />
+      <Column Name="PR_COD" Type="System.String" DbType="varchar(6)" CanBeNull="true" />
+      <Association Name="dict_Partner_LTA_Account" Member="LTA_Account_Buyers" Storage="_LTA_Accounts" ThisKey="PR_KEY" OtherKey="AC_PRKey" Type="LTA_Account" />
+      <Association Name="dict_Partner_LTA_Account1" Member="LTA_Account_Suppliers" ThisKey="PR_KEY" OtherKey="AC_SuplierRRKey" Type="LTA_Account" />
+      <Association Name="dict_Partner_dict_PrtAccount" Member="dict_PrtAccounts" Storage="_PrtAccounts" ThisKey="PR_KEY" OtherKey="PA_PRKey" Type="dict_PrtAccount" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Rates" Member="dict_Rates">
+    <Type Name="dict_Rate">
+      <Column Name="RA_CODE" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="ra_key" Member="RA_Key" Storage="_ra_key" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="RA_National" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Association Name="dict_Rate_dict_PrtAccount" Member="dict_PrtAccounts" Storage="_PrtAccounts" ThisKey="RA_Key" OtherKey="PA_RAKey" Type="dict_PrtAccount" />
+      <Association Name="dict_Rate_FIN_BILL_OUT" Member="FIN_BILL_OUTs" ThisKey="RA_CODE" OtherKey="BI_RATE" Type="FIN_BILL_OUT" />
+      <Association Name="dict_Rate_FIN_DOCUMENT" Member="FIN_DOCUMENTs" ThisKey="RA_CODE" OtherKey="DC_RATE" Type="FIN_DOCUMENT" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PrtAccounts" Member="dict_PrtAccounts">
+    <Type Name="dict_PrtAccount">
+      <Column Name="PA_Key" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PA_PRKey" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PA_BNKey" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PA_Account" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="PA_RAKey" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="dict_Rate_dict_PrtAccount" Member="dict_Rate" Storage="_Rate" ThisKey="PA_RAKey" OtherKey="RA_Key" Type="dict_Rate" IsForeignKey="true" />
+      <Association Name="dict_PrtBank_dict_PrtAccount" Member="dict_PrtBank" Storage="_Bank" ThisKey="PA_BNKey" OtherKey="BN_Key" Type="dict_PrtBank" IsForeignKey="true" />
+      <Association Name="dict_Partner_dict_PrtAccount" Member="dict_Partner" Storage="_tbl_Partner" ThisKey="PA_PRKey" OtherKey="PR_KEY" Type="dict_Partner" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Banks" Member="dict_PrtBanks">
+    <Type Name="dict_PrtBank">
+      <Column Name="BN_Key" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="BN_Name" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="BN_BIK" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="BN_CorAccount" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Association Name="dict_PrtBank_dict_PrtAccount" Member="dict_PrtAccounts" Storage="_PrtAccounts" ThisKey="BN_Key" OtherKey="PA_BNKey" Type="dict_PrtAccount" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FIN_BILL_OUT" Member="FIN_BILL_OUTs">
+    <Type Name="FIN_BILL_OUT">
+      <Column Name="BI_KEY" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="BI_PAYEDBASE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="BI_DATE_INVOICE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="BI_DATE_PROCESS" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="BI_OUTNUM" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="BI_FRKEY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BI_SUM" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="BI_SUM_BASE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="BI_SUM_NATIONAL" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="BI_RATE" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="BI_COMMENT" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
+      <Column Name="BI_PARTNERKEY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BI_CREATOR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BI_ISAVIA" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="BI_ACCDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="BI_ACCNUMBER" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BI_DOCKEY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BI_NDS" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="BI_PAYED" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="BI_ACTIONTYPE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BI_PERCENT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="BI_OFKEY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BI_ANNULATED" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="BI_LOCKED" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="BI_ANNULDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="BI_DEADLINEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="BI_PAYWITHCOMISSION" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Association Name="dict_Rate_FIN_BILL_OUT" Member="dict_Rate" ThisKey="BI_RATE" OtherKey="RA_CODE" Type="dict_Rate" IsForeignKey="true" />
+      <Association Name="FIN_DOCUMENT_FIN_BILL_OUT" Member="FIN_DOCUMENT" ThisKey="BI_DOCKEY" OtherKey="DC_KEY" Type="FIN_DOCUMENT" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FIN_DOCUMENTS" Member="FIN_DOCUMENTs">
+    <Type Name="FIN_DOCUMENT">
+      <Column Name="DC_KEY" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DC_DTKEY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DC_DATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DC_NUMBER" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DC_PARTNERKEY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DC_SUM" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DC_RATE" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="DC_USKEY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DC_FRKEY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DC_OTKEY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DC_Dogovor" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
+      <Column Name="DC_COMMENT" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
+      <Column Name="DC_SUMBASE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DC_SUMNATIONAL" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DC_OUTNUM" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DC_OFKEY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DC_ACTIONTYPE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DC_LEVEL" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DC_STREAM" Type="System.String" DbType="VarChar(1024)" CanBeNull="true" />
+      <Column Name="DC_NSCKEY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DC_FLOWLEVEL" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="DC_ROWID" Type="System.Data.Linq.Binary" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="DC_SENTTO1C" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="DC_LOCKED" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="DC_PIKEY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="FIN_DOCUMENT_FIN_BILL_OUT" Member="FIN_BILL_OUT" ThisKey="DC_KEY" OtherKey="BI_DOCKEY" Type="FIN_BILL_OUT" />
+      <Association Name="dict_Rate_FIN_DOCUMENT" Member="dict_Rate" ThisKey="DC_RATE" OtherKey="RA_CODE" Type="dict_Rate" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LTA_AccountDocument" Member="LTA_AccountDocuments">
+    <Type Name="LTA_AccountDocument">
+      <Column Name="ACF_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ACF_ACId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ACF_Source" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="ACF_Extension" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="ACF_PrintDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="LTA_Account_LTA_AccountDocument" Member="LTA_Account" ThisKey="ACF_ACId" OtherKey="AC_ID" Type="LTA_Account" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

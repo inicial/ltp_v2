@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 14.125, 8.5" name="SqlTS">
+  <DataContextMoniker Name="/SqlTSDataContext" />
+  <nestedChildShapes>
+    <classShape Id="e6f345f2-5003-492a-8d52-5b2577afea01" absoluteBounds="1.5, 4.625, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/SqlTSDataContext/Ship" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bd1fdf36-d6bf-4582-b1d4-f4c8de304744" absoluteBounds="1.5150000000000006, 5.0850000000000009, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a0e1dca9-ef8a-4fa1-a3b9-f8ba8d574fa4" absoluteBounds="5, 4.5, 2, 3.1170068359375">
+      <DataClassMoniker Name="/SqlTSDataContext/CruiseLine" />
+      <nestedChildShapes>
+        <elementListCompartment Id="416df9d3-4ac5-4e36-8e32-9844018a005f" absoluteBounds="5.0150000000000006, 4.96, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5 : 5.79890055338542); (3.5 : 5.79890055338542)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/SqlTSDataContext/CruiseLine/CruiseLine_Ship" />
+      <nodes>
+        <classShapeMoniker Id="a0e1dca9-ef8a-4fa1-a3b9-f8ba8d574fa4" />
+        <classShapeMoniker Id="e6f345f2-5003-492a-8d52-5b2577afea01" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="d02350f2-fcdf-4726-a396-449c747bad70" absoluteBounds="4.625, 0.75, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/SqlTSDataContext/Itinerary_old_all" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b4fa6222-6f8e-4f70-ac8e-f57ddc2e0852" absoluteBounds="4.64, 1.21, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d9147f94-1a9f-428e-be26-7b8cdf1beb2f" absoluteBounds="12.125, 0.875, 1.625, 2.1554996744791666">
+      <DataClassMoniker Name="/SqlTSDataContext/CRUISES_by_cabincategiory_and_action" />
+      <nestedChildShapes>
+        <elementListCompartment Id="49cf4c73-e0c7-4fb8-9dd1-48ca9b7247e7" absoluteBounds="12.14, 1.335, 1.5950000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="35eb132e-7d1c-4ff1-b61b-a01775c048e7" absoluteBounds="7.5, 1, 2, 2.5401025390625">
+      <DataClassMoniker Name="/SqlTSDataContext/CRUISES_serch" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c5b30848-0992-4b26-ae26-7b067dc76d56" absoluteBounds="7.5150000000000006, 1.46, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="12fd30fb-2ec2-4619-af6b-fbd052306ae7" absoluteBounds="1.875, 0.625, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/SqlTSDataContext/SeaPOrtAdress" />
+      <nestedChildShapes>
+        <elementListCompartment Id="12bc93ef-1a61-4a8c-afd9-ab55b17b758e" absoluteBounds="1.8900000000000001, 1.085, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2e1b8764-aba8-4976-baa1-99bcfc5ac20b" absoluteBounds="9.875, 1.25, 2, 2.5401025390625">
+      <DataClassMoniker Name="/SqlTSDataContext/Seaport" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a8944671-f6d9-4ce4-ae9b-893bfc12535e" absoluteBounds="9.89, 1.71, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(10.875 : 1.25); (10.875 : 0.65625); (3.875 : 0.65625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/SqlTSDataContext/Seaport/Seaport_SeaPOrtAdress" />
+      <nodes>
+        <classShapeMoniker Id="2e1b8764-aba8-4976-baa1-99bcfc5ac20b" />
+        <classShapeMoniker Id="12fd30fb-2ec2-4619-af6b-fbd052306ae7" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(9.875 : 3.6963525390625); (6.625 : 3.6963525390625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/SqlTSDataContext/Seaport/Seaport_Itinerary_old_all" />
+      <nodes>
+        <classShapeMoniker Id="2e1b8764-aba8-4976-baa1-99bcfc5ac20b" />
+        <classShapeMoniker Id="d02350f2-fcdf-4726-a396-449c747bad70" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(10.5842307692308 : 3.7901025390625); (10.5842307692308 : 4.0401025390625); (11.1796153846154 : 4.0401025390625); (11.1796153846154 : 3.7901025390625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/SqlTSDataContext/Seaport/Seaport_Seaport" />
+      <nodes>
+        <classShapeMoniker Id="2e1b8764-aba8-4976-baa1-99bcfc5ac20b" />
+        <classShapeMoniker Id="2e1b8764-aba8-4976-baa1-99bcfc5ac20b" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="ab68fbe8-36c5-4846-beb9-37d9906d524d" absoluteBounds="11.875, 4.75, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/SqlTSDataContext/CRUISE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0eb4cb8f-b527-4a5c-abce-beedc431f4e4" absoluteBounds="11.89, 5.21, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cf0226c5-6ce6-46e9-b989-73f917309f14" absoluteBounds="8.375, 4.375, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/SqlTSDataContext/Region" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fa053dcb-8468-4c35-8a21-be7e71018c86" absoluteBounds="8.39, 4.835, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(10.375 : 5.64024983723958); (11.875 : 5.64024983723958)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/SqlTSDataContext/Region/Region_CRUISE" />
+      <nodes>
+        <classShapeMoniker Id="cf0226c5-6ce6-46e9-b989-73f917309f14" />
+        <classShapeMoniker Id="ab68fbe8-36c5-4846-beb9-37d9906d524d" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="008586c8-3cf1-4444-a94c-1d5fa64cb969" absoluteBounds="0.5, 2.75, 2, 1.3862939453125">
+      <DataClassMoniker Name="/SqlTSDataContext/CruiseTerminal" />
+      <nestedChildShapes>
+        <elementListCompartment Id="281e0d47-b525-4fc9-ae72-0a52cc110aaf" absoluteBounds="0.515, 3.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

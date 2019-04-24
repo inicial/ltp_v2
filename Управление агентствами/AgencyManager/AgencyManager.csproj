@@ -1,0 +1,624 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{189E9674-2062-45FF-944E-02D68CE8906E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AgencyManager</RootNamespace>
+    <AssemblyName>AgencyManager</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <ApplicationIcon>Login.ico</ApplicationIcon>
+    <ManifestCertificateThumbprint>9B4316E3146EAE7264B15893E79DF421D9ED9F67</ManifestCertificateThumbprint>
+    <ManifestKeyFile>AgencyManager_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>true</GenerateManifests>
+    <SignManifests>false</SignManifests>
+    <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>..\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>c:\ma2010\agencymanager\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemGroup>
+    <Reference Include="barcodelib, Version=1.0.0.11, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\barcodelib.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\Library\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Enums\DogovorActiveState.cs" />
+    <Compile Include="FormsForAccess\bot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsForAccess\bot.designer.cs">
+      <DependentUpon>bot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsForAccess\frmAviaOnLine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsForAccess\frmAviaOnLine.Designer.cs">
+      <DependentUpon>frmAviaOnLine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsForAccess\frmGenerateLoginPass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsForAccess\frmGenerateLoginPass.Designer.cs">
+      <DependentUpon>frmGenerateLoginPass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsForAccess\frmLantaOnLine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsForAccess\frmLantaOnLine.Designer.cs">
+      <DependentUpon>frmLantaOnLine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsForAccounts\frmAccountInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsForAccounts\frmAccountInformation.Designer.cs">
+      <DependentUpon>frmAccountInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsForAccounts\frmBanks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsForAccounts\frmBanks.Designer.cs">
+      <DependentUpon>frmBanks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsForDogovor\frmDogovorCommentEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsForDogovor\frmDogovorCommentEditor.Designer.cs">
+      <DependentUpon>frmDogovorCommentEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsForDogovor\frmGettingDogovor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsForDogovor\frmGettingDogovor.Designer.cs">
+      <DependentUpon>frmGettingDogovor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsForDogovor\frmJournalCirculationDogovors.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsForDogovor\frmJournalCirculationDogovors.Designer.cs">
+      <DependentUpon>frmJournalCirculationDogovors.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsForDogovor\frmPrintingEnvelopes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsForDogovor\frmPrintingEnvelopes.Designer.cs">
+      <DependentUpon>frmPrintingEnvelopes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsForDogovor\frmActivateDogovor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsForDogovor\frmActivateDogovor.Designer.cs">
+      <DependentUpon>frmActivateDogovor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsForDogovor\frmCreateDogovor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsForDogovor\frmCreateDogovor.Designer.cs">
+      <DependentUpon>frmCreateDogovor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsForDogovor\frmDogovorsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsForDogovor\frmDogovorsList.Designer.cs">
+      <DependentUpon>frmDogovorsList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsForDogovor\frmDogovorShablonManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsForDogovor\frmDogovorShablonManagement.Designer.cs">
+      <DependentUpon>frmDogovorShablonManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsForDogovor\frmDogovorTypeManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsForDogovor\frmDogovorTypeManagement.Designer.cs">
+      <DependentUpon>frmDogovorTypeManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsForDogovor\frmSendToCourier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsForDogovor\frmSendToCourier.Designer.cs">
+      <DependentUpon>frmSendToCourier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsForDogovor\frmSigningDogovors.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsForDogovor\frmSigningDogovors.Designer.cs">
+      <DependentUpon>frmSigningDogovors.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsForDogovor\PrintDogovor.cs" />
+    <Compile Include="FormsForDogovor\rptClassPrintingEnvelopes.cs" />
+    <Compile Include="FormsForDogovor\TypeDogovorsManagement\frmCreateModDogovorType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsForDogovor\TypeDogovorsManagement\frmCreateModDogovorType.Designer.cs">
+      <DependentUpon>frmCreateModDogovorType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsForDogovor\TypeDogovorsManagement\frmModifyShablon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsForDogovor\TypeDogovorsManagement\frmModifyShablon.Designer.cs">
+      <DependentUpon>frmModifyShablon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsForPartners\frmEditPartner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsForPartners\frmEditPartner.Designer.cs">
+      <DependentUpon>frmEditPartner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsForPartners\frmHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsForPartners\frmHistory.Designer.cs">
+      <DependentUpon>frmHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsForPartners\frmPartnerTypes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsForPartners\frmPartnerTypes.Designer.cs">
+      <DependentUpon>frmPartnerTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsForPartners\frmSendMail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsForPartners\frmSendMail.Designer.cs">
+      <DependentUpon>frmSendMail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsForPartners\frmSetDogovorTypes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsForPartners\frmSetDogovorTypes.Designer.cs">
+      <DependentUpon>frmSetDogovorTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsForPartners\GenerateUnicalCodeBoss.cs" />
+    <Compile Include="frmMasterPartners.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMasterPartners.Designer.cs">
+      <DependentUpon>frmMasterPartners.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsForPartners\frmMoveValues.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsForPartners\frmMoveValues.Designer.cs">
+      <DependentUpon>frmMoveValues.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNewRegistration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNewRegistration.Designer.cs">
+      <DependentUpon>frmNewRegistration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStart.Designer.cs">
+      <DependentUpon>frmStart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ObjectModel\PartnersList.cs">
+      <DependentUpon>PartnersList.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="ObjectModel\PartnersList.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PartnersList.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="ObjectModel\Permission.cs" />
+    <Compile Include="ObjectModel\References.cs">
+      <DependentUpon>References.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="ObjectModel\References.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>References.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="ObjectModel\PartnersList.dbml.layout">
+      <DependentUpon>PartnersList.dbml</DependentUpon>
+    </None>
+    <EmbeddedResource Include="FormsForAccess\bot.resx">
+      <DependentUpon>bot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsForAccess\frmAviaOnLine.resx">
+      <DependentUpon>frmAviaOnLine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsForAccess\frmGenerateLoginPass.resx">
+      <DependentUpon>frmGenerateLoginPass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsForAccess\frmLantaOnLine.resx">
+      <DependentUpon>frmLantaOnLine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsForAccounts\frmAccountInformation.resx">
+      <DependentUpon>frmAccountInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsForAccounts\frmBanks.resx">
+      <DependentUpon>frmBanks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsForDogovor\frmDogovorCommentEditor.resx">
+      <DependentUpon>frmDogovorCommentEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsForDogovor\frmGettingDogovor.resx">
+      <DependentUpon>frmGettingDogovor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsForDogovor\frmJournalCirculationDogovors.resx">
+      <DependentUpon>frmJournalCirculationDogovors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsForDogovor\frmPrintingEnvelopes.resx">
+      <DependentUpon>frmPrintingEnvelopes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsForDogovor\frmActivateDogovor.resx">
+      <DependentUpon>frmActivateDogovor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsForDogovor\frmCreateDogovor.resx">
+      <DependentUpon>frmCreateDogovor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsForDogovor\frmDogovorsList.resx">
+      <DependentUpon>frmDogovorsList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsForDogovor\frmDogovorShablonManagement.resx">
+      <DependentUpon>frmDogovorShablonManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsForDogovor\frmDogovorTypeManagement.resx">
+      <DependentUpon>frmDogovorTypeManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsForDogovor\frmSendToCourier.resx">
+      <DependentUpon>frmSendToCourier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsForDogovor\frmSigningDogovors.resx">
+      <DependentUpon>frmSigningDogovors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsForDogovor\rptPrintingEnvelopes.rdlc" />
+    <EmbeddedResource Include="FormsForDogovor\TypeDogovorsManagement\frmCreateModDogovorType.resx">
+      <DependentUpon>frmCreateModDogovorType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsForDogovor\TypeDogovorsManagement\frmModifyShablon.resx">
+      <DependentUpon>frmModifyShablon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsForPartners\frmEditPartner.resx">
+      <DependentUpon>frmEditPartner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsForPartners\frmHistory.resx">
+      <DependentUpon>frmHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsForPartners\frmPartnerTypes.resx">
+      <DependentUpon>frmPartnerTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsForPartners\frmSendMail.resx">
+      <DependentUpon>frmSendMail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsForPartners\frmSetDogovorTypes.resx">
+      <DependentUpon>frmSetDogovorTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMasterPartners.resx">
+      <DependentUpon>frmMasterPartners.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsForPartners\frmMoveValues.resx">
+      <DependentUpon>frmMoveValues.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNewRegistration.resx">
+      <DependentUpon>frmNewRegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="ObjectModel\References.dbml.layout">
+      <DependentUpon>References.dbml</DependentUpon>
+    </None>
+    <EmbeddedResource Include="frmStart.resx">
+      <DependentUpon>frmStart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="ObjectModel\PartnersList.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>PartnersList.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Structs\DefaultValuesControl.cs" />
+    <Compile Include="Web References\Megatec_EncryptService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\CallCenter\CallCenterManagement.csproj">
+      <Project>{166C7971-F457-4220-AF3F-8EE57B53DF8E}</Project>
+      <Name>CallCenterManagement</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Library\ltp_v2.AccountCreator\ltp_v2.AccountCreator.csproj">
+      <Project>{E70CFA22-3205-409C-99FF-E6AF73EB2E78}</Project>
+      <Name>ltp_v2.AccountCreator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Library\ltp_v2.Controls\ltp_v2.Controls.csproj">
+      <Project>{8C992825-8822-4EFF-AC7E-47E80729A872}</Project>
+      <Name>ltp_v2.Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Library\ltp_v2.Framework\ltp_v2.Framework.csproj">
+      <Project>{5BD548F1-CEAE-44E9-B511-E0991E4D4228}</Project>
+      <Name>ltp_v2.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\Master32\Master32.csproj">
+      <Project>{3BCB8EAD-0AF0-4BEF-8AEB-2AE22B5EEB66}</Project>
+      <Name>Master32</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AccountControl\AccountControl.csproj">
+      <Project>{AD796260-ABEF-4B26-93CD-9365B4E527FE}</Project>
+      <Name>AccountControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Arhivarius\Arhivarius.csproj">
+      <Project>{FC0187FA-64EB-41AB-9342-EE79021B2DF4}</Project>
+      <Name>Arhivarius</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AccreditationCards\AccreditationCards.csproj">
+      <Project>{43DF1AD7-85B4-4BE8-B4BE-7B8BC9A0DBD3}</Project>
+      <Name>AccreditationCards</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Courier_Sync\Courier_Sync.csproj">
+      <Project>{BED11DA8-13FC-41FC-BA51-6E7E87C5B93A}</Project>
+      <Name>Courier_Sync</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Export.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Restricted.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Apply_Check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Config-Tools.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Construction.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Print.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ObjectModel\References.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>References.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\Stop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://lanta.lantatur.ru/EncryptionService/EncryptionService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\Megatec_EncryptService\</RelPath>
+      <UpdateFromURL>http://lanta.lantatur.ru/EncryptionService/EncryptionService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>AgencyManager_Megatec_EncryptService_EncryptionService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\Megatec_EncryptService\EncryptionService.disco" />
+    <None Include="Web References\Megatec_EncryptService\EncryptionService.wsdl" />
+    <None Include="Web References\Megatec_EncryptService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EMail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UserGroupAdd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Contact.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Contract.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Contract_End.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Contract_NonContract.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Contract_Wait.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Register_Contract.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Phone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UnCheck.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\DataSources\AgencyManager.FormsForDogovor.rptClassPrintingEnvelopes.datasource" />
+    <None Include="Properties\DataSources\AgencyManager.FormsForDogovor.rptDogovorList.datasource" />
+    <None Include="Resources\Save2.png" />
+    <None Include="Resources\Help.png" />
+    <None Include="Resources\dollars.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Login.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

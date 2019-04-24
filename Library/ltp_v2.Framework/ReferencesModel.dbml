@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="lanta" Class="ReferencesModelDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Table Name="dbo.UserList" Member="UserLists">
+    <Type Name="UserList">
+      <Column Name="US_USERID" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="US_POP3" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="US_SMTP" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="US_SHORTNAME" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="US_BIRTHDAY" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="US_JOB" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="US_SUBSIDIARY" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="US_ACCESSCHECKTIME" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="US_ISIGNORQUOTE" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="US_PRKEY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="US_SERVICE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="US_TURIST" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="US_SERVICEM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="US_FNAME" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="US_MAILBOX" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="US_MAILUSER" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="US_MAILPASS" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="US_NAME" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="US_SNAME" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="US_WarningFlag" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="US_ICQ" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="US_GDS_PREFIX" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="US_GDS_SUFFIX" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="US_SmtpAuth" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="US_SmtpLogin" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="US_SmtpPass" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="US_KEY" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="US_DepartmentKey" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="US_FullNameLat" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="US_FullName" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="us_ofkey" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="us_smkey" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="US_FilialKey" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="US_LastLogDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="UserList_AccessForAgency" Member="AccessForAgency" ThisKey="US_KEY" OtherKey="LTP_AC_USKey" Type="AccessForAgency" Cardinality="One" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LTP_Access" Member="AccessForAgencies">
+    <Type Name="AccessForAgency">
+      <Column Name="LTP_AC_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LTP_AC_USKey" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LTP_AC_Dog_Agency" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="LTP_AC_Dog_FIT" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="LTP_AC_Dog_AviaZD" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="LTP_AC_Dog_Cruize" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="LTP_AC_CallCenter" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="LTP_AC_Account" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="LTP_AC_NewRegistration" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="LTP_AC_CreatePartner" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="LTP_AC_ModifyPartner" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="LTP_AC_BackMail" Type="System.String" DbType="varchar(255) not null" CanBeNull="false" />
+      <Association Name="UserList_AccessForAgency" Member="UserList" ThisKey="LTP_AC_USKey" OtherKey="US_KEY" Type="UserList" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="COUNTRY" Member="COUNTRies">
+    <Type Name="COUNTRY">
+      <Column Name="CN_KEY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CN_NAME" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="CN_NAMELAT" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="CN_FRAME" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CN_WEB" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CN_WEBIMAGE" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="CN_WEBHTTP" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="CN_CODE" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="ROWID" Type="System.Data.Linq.Binary" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="CN_AnkLang" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="CN_StdKey" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="CN_Updatedate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CN_SMALLDESC" Type="System.String" DbType="Text" CanBeNull="true" />
+      <Column Name="CN_COKey" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CN_NameAC" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="CN_Order" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CN_CitizenName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CN_CitizenNameLat" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CN_INNName" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="CN_CheckINN" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CN_PassportMinDur" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.LANTA_TLW_DecodeIntValue" Method="LANTA_TLW_DecodeIntValue" IsComposable="true">
+    <Parameter Name="Value" Parameter="value" Type="System.String" DbType="VarChar(500)" />
+    <Return Type="System.String" />
+  </Function>
+  <Function Name="dbo.LANTA_TLW_EncodeIntValue" Method="LANTA_TLW_EncodeIntValue" IsComposable="true">
+    <Parameter Name="Value" Parameter="value" Type="System.String" DbType="VarChar(500)" />
+    <Parameter Name="UseDate" Parameter="useDate" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.String" />
+  </Function>
+</Database>

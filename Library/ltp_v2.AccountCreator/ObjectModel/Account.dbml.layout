@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 17.25, 8.5" name="Account">
+  <DataContextMoniker Name="/AccountDataContext" />
+  <nestedChildShapes>
+    <classShape Id="7e2bc8a0-0fe2-4d56-8624-12ba5407e7c3" isExpanded="false" absoluteBounds="7.875, 0.75, 2, 0.45">
+      <DataClassMoniker Name="/AccountDataContext/LTA_Account" />
+      <nestedChildShapes>
+        <elementListCompartment Id="30f98953-a4d0-44cd-acff-a4e7e3fe9303" absoluteBounds="7.8900000005960464, 1.2100000008940697, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0f619697-e833-4d4c-b6e8-00a5f614fa7c" isExpanded="false" absoluteBounds="3.5, 6.75, 2, 0.44999999999999929">
+      <DataClassMoniker Name="/AccountDataContext/LTA_AccountType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f9799523-3d35-4179-8c1d-101d5c88bd55" absoluteBounds="3.5150000005960464, 7.21000000089407, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d4c35c1a-5f4d-46d8-a8f7-52e7dc3f1451" isExpanded="false" absoluteBounds="0.625, 6.75, 2, 0.44999999925494194">
+      <DataClassMoniker Name="/AccountDataContext/dict_AccountDefaultService" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a922c98a-06ca-48a2-a74d-96ca4bb5cbc8" absoluteBounds="0.64000000059604645, 7.21000000089407, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="431b2325-702c-496c-9e27-b415ae88893d" isExpanded="false" absoluteBounds="11, 0.875, 2, 0.44999999999999929">
+      <DataClassMoniker Name="/AccountDataContext/LTA_AccountService" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bc994076-84ef-4a6b-bced-94a1223325a1" absoluteBounds="11.015000000596046, 1.3350000008940697, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(9.875 : 1.0375); (11 : 1.0375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AccountDataContext/LTA_Account/LTA_Account_LTA_AccountService" />
+      <nodes>
+        <classShapeMoniker Id="7e2bc8a0-0fe2-4d56-8624-12ba5407e7c3" />
+        <classShapeMoniker Id="431b2325-702c-496c-9e27-b415ae88893d" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="4cef50c7-c87e-463f-8d55-2c18abed68a7" isExpanded="false" absoluteBounds="5, 5.625, 2, 0.45">
+      <DataClassMoniker Name="/AccountDataContext/dict_Partner" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b053b310-23c4-4636-92dc-79c45556718a" absoluteBounds="5.0150000005960464, 6.08500000089407, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="67eaa089-e95a-4bcc-abc7-adab117b06c4" isExpanded="false" absoluteBounds="14.75, 2.875, 2, 0.45">
+      <DataClassMoniker Name="/AccountDataContext/dict_Rate" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d1a21682-2db2-401d-983a-9483975866ab" absoluteBounds="14.765000000596046, 3.3350000008940697, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="59009b52-d522-40ae-ab6b-5f7c3ec1f008" isExpanded="false" absoluteBounds="11, 4.625, 2, 0.45000000000000018">
+      <DataClassMoniker Name="/AccountDataContext/dict_PrtAccount" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2c89ac68-7130-4a98-b06b-55435fc6d262" absoluteBounds="11.015000000596046, 5.08500000089407, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6586ba6f-b6fb-44b0-bec8-5fe5b77185f0" isExpanded="false" absoluteBounds="15, 5.375, 2, 0.45">
+      <DataClassMoniker Name="/AccountDataContext/dict_PrtBank" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d9b09c05-79ba-4915-9be0-654a5d2efdd9" absoluteBounds="15.015000000596046, 5.83500000089407, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 6.975); (8.875 : 6.975); (8.875 : 1.2)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AccountDataContext/LTA_AccountType/LTA_AccountType_LTA_Account" />
+      <nodes>
+        <classShapeMoniker Id="0f619697-e833-4d4c-b6e8-00a5f614fa7c" />
+        <classShapeMoniker Id="7e2bc8a0-0fe2-4d56-8624-12ba5407e7c3" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.92182367456436 : 5.625); (5.92182367456436 : 0.84375); (7.875 : 0.84375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AccountDataContext/dict_Partner/dict_Partner_LTA_Account" />
+      <nodes>
+        <classShapeMoniker Id="4cef50c7-c87e-463f-8d55-2c18abed68a7" />
+        <classShapeMoniker Id="7e2bc8a0-0fe2-4d56-8624-12ba5407e7c3" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.49216433728218 : 5.625); (6.49216433728218 : 0.8750025); (7.875 : 0.8750025)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AccountDataContext/dict_Partner/dict_Partner_LTA_Account1" />
+      <nodes>
+        <classShapeMoniker Id="4cef50c7-c87e-463f-8d55-2c18abed68a7" />
+        <classShapeMoniker Id="7e2bc8a0-0fe2-4d56-8624-12ba5407e7c3" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.5 : 6.97499999962747); (2.625 : 6.97499999962747)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AccountDataContext/LTA_AccountType/LTA_AccountType_dict_AccountDefaultService" />
+      <nodes>
+        <classShapeMoniker Id="0f619697-e833-4d4c-b6e8-00a5f614fa7c" />
+        <classShapeMoniker Id="d4c35c1a-5f4d-46d8-a8f7-52e7dc3f1451" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(15.75 : 3.325); (15.75 : 4.85); (13 : 4.85)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AccountDataContext/dict_Rate/dict_Rate_dict_PrtAccount" />
+      <nodes>
+        <classShapeMoniker Id="67eaa089-e95a-4bcc-abc7-adab117b06c4" />
+        <classShapeMoniker Id="59009b52-d522-40ae-ab6b-5f7c3ec1f008" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(15 : 5.6); (12 : 5.6); (12 : 5.075)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AccountDataContext/dict_PrtBank/dict_PrtBank_dict_PrtAccount" />
+      <nodes>
+        <classShapeMoniker Id="6586ba6f-b6fb-44b0-bec8-5fe5b77185f0" />
+        <classShapeMoniker Id="59009b52-d522-40ae-ab6b-5f7c3ec1f008" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7 : 5.78125); (11.03125 : 5.78125); (11.03125 : 5.075)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AccountDataContext/dict_Partner/dict_Partner_dict_PrtAccount" />
+      <nodes>
+        <classShapeMoniker Id="4cef50c7-c87e-463f-8d55-2c18abed68a7" />
+        <classShapeMoniker Id="59009b52-d522-40ae-ab6b-5f7c3ec1f008" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="121cd9bf-5b16-4852-a83d-1983655feed9" isExpanded="false" absoluteBounds="11, 3.5, 2, 0.44999999925494194">
+      <DataClassMoniker Name="/AccountDataContext/FIN_BILL_OUT" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6254cc9e-d541-4ed8-9072-aad8edd8ba2e" absoluteBounds="11.015000000596046, 3.9600000008940697, 1.9700000000000002, 5.4415283203125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="51c0a997-5b29-4171-bcab-c194d9d75105" isExpanded="false" absoluteBounds="11.125, 6, 2, 0.45">
+      <DataClassMoniker Name="/AccountDataContext/FIN_DOCUMENT" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b178e6eb-ef4f-40f7-989b-0b538d5cfd6e" absoluteBounds="11.140000000596046, 6.46000000089407, 1.9700000000000002, 5.0569254557291661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(14.75 : 3.02812375); (13.1770833333333 : 3.02812375 : JumpStart); (13.0104166666667 : 3.02812375 : JumpEnd); (12 : 3.02812375); (12 : 3.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AccountDataContext/dict_Rate/dict_Rate_FIN_BILL_OUT" />
+      <nodes>
+        <classShapeMoniker Id="67eaa089-e95a-4bcc-abc7-adab117b06c4" />
+        <classShapeMoniker Id="121cd9bf-5b16-4852-a83d-1983655feed9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.1253451538462 : 6); (10.75 : 5.375); (10.625 : 5.375); (10.625 : 4.32499999925494); (11 : 3.94999999925494)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AccountDataContext/FIN_DOCUMENT/FIN_DOCUMENT_FIN_BILL_OUT" />
+      <nodes>
+        <classShapeMoniker Id="51c0a997-5b29-4171-bcab-c194d9d75105" />
+        <classShapeMoniker Id="121cd9bf-5b16-4852-a83d-1983655feed9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(14.84375 : 3.325); (14.84375 : 6.225); (13.125 : 6.225)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AccountDataContext/dict_Rate/dict_Rate_FIN_DOCUMENT" />
+      <nodes>
+        <classShapeMoniker Id="67eaa089-e95a-4bcc-abc7-adab117b06c4" />
+        <classShapeMoniker Id="51c0a997-5b29-4171-bcab-c194d9d75105" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="39edbc72-e6d8-4402-a7c5-0f8e76269970" absoluteBounds="3.125, 1, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/AccountDataContext/LTA_AccountDocument" />
+      <nestedChildShapes>
+        <elementListCompartment Id="76be7a34-3d77-4004-9851-bdaa4e9a3c97" absoluteBounds="3.14, 1.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.3437475 : 1.2); (8.3437475 : 1.92585007486979); (5.125 : 1.92585007486979)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AccountDataContext/LTA_Account/LTA_Account_LTA_AccountDocument" />
+      <nodes>
+        <classShapeMoniker Id="7e2bc8a0-0fe2-4d56-8624-12ba5407e7c3" />
+        <classShapeMoniker Id="39edbc72-e6d8-4402-a7c5-0f8e76269970" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(13.09375 : 6); (13.09375 : 0.78125); (9.875 : 0.78125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AccountDataContext/FIN_DOCUMENT/FIN_DOCUMENT_LTA_Account" />
+      <nodes>
+        <classShapeMoniker Id="51c0a997-5b29-4171-bcab-c194d9d75105" />
+        <classShapeMoniker Id="7e2bc8a0-0fe2-4d56-8624-12ba5407e7c3" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

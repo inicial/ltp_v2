@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.875" name="lts">
+  <DataContextMoniker Name="/ltsDataContext" />
+  <nestedChildShapes>
+    <classShape Id="2aac9ca7-e968-4fb2-bbc9-36a35fa382c6" isExpanded="false" absoluteBounds="3.625, 1.375, 2, 0.45">
+      <DataClassMoniker Name="/ltsDataContext/tbl_Partner" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9b00c376-ab22-4bf3-b949-4f5f741ff90c" absoluteBounds="3.6399999999999997, 1.835, 1.9700000000000002, 12.9412841796875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c67ee3b5-73fd-48b9-99bf-69e32676e878" isExpanded="false" absoluteBounds="6.5, 1.375, 2, 0.45">
+      <DataClassMoniker Name="/ltsDataContext/LTP_PartnerAddsValue" />
+      <nestedChildShapes>
+        <elementListCompartment Id="01c7e22f-faa3-4e2b-92d8-ba31b48ec502" absoluteBounds="6.5150000000000006, 1.835, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.625 : 1.6); (6.5 : 1.6)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ltsDataContext/tbl_Partner/tbl_Partner_LTP_PartnerAddsValue" />
+      <nodes>
+        <classShapeMoniker Id="2aac9ca7-e968-4fb2-bbc9-36a35fa382c6" />
+        <classShapeMoniker Id="c67ee3b5-73fd-48b9-99bf-69e32676e878" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="731b8d77-9732-45cc-be88-b0775fd5e910" isExpanded="false" absoluteBounds="0.75, 2.875, 2, 0.45">
+      <DataClassMoniker Name="/ltsDataContext/LTP_DogType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b1066e8a-b272-4e13-b697-0f4af8d7579f" absoluteBounds="0.76500000000000057, 3.335, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="68e7791a-0242-49b3-bc8b-b9ac57fe3a27" isExpanded="false" absoluteBounds="0.75, 1.375, 2, 0.45">
+      <DataClassMoniker Name="/ltsDataContext/LTP_PrtDog" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1b7c5f95-c64b-4f65-bd47-b9a0e68e522c" absoluteBounds="0.765, 1.835, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(1.75520833333333 : 2.875); (1.75520833333333 : 2.35); (1.75520833333333 : 2.35); (1.75520833333333 : 1.825)]" manuallyRouted="true" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ltsDataContext/LTP_DogType/LTP_DogType_LTP_PrtDog" />
+      <nodes>
+        <classShapeMoniker Id="731b8d77-9732-45cc-be88-b0775fd5e910" />
+        <classShapeMoniker Id="68e7791a-0242-49b3-bc8b-b9ac57fe3a27" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.625 : 1.49479166666666); (2.75 : 1.49479166666666)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ltsDataContext/tbl_Partner/tbl_Partner_LTP_PrtDog" />
+      <nodes>
+        <classShapeMoniker Id="2aac9ca7-e968-4fb2-bbc9-36a35fa382c6" />
+        <classShapeMoniker Id="68e7791a-0242-49b3-bc8b-b9ac57fe3a27" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="40ec314b-e7ba-4d93-8a4e-a14d05d35a6e" isExpanded="false" absoluteBounds="6.5, 2.125, 2, 0.45">
+      <DataClassMoniker Name="/ltsDataContext/UserList" />
+      <nestedChildShapes>
+        <elementListCompartment Id="17a7cb41-df88-4cfc-bd9f-28950bb4a545" absoluteBounds="6.5150000000000006, 2.585, 1.9700000000000002, 6.7876383463541661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.43749625 : 1.825); (4.43749625 : 2.35); (4.97916729166667 : 2.35 : JumpStart); (5.14583395833333 : 2.35 : JumpEnd); (6.5 : 2.35)]" manuallyRouted="true" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ltsDataContext/tbl_Partner/tbl_Partner_UserList" />
+      <nodes>
+        <classShapeMoniker Id="2aac9ca7-e968-4fb2-bbc9-36a35fa382c6" />
+        <classShapeMoniker Id="40ec314b-e7ba-4d93-8a4e-a14d05d35a6e" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="e99eaf75-7689-4612-a5c2-d5fe78de8fdc" absoluteBounds="8.75, 4.875, 2, 3.6939111328125005">
+      <DataClassMoniker Name="/ltsDataContext/LTP_AccreditationCard" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ebc2c64f-8b4f-4dfb-96fe-1ae0745445b8" absoluteBounds="8.765, 5.335, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7.5 : 2.575); (7.5 : 7.56137518066407); (8.75 : 7.56137518066407)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ltsDataContext/UserList/UserList_LTP_AccreditationCard1" />
+      <nodes>
+        <classShapeMoniker Id="40ec314b-e7ba-4d93-8a4e-a14d05d35a6e" />
+        <classShapeMoniker Id="e99eaf75-7689-4612-a5c2-d5fe78de8fdc" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.0312525 : 2.575); (8.0312525 : 7.02635470458985); (8.75 : 7.02635470458985)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ltsDataContext/UserList/UserList_LTP_AccreditationCard" />
+      <nodes>
+        <classShapeMoniker Id="40ec314b-e7ba-4d93-8a4e-a14d05d35a6e" />
+        <classShapeMoniker Id="e99eaf75-7689-4612-a5c2-d5fe78de8fdc" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.062500625 : 1.825); (5.062500625 : 5.65191511425781); (7.41666666666667 : 5.65191511425781 : JumpStart); (7.58333333333333 : 5.65191511425781 : JumpEnd); (7.94791916666667 : 5.65191511425781 : JumpStart); (8.11458583333333 : 5.65191511425781 : JumpEnd); (8.75 : 5.65191511425781)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ltsDataContext/tbl_Partner/tbl_Partner_LTP_AccreditationCard" />
+      <nodes>
+        <classShapeMoniker Id="2aac9ca7-e968-4fb2-bbc9-36a35fa382c6" />
+        <classShapeMoniker Id="e99eaf75-7689-4612-a5c2-d5fe78de8fdc" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.999995625 : 1.825); (3.999995625 : 6.49133422851563); (7.41666666666667 : 6.49133422851563 : JumpStart); (7.58333333333333 : 6.49133422851563 : JumpEnd); (7.94791916666667 : 6.49133422851563 : JumpStart); (8.11458583333333 : 6.49133422851563 : JumpEnd); (8.75 : 6.49133422851563)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ltsDataContext/tbl_Partner/tbl_Partner_LTP_AccreditationCard1" />
+      <nodes>
+        <classShapeMoniker Id="2aac9ca7-e968-4fb2-bbc9-36a35fa382c6" />
+        <classShapeMoniker Id="e99eaf75-7689-4612-a5c2-d5fe78de8fdc" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 1.825); (3.125 : 2.2); (3.125 : 6.49133422851563); (7.41666666666667 : 6.49133422851563 : JumpStart); (7.58333333333333 : 6.49133422851563 : JumpEnd); (7.94791916666667 : 6.49133422851563 : JumpStart); (8.11458583333333 : 6.49133422851563 : JumpEnd); (8.75 : 6.49133422851563)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ltsDataContext/LTP_PrtDog/LTP_PrtDog_LTP_AccreditationCard" />
+      <nodes>
+        <classShapeMoniker Id="68e7791a-0242-49b3-bc8b-b9ac57fe3a27" />
+        <classShapeMoniker Id="e99eaf75-7689-4612-a5c2-d5fe78de8fdc" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

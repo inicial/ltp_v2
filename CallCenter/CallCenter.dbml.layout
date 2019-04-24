@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.875, 8.5" name="CallCenter">
+  <DataContextMoniker Name="/CallCenterDataContext" />
+  <nestedChildShapes>
+    <classShape Id="6ce889e3-eaa9-4c8e-b6f8-01c7c2dfe146" isExpanded="false" absoluteBounds="2.875, 0.625, 2, 0.45">
+      <DataClassMoniker Name="/CallCenterDataContext/tbl_Partner" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e4187424-a697-40f4-8451-9c37f1be9ea9" absoluteBounds="2.8900000000000006, 1.085, 1.9700000000000002, 12.9412841796875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.55919230769231 : 1.075); (3.55919230769231 : 1.325); (4.20584615384615 : 1.325); (4.20584615384615 : 1.075)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CallCenterDataContext/tbl_Partner/tbl_Partner_tbl_Partner" />
+      <nodes>
+        <classShapeMoniker Id="6ce889e3-eaa9-4c8e-b6f8-01c7c2dfe146" />
+        <classShapeMoniker Id="6ce889e3-eaa9-4c8e-b6f8-01c7c2dfe146" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="9969a190-02b1-4e4e-ac9b-b7442ccb703e" isExpanded="false" absoluteBounds="9.625, 3.875, 2, 0.45">
+      <DataClassMoniker Name="/CallCenterDataContext/LCC_History" />
+      <nestedChildShapes>
+        <elementListCompartment Id="33a7a7d0-c6d8-44a5-92ee-a4a5d515e8f0" absoluteBounds="9.64, 4.335, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a264d381-f7d4-454c-bd79-4ee52b81f8ae" isExpanded="false" absoluteBounds="2.875, 1.875, 2, 0.45">
+      <DataClassMoniker Name="/CallCenterDataContext/LCC_Partner" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d8e05f8d-dfad-4086-8cf4-522440e59037" absoluteBounds="2.8899999999999997, 2.335, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c1b229b7-a359-47f7-8051-d853b7656652" isExpanded="false" absoluteBounds="9.625, 5.125, 2, 0.45">
+      <DataClassMoniker Name="/CallCenterDataContext/tbl_Country" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ac1a92d5-e054-4ce9-9dfe-e7b27f6fd2da" absoluteBounds="9.64, 5.5850000000000009, 1.9700000000000002, 4.2877197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ca90df27-4223-4ea5-9f6e-a0ef6b0746af" isExpanded="false" absoluteBounds="6.875, 3.875, 2, 0.45">
+      <DataClassMoniker Name="/CallCenterDataContext/LCC_TypeCallCenter" />
+      <nestedChildShapes>
+        <elementListCompartment Id="36620711-d107-48f8-a40c-756787784357" absoluteBounds="6.8900000000000006, 4.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.875 : 4.1); (9.625 : 4.1)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CallCenterDataContext/LCC_TypeCallCenter/LCC_TypeCallCenter_LCC_History" />
+      <nodes>
+        <classShapeMoniker Id="ca90df27-4223-4ea5-9f6e-a0ef6b0746af" />
+        <classShapeMoniker Id="9969a190-02b1-4e4e-ac9b-b7442ccb703e" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="13c3481f-fb67-42f0-a7e9-2b8782c34664" isExpanded="false" absoluteBounds="9.625, 4.5, 2, 0.45">
+      <DataClassMoniker Name="/CallCenterDataContext/LCC_MetroStation" />
+      <nestedChildShapes>
+        <elementListCompartment Id="03755a2e-9e0c-42a4-a3a7-6f1db0f52269" absoluteBounds="9.64, 4.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2c125327-df58-4221-a4ed-6ee1ef151521" isExpanded="false" absoluteBounds="0.5, 1.75, 2, 0.45">
+      <DataClassMoniker Name="/CallCenterDataContext/tbl_Dogovor" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f7dab324-8963-4852-a049-b078d27c8177" absoluteBounds="0.51500000000000057, 2.2100000000000009, 1.9700000000000002, 13.325887044270832" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.15459615384616 : 1.075); (3.15459615384616 : 1.875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CallCenterDataContext/tbl_Partner/tbl_Partner_LCC_Partner" />
+      <nodes>
+        <classShapeMoniker Id="6ce889e3-eaa9-4c8e-b6f8-01c7c2dfe146" />
+        <classShapeMoniker Id="a264d381-f7d4-454c-bd79-4ee52b81f8ae" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="909cb996-80ca-424c-b823-2b8c5f1fdfa5" isExpanded="false" absoluteBounds="4, 3.875, 2, 0.45">
+      <DataClassMoniker Name="/CallCenterDataContext/LCC_Phones" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dc0805ec-c9eb-4204-b977-2ea1dba4ad19" absoluteBounds="4.0150000000000006, 4.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.4375 : 2.325); (4.4375 : 3.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CallCenterDataContext/LCC_Partner/LCC_Partner_LCC_Phones" />
+      <nodes>
+        <classShapeMoniker Id="a264d381-f7d4-454c-bd79-4ee52b81f8ae" />
+        <classShapeMoniker Id="909cb996-80ca-424c-b823-2b8c5f1fdfa5" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.40625 : 2.325); (3.40625 : 4.725); (3.61979416666667 : 4.725 : JumpStart); (3.78646083333333 : 4.725 : JumpEnd); (9.625 : 4.725)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CallCenterDataContext/LCC_Partner/LCC_Partner_LCC_MetroStation" />
+      <nodes>
+        <classShapeMoniker Id="a264d381-f7d4-454c-bd79-4ee52b81f8ae" />
+        <classShapeMoniker Id="13c3481f-fb67-42f0-a7e9-2b8782c34664" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="38076fa3-a2c7-45c2-8b7c-9711d49179f3" isExpanded="false" absoluteBounds="5.25, 5.125, 2, 0.45">
+      <DataClassMoniker Name="/CallCenterDataContext/LCC_PartnerCountry" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5edb4a45-71e8-4db1-b1ed-d0e9ab337487" absoluteBounds="5.265, 5.5850000000000009, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.7031275 : 2.325); (3.7031275 : 5.35); (5.25 : 5.35)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CallCenterDataContext/LCC_Partner/LCC_Partner_LCC_PartnerCountry" />
+      <nodes>
+        <classShapeMoniker Id="a264d381-f7d4-454c-bd79-4ee52b81f8ae" />
+        <classShapeMoniker Id="38076fa3-a2c7-45c2-8b7c-9711d49179f3" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="d5fbfdb6-58c1-4b67-81a9-5c0cb31789ab" isExpanded="false" absoluteBounds="5.25, 1.875, 2, 0.45">
+      <DataClassMoniker Name="/CallCenterDataContext/LCC_TypesSend" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6661304b-94e7-4feb-9a55-d37b7892b7dd" absoluteBounds="5.2650000000000006, 2.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7.25 : 2.1); (10.625 : 2.1); (10.625 : 3.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CallCenterDataContext/LCC_TypesSend/LCC_TypesSend_LCC_History" />
+      <nodes>
+        <classShapeMoniker Id="d5fbfdb6-58c1-4b67-81a9-5c0cb31789ab" />
+        <classShapeMoniker Id="9969a190-02b1-4e4e-ac9b-b7442ccb703e" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="21c81078-47e0-4aae-b3ba-eb3229855cc7" isExpanded="false" absoluteBounds="0.5, 3, 2, 0.45">
+      <DataClassMoniker Name="/CallCenterDataContext/Advertise" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bbfa4908-4999-45c3-a5dc-51a47a9f1cae" absoluteBounds="0.51499999999999968, 3.46, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7b997a27-5186-487a-9047-0afc79c70867" isExpanded="false" absoluteBounds="0.5, 2.375, 2, 0.45">
+      <DataClassMoniker Name="/CallCenterDataContext/UserList" />
+      <nestedChildShapes>
+        <elementListCompartment Id="acb79ac6-58e4-4523-a1b5-4868e9d96ee8" absoluteBounds="0.51500000000000012, 2.835, 1.9700000000000002, 6.7876383463541661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(9.625 : 5.35); (7.25 : 5.35)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CallCenterDataContext/tbl_Country/tbl_Country_LCC_PartnerCountry" />
+      <nodes>
+        <classShapeMoniker Id="c1b229b7-a359-47f7-8051-d853b7656652" />
+        <classShapeMoniker Id="38076fa3-a2c7-45c2-8b7c-9711d49179f3" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.875 : 4.1); (6 : 4.1)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CallCenterDataContext/LCC_TypeCallCenter/LCC_TypeCallCenter_LCC_Phones" />
+      <nodes>
+        <classShapeMoniker Id="ca90df27-4223-4ea5-9f6e-a0ef6b0746af" />
+        <classShapeMoniker Id="909cb996-80ca-424c-b823-2b8c5f1fdfa5" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="b13b2baa-cd09-46aa-81fa-b48aa03d745c" absoluteBounds="0.75, 4.375, 2, 3.8862125651041666">
+      <DataClassMoniker Name="/CallCenterDataContext/LTA_Account" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ea0ec593-6d49-409e-bd1c-1dc4f935382c" absoluteBounds="0.76500000000000012, 4.835, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

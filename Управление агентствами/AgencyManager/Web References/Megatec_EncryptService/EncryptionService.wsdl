@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.megatec.ru/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://www.megatec.ru/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Service for encrypt/decrypt strings</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.megatec.ru/">
+      <s:element name="EncryptString">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="source" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EncryptStringResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EncryptStringResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DecryptString">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="source" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DecryptStringResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DecryptStringResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="EncryptStringSoapIn">
+    <wsdl:part name="parameters" element="tns:EncryptString" />
+  </wsdl:message>
+  <wsdl:message name="EncryptStringSoapOut">
+    <wsdl:part name="parameters" element="tns:EncryptStringResponse" />
+  </wsdl:message>
+  <wsdl:message name="DecryptStringSoapIn">
+    <wsdl:part name="parameters" element="tns:DecryptString" />
+  </wsdl:message>
+  <wsdl:message name="DecryptStringSoapOut">
+    <wsdl:part name="parameters" element="tns:DecryptStringResponse" />
+  </wsdl:message>
+  <wsdl:message name="EncryptStringHttpGetIn">
+    <wsdl:part name="source" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EncryptStringHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="DecryptStringHttpGetIn">
+    <wsdl:part name="source" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DecryptStringHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="EncryptStringHttpPostIn">
+    <wsdl:part name="source" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EncryptStringHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="DecryptStringHttpPostIn">
+    <wsdl:part name="source" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DecryptStringHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="EncryptionServiceSoap">
+    <wsdl:operation name="EncryptString">
+      <wsdl:input message="tns:EncryptStringSoapIn" />
+      <wsdl:output message="tns:EncryptStringSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DecryptString">
+      <wsdl:input message="tns:DecryptStringSoapIn" />
+      <wsdl:output message="tns:DecryptStringSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="EncryptionServiceHttpGet">
+    <wsdl:operation name="EncryptString">
+      <wsdl:input message="tns:EncryptStringHttpGetIn" />
+      <wsdl:output message="tns:EncryptStringHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DecryptString">
+      <wsdl:input message="tns:DecryptStringHttpGetIn" />
+      <wsdl:output message="tns:DecryptStringHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="EncryptionServiceHttpPost">
+    <wsdl:operation name="EncryptString">
+      <wsdl:input message="tns:EncryptStringHttpPostIn" />
+      <wsdl:output message="tns:EncryptStringHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DecryptString">
+      <wsdl:input message="tns:DecryptStringHttpPostIn" />
+      <wsdl:output message="tns:DecryptStringHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="EncryptionServiceSoap" type="tns:EncryptionServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="EncryptString">
+      <soap:operation soapAction="http://www.megatec.ru/EncryptString" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DecryptString">
+      <soap:operation soapAction="http://www.megatec.ru/DecryptString" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="EncryptionServiceSoap12" type="tns:EncryptionServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="EncryptString">
+      <soap12:operation soapAction="http://www.megatec.ru/EncryptString" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DecryptString">
+      <soap12:operation soapAction="http://www.megatec.ru/DecryptString" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="EncryptionServiceHttpGet" type="tns:EncryptionServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="EncryptString">
+      <http:operation location="/EncryptString" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DecryptString">
+      <http:operation location="/DecryptString" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="EncryptionServiceHttpPost" type="tns:EncryptionServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="EncryptString">
+      <http:operation location="/EncryptString" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DecryptString">
+      <http:operation location="/DecryptString" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="EncryptionService">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Service for encrypt/decrypt strings</wsdl:documentation>
+    <wsdl:port name="EncryptionServiceSoap" binding="tns:EncryptionServiceSoap">
+      <soap:address location="http://lanta.lantatur.ru/EncryptionService/EncryptionService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="EncryptionServiceSoap12" binding="tns:EncryptionServiceSoap12">
+      <soap12:address location="http://lanta.lantatur.ru/EncryptionService/EncryptionService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="EncryptionServiceHttpGet" binding="tns:EncryptionServiceHttpGet">
+      <http:address location="http://lanta.lantatur.ru/EncryptionService/EncryptionService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="EncryptionServiceHttpPost" binding="tns:EncryptionServiceHttpPost">
+      <http:address location="http://lanta.lantatur.ru/EncryptionService/EncryptionService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

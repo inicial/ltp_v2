@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{29A238F8-2D36-482E-8D1F-164B80CF4B68}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>rep6043</RootNamespace>
+    <AssemblyName>rep6043</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>C:\ma2010\report\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ErrorMessages.cs" />
+    <Compile Include="ExtendedClasses\TouristService.cs" />
+    <Compile Include="ExtendedSql\ExportQuery1.cs" />
+    <Compile Include="frmCreateInsurances.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCreateInsurances.Designer.cs">
+      <DependentUpon>frmCreateInsurances.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmExport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmExport.Designer.cs">
+      <DependentUpon>frmExport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmExtended.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmExtended.Designer.cs">
+      <DependentUpon>frmExtended.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmListAnnuledInsurances.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListAnnuledInsurances.Designer.cs">
+      <DependentUpon>frmListAnnuledInsurances.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmListInsurancesForInfant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListInsurancesForInfant.Designer.cs">
+      <DependentUpon>frmListInsurancesForInfant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report\HelperClasses.cs" />
+    <Compile Include="Report\ReportViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\ReportViewer.Designer.cs">
+      <DependentUpon>ReportViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sql.cs">
+      <DependentUpon>sql.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="sql.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sql.dbml</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="frmCreateInsurances.resx">
+      <DependentUpon>frmCreateInsurances.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmExport.resx">
+      <DependentUpon>frmExport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmExtended.resx">
+      <DependentUpon>frmExtended.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListAnnuledInsurances.resx">
+      <DependentUpon>frmListAnnuledInsurances.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListInsurancesForInfant.resx">
+      <DependentUpon>frmListInsurancesForInfant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Report\InsuranceBlank.rdlc" />
+    <EmbeddedResource Include="Report\InsuranceConditionList.rdlc" />
+    <EmbeddedResource Include="Report\InsurancePersonList.rdlc" />
+    <EmbeddedResource Include="Report\InsuranceTerretoryList.rdlc" />
+    <EmbeddedResource Include="Report\ReportViewer.resx">
+      <DependentUpon>ReportViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\DataSources\INS_COUNTRIES_ING.datasource" />
+    <None Include="Properties\DataSources\INS_PERSON.datasource" />
+    <None Include="Properties\DataSources\rep6043.Report.InsConditions.datasource" />
+    <None Include="Properties\DataSources\rep6043.Report.InsHeader.datasource" />
+    <None Include="sql.dbml.layout">
+      <DependentUpon>sql.dbml</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="sql.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>sql.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Library\ltp_v2.Controls\ltp_v2.Controls.csproj">
+      <Project>{8C992825-8822-4EFF-AC7E-47E80729A872}</Project>
+      <Name>ltp_v2.Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Library\ltp_v2.Framework\ltp_v2.Framework.csproj">
+      <Project>{5BD548F1-CEAE-44E9-B511-E0991E4D4228}</Project>
+      <Name>ltp_v2.Framework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Print.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Apply_Check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit_Text.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Export.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Help.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

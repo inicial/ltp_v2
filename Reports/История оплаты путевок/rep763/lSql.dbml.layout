@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.25, 8.5" name="lSql">
+  <DataContextMoniker Name="/lSqlDataContext" />
+  <nestedChildShapes>
+    <classShape Id="1a383e52-7132-44f5-ae31-1a1ef86bb843" isExpanded="false" absoluteBounds="2.875, 1.125, 2, 0.45">
+      <DataClassMoniker Name="/lSqlDataContext/tbl_Dogovor" />
+      <nestedChildShapes>
+        <elementListCompartment Id="91430f8a-44f5-4a1f-8328-bd1599270961" absoluteBounds="2.89, 1.585, 1.9700000000000002, 13.325887044270832" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e2c05777-a16e-43f8-bc75-016111311e7e" isExpanded="false" absoluteBounds="5.625, 1.25, 2, 0.45">
+      <DataClassMoniker Name="/lSqlDataContext/tbl_Partner" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bbd6c0f9-997c-4848-830a-2d0f35f82c85" absoluteBounds="5.64, 1.71, 1.9700000000000002, 13.133585611979166" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.625 : 1.4125); (4.875 : 1.4125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/lSqlDataContext/tbl_Partner/tbl_Partner_tbl_Dogovor" />
+      <nodes>
+        <classShapeMoniker Id="e2c05777-a16e-43f8-bc75-016111311e7e" />
+        <classShapeMoniker Id="1a383e52-7132-44f5-ae31-1a1ef86bb843" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="400c809d-256e-49f8-8615-c754ddbb2476" isExpanded="false" absoluteBounds="5.625, 2.25, 2, 0.45">
+      <DataClassMoniker Name="/lSqlDataContext/tbl_Turist" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c4cd811d-26e9-431a-9347-7c5bc148172e" absoluteBounds="5.64, 2.71, 1.9700000000000002, 9.0952555338541661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.875 : 1.575); (5.625 : 2.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/lSqlDataContext/tbl_Dogovor/tbl_Dogovor_tbl_Turist" />
+      <nodes>
+        <classShapeMoniker Id="1a383e52-7132-44f5-ae31-1a1ef86bb843" />
+        <classShapeMoniker Id="400c809d-256e-49f8-8615-c754ddbb2476" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="214dadb4-3315-44db-828f-0af1e2ada31f" isExpanded="false" absoluteBounds="5.625, 3, 2, 0.45">
+      <DataClassMoniker Name="/lSqlDataContext/tbl_DogovorList" />
+      <nestedChildShapes>
+        <elementListCompartment Id="446edac9-4175-4d8c-806c-69d6f3a1fcd6" absoluteBounds="5.64, 3.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.8437475 : 1.575); (3.8437475 : 3.225); (5.625 : 3.225)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/lSqlDataContext/tbl_Dogovor/tbl_Dogovor_tbl_DogovorList" />
+      <nodes>
+        <classShapeMoniker Id="1a383e52-7132-44f5-ae31-1a1ef86bb843" />
+        <classShapeMoniker Id="214dadb4-3315-44db-828f-0af1e2ada31f" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="2d35b085-b159-45ae-9cd9-bdd9bd7d253c" isExpanded="false" absoluteBounds="9, 1.25, 2, 0.45">
+      <DataClassMoniker Name="/lSqlDataContext/FIN_TRANSACTION" />
+      <nestedChildShapes>
+        <elementListCompartment Id="96b7c55e-07e4-41b3-9286-b15f3318578b" absoluteBounds="9.015, 1.71, 1.9700000000000002, 12.748982747395832" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7.625 : 1.475); (9 : 1.475)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/lSqlDataContext/tbl_Partner/tbl_Partner_FIN_TRANSACTION" />
+      <nodes>
+        <classShapeMoniker Id="e2c05777-a16e-43f8-bc75-016111311e7e" />
+        <classShapeMoniker Id="2d35b085-b159-45ae-9cd9-bdd9bd7d253c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.875 : 1.125); (5.25 : 0.75); (5.25 : 0.875); (8.62534515384615 : 0.875); (9.00034515384615 : 1.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/lSqlDataContext/tbl_Dogovor/tbl_Dogovor_FIN_TRANSACTION" />
+      <nodes>
+        <classShapeMoniker Id="1a383e52-7132-44f5-ae31-1a1ef86bb843" />
+        <classShapeMoniker Id="2d35b085-b159-45ae-9cd9-bdd9bd7d253c" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="1d2dd518-2c9e-4140-8a87-de22405c5e21" isExpanded="false" absoluteBounds="5.75, 3.75, 2, 0.45">
+      <DataClassMoniker Name="/lSqlDataContext/PaymentDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f3aa0757-8de9-4746-9072-98f9bac4766e" absoluteBounds="5.7650000000000006, 4.21, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="43812423-cc82-4689-aa17-07c15496edec" isExpanded="false" absoluteBounds="0.75, 5.125, 2, 0.45">
+      <DataClassMoniker Name="/lSqlDataContext/Payment" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f8506a0e-785c-4948-9cb2-144a63c27f0a" absoluteBounds="0.765, 5.585, 1.9700000000000002, 4.2877197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5065306a-c06f-4966-b8be-9da59bd788c8" isExpanded="false" absoluteBounds="3.875, 5, 2, 0.45">
+      <DataClassMoniker Name="/lSqlDataContext/PaymentOperation" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cd4d0c41-d1d9-4e5f-b084-ae8469ab9eec" absoluteBounds="3.8899999999999997, 5.46, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(1.75 : 5.125); (1.75 : 3.975); (5.75 : 3.975)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/lSqlDataContext/Payment/Payment_PaymentDetail" />
+      <nodes>
+        <classShapeMoniker Id="43812423-cc82-4689-aa17-07c15496edec" />
+        <classShapeMoniker Id="1d2dd518-2c9e-4140-8a87-de22405c5e21" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="5a849e99-9ab2-40e9-9046-4628974060a7" isExpanded="false" absoluteBounds="0.75, 6.25, 2, 0.45">
+      <DataClassMoniker Name="/lSqlDataContext/Rate" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b5a95ad8-1e3a-4068-b291-611c679aa525" absoluteBounds="0.76500000000000057, 6.7100000000000009, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.35937375 : 1.575); (4.35937375 : 3.8312475); (5.75 : 3.8312475)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/lSqlDataContext/tbl_Dogovor/tbl_Dogovor_PaymentDetail" />
+      <nodes>
+        <classShapeMoniker Id="1a383e52-7132-44f5-ae31-1a1ef86bb843" />
+        <classShapeMoniker Id="1d2dd518-2c9e-4140-8a87-de22405c5e21" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.875 : 5.2875); (2.75 : 5.2875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/lSqlDataContext/PaymentOperation/PaymentOperation_Payment" />
+      <nodes>
+        <classShapeMoniker Id="5065306a-c06f-4966-b8be-9da59bd788c8" />
+        <classShapeMoniker Id="43812423-cc82-4689-aa17-07c15496edec" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="0a9456bd-a9be-492d-b4df-a0a429f492c2" isExpanded="false" absoluteBounds="6.625, 6.375, 2, 0.45">
+      <DataClassMoniker Name="/lSqlDataContext/tbl_PaymentType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="718d2d3b-1c45-47ac-8e33-b6f448ca90e3" absoluteBounds="6.64, 6.835, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6.625 : 6.6); (4.875 : 6.6); (4.875 : 5.45)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/lSqlDataContext/tbl_PaymentType/tbl_PaymentType_PaymentOperation" />
+      <nodes>
+        <classShapeMoniker Id="0a9456bd-a9be-492d-b4df-a0a429f492c2" />
+        <classShapeMoniker Id="5065306a-c06f-4966-b8be-9da59bd788c8" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.75 : 6.25); (1.75 : 5.575)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/lSqlDataContext/Rate/Rate_Payment" />
+      <nodes>
+        <classShapeMoniker Id="5a849e99-9ab2-40e9-9046-4628974060a7" />
+        <classShapeMoniker Id="43812423-cc82-4689-aa17-07c15496edec" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="715e6073-573e-49f9-8506-6ee8e0c0af00" isExpanded="false" absoluteBounds="8.75, 3.375, 2, 0.45">
+      <DataClassMoniker Name="/lSqlDataContext/RealCourse" />
+      <nestedChildShapes>
+        <elementListCompartment Id="857108b6-4fe7-4ac4-a3f3-e92f87c9a107" absoluteBounds="8.765, 3.835, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

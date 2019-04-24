@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="ArtWebService">
+        <s:complexType />
+      </s:element>
+      <s:element name="ArtWebServiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ArtWebServiceResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WebCreateDogovor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sDateBeg" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nTrKey" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCnCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nCtKey" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nCtDepartureKey" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sRate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nMen" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nPartnerKey" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nDays" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nPrice" type="s:float" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDgCodePartner" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nBTKey" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nCnKey" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WebCreateDogovorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WebCreateDogovorResult" type="tns:MessageInfos" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="MessageInfos">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="AllMessageInfo" type="tns:ArrayOfMessageInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfMessageInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="MessageInfo" nillable="true" type="tns:MessageInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MessageInfo">
+        <s:attribute name="Key" type="s:int" use="required" />
+        <s:attribute name="InfoNumber" type="s:int" use="required" />
+        <s:attribute name="Info" type="s:string" />
+        <s:attribute name="DopInfo" type="s:string" />
+      </s:complexType>
+      <s:element name="WebCreateTurist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nSex" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sFName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDR" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sNom" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPasport" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDatePasportEnd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDgCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WebCreateTuristResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WebCreateTuristResult" type="tns:MessageInfos" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WebCreateDogList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sDgCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nDay" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nSvKey" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nCode" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nSubCode1" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nSubCode2" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nPkKey" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nPrKey" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nMen" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nDays" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nCtKey" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nNetto" type="s:float" />
+            <s:element minOccurs="1" maxOccurs="1" name="nBrutto" type="s:float" />
+            <s:element minOccurs="0" maxOccurs="1" name="sNameService" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sTuristKeys" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WebCreateDogListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WebCreateDogListResult" type="tns:MessageInfos" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WebRecalculateDogovor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sDgCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WebRecalculateDogovorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WebRecalculateDogovorResult" type="tns:MessageInfos" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WebCreateMFPayment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sDgCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fSumma" type="s:float" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WebCreateMFPaymentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WebCreateMFPaymentResult" type="tns:MessageInfos" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WebInsertDictionary">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nSvKey" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sNameRus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sNameLat" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nCnKey" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nCtKey" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nDaysCountMin" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WebInsertDictionaryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WebInsertDictionaryResult" type="tns:MessageInfos" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WebCreateCost">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nSvKey" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nCode" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nSubCode1" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nSubCode2" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nPkKey" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nPrKey" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nNetto" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nBrutto" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDateFrom" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDateTo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPPDateFrom" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPPDateTo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nComiss" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nGroup" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sRate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WebCreateCostResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WebCreateCostResult" type="tns:MessageInfos" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sDgCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetInfoResult" type="tns:TourInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TourInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="AllInfo" type="tns:ArrayOfAllTourInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfAllTourInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="AllTourInfo" nillable="true" type="tns:AllTourInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AllTourInfo">
+        <s:attribute name="Status" type="s:string" />
+        <s:attribute name="Price" type="s:string" />
+        <s:attribute name="Payed" type="s:string" />
+        <s:attribute name="RateDogovor" type="s:string" />
+        <s:attribute name="Rate1" type="s:string" />
+        <s:attribute name="Rate2" type="s:string" />
+        <s:attribute name="RealCourse" type="s:string" />
+        <s:attribute name="InCourse" type="s:string" />
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ArtWebServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:ArtWebService" />
+  </wsdl:message>
+  <wsdl:message name="ArtWebServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:ArtWebServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="WebCreateDogovorSoapIn">
+    <wsdl:part name="parameters" element="tns:WebCreateDogovor" />
+  </wsdl:message>
+  <wsdl:message name="WebCreateDogovorSoapOut">
+    <wsdl:part name="parameters" element="tns:WebCreateDogovorResponse" />
+  </wsdl:message>
+  <wsdl:message name="WebCreateTuristSoapIn">
+    <wsdl:part name="parameters" element="tns:WebCreateTurist" />
+  </wsdl:message>
+  <wsdl:message name="WebCreateTuristSoapOut">
+    <wsdl:part name="parameters" element="tns:WebCreateTuristResponse" />
+  </wsdl:message>
+  <wsdl:message name="WebCreateDogListSoapIn">
+    <wsdl:part name="parameters" element="tns:WebCreateDogList" />
+  </wsdl:message>
+  <wsdl:message name="WebCreateDogListSoapOut">
+    <wsdl:part name="parameters" element="tns:WebCreateDogListResponse" />
+  </wsdl:message>
+  <wsdl:message name="WebRecalculateDogovorSoapIn">
+    <wsdl:part name="parameters" element="tns:WebRecalculateDogovor" />
+  </wsdl:message>
+  <wsdl:message name="WebRecalculateDogovorSoapOut">
+    <wsdl:part name="parameters" element="tns:WebRecalculateDogovorResponse" />
+  </wsdl:message>
+  <wsdl:message name="WebCreateMFPaymentSoapIn">
+    <wsdl:part name="parameters" element="tns:WebCreateMFPayment" />
+  </wsdl:message>
+  <wsdl:message name="WebCreateMFPaymentSoapOut">
+    <wsdl:part name="parameters" element="tns:WebCreateMFPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="WebInsertDictionarySoapIn">
+    <wsdl:part name="parameters" element="tns:WebInsertDictionary" />
+  </wsdl:message>
+  <wsdl:message name="WebInsertDictionarySoapOut">
+    <wsdl:part name="parameters" element="tns:WebInsertDictionaryResponse" />
+  </wsdl:message>
+  <wsdl:message name="WebCreateCostSoapIn">
+    <wsdl:part name="parameters" element="tns:WebCreateCost" />
+  </wsdl:message>
+  <wsdl:message name="WebCreateCostSoapOut">
+    <wsdl:part name="parameters" element="tns:WebCreateCostResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetInfoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Service1Soap">
+    <wsdl:operation name="ArtWebService">
+      <wsdl:input message="tns:ArtWebServiceSoapIn" />
+      <wsdl:output message="tns:ArtWebServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WebCreateDogovor">
+      <wsdl:input message="tns:WebCreateDogovorSoapIn" />
+      <wsdl:output message="tns:WebCreateDogovorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WebCreateTurist">
+      <wsdl:input message="tns:WebCreateTuristSoapIn" />
+      <wsdl:output message="tns:WebCreateTuristSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WebCreateDogList">
+      <wsdl:input message="tns:WebCreateDogListSoapIn" />
+      <wsdl:output message="tns:WebCreateDogListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WebRecalculateDogovor">
+      <wsdl:input message="tns:WebRecalculateDogovorSoapIn" />
+      <wsdl:output message="tns:WebRecalculateDogovorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WebCreateMFPayment">
+      <wsdl:input message="tns:WebCreateMFPaymentSoapIn" />
+      <wsdl:output message="tns:WebCreateMFPaymentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WebInsertDictionary">
+      <wsdl:input message="tns:WebInsertDictionarySoapIn" />
+      <wsdl:output message="tns:WebInsertDictionarySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WebCreateCost">
+      <wsdl:input message="tns:WebCreateCostSoapIn" />
+      <wsdl:output message="tns:WebCreateCostSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInfo">
+      <wsdl:input message="tns:GetInfoSoapIn" />
+      <wsdl:output message="tns:GetInfoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Service1Soap" type="tns:Service1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ArtWebService">
+      <soap:operation soapAction="http://tempuri.org/ArtWebService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebCreateDogovor">
+      <soap:operation soapAction="http://tempuri.org/WebCreateDogovor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebCreateTurist">
+      <soap:operation soapAction="http://tempuri.org/WebCreateTurist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebCreateDogList">
+      <soap:operation soapAction="http://tempuri.org/WebCreateDogList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebRecalculateDogovor">
+      <soap:operation soapAction="http://tempuri.org/WebRecalculateDogovor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebCreateMFPayment">
+      <soap:operation soapAction="http://tempuri.org/WebCreateMFPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebInsertDictionary">
+      <soap:operation soapAction="http://tempuri.org/WebInsertDictionary" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebCreateCost">
+      <soap:operation soapAction="http://tempuri.org/WebCreateCost" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInfo">
+      <soap:operation soapAction="http://tempuri.org/GetInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Service1Soap12" type="tns:Service1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ArtWebService">
+      <soap12:operation soapAction="http://tempuri.org/ArtWebService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebCreateDogovor">
+      <soap12:operation soapAction="http://tempuri.org/WebCreateDogovor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebCreateTurist">
+      <soap12:operation soapAction="http://tempuri.org/WebCreateTurist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebCreateDogList">
+      <soap12:operation soapAction="http://tempuri.org/WebCreateDogList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebRecalculateDogovor">
+      <soap12:operation soapAction="http://tempuri.org/WebRecalculateDogovor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebCreateMFPayment">
+      <soap12:operation soapAction="http://tempuri.org/WebCreateMFPayment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebInsertDictionary">
+      <soap12:operation soapAction="http://tempuri.org/WebInsertDictionary" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebCreateCost">
+      <soap12:operation soapAction="http://tempuri.org/WebCreateCost" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="Service1Soap" binding="tns:Service1Soap">
+      <soap:address location="http://lanta.lantatur.ru/webgetinfo/Service1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Service1Soap12" binding="tns:Service1Soap12">
+      <soap12:address location="http://lanta.lantatur.ru/webgetinfo/Service1.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

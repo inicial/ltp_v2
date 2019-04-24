@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="lanta" Class="sqlDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=192.168.10.4;Initial Catalog=lanta;Persist Security Info=True;User ID=sa" SettingsObjectName="rep6043.Properties.Settings" SettingsPropertyName="lantaConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tbl_DogovorList" Member="tbl_DogovorLists">
+    <Type Name="tbl_DogovorList">
+      <Column Name="DL_DGCOD" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="DL_KEY" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="DL_SVKEY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="DL_NAME" Type="System.String" DbType="VarChar(255)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DL_DAY" Type="System.Int16" DbType="SmallInt" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DL_CODE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="DL_SUBCODE1" Type="System.Int32" DbType="Int" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DL_SUBCODE2" Type="System.Int32" DbType="Int" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DL_NMEN" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="DL_NDAYS" Type="System.Int16" DbType="SmallInt" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DL_CNKEY" Type="System.Int32" DbType="Int" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DL_DGKEY" Type="System.Int32" DbType="Int" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DL_COST" Storage="_DL_Cost" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Association Name="tbl_DogovorList_TuristService" Member="TuristServices" ThisKey="DL_KEY" OtherKey="TU_DLKEY" Type="TuristService" />
+      <Association Name="tbl_Dogovor_tbl_DogovorList" Member="tbl_Dogovor" ThisKey="DL_DGKEY" OtherKey="DG_Key" Type="tbl_Dogovor" IsForeignKey="true" />
+      <Association Name="COUNTRY_tbl_DogovorList" Member="COUNTRY" AccessModifier="Internal" ThisKey="DL_CNKEY" OtherKey="CN_KEY" Type="COUNTRY" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Dogovor" Member="tbl_Dogovors">
+    <Type Name="tbl_Dogovor">
+      <Column Name="DG_CODE" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="DG_TURDATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="DG_CNKEY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="DG_NMEN" Type="System.Int16" DbType="SmallInt" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DG_PRICE" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="DG_PAYED" Type="System.Decimal" DbType="Money" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DG_CRDATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="DG_RATE" Type="System.String" DbType="VarChar(3)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DG_Key" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="DG_NDAY" Type="System.Single" DbType="float Not NULL" CanBeNull="false" />
+      <Association Name="tbl_Dogovor_tbl_DogovorList" Member="tbl_DogovorLists" ThisKey="DG_Key" OtherKey="DL_DGKEY" Type="tbl_DogovorList" />
+      <Association Name="tbl_Dogovor_tbl_Turist" Member="tbl_Turists" ThisKey="DG_Key" OtherKey="TU_DGKEY" Type="tbl_Turist" />
+      <Association Name="COUNTRY_tbl_Dogovor" Member="COUNTRY" AccessModifier="Internal" ThisKey="DG_CNKEY" OtherKey="CN_KEY" Type="COUNTRY" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Turist" Member="tbl_Turists">
+    <Type Name="tbl_Turist">
+      <Column Name="TU_DGCOD" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="TU_KEY" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="TU_NAMELAT" Type="System.String" DbType="VarChar(35)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="TU_SEX" Type="System.Int16" DbType="SmallInt" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="TU_FNAMELAT" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="TU_SNAMELAT" Type="System.String" DbType="VarChar(15)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="TU_BIRTHDAY" Type="System.DateTime" DbType="DateTime" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="TU_DGKEY " Member="TU_DGKEY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TU_RealSex" Type="System.Int32" DbType="smallint" CanBeNull="true" />
+      <Association Name="tbl_Turist_TuristService" Member="TuristServices" ThisKey="TU_KEY" OtherKey="TU_TUKEY" Type="TuristService" />
+      <Association Name="tbl_Turist_INS_PERSON" Member="INS_PERSONs" ThisKey="TU_KEY" OtherKey="IP_TUKEY" Type="INS_PERSON" />
+      <Association Name="tbl_Dogovor_tbl_Turist" Member="tbl_Dogovor" ThisKey="TU_DGKEY" OtherKey="DG_Key" Type="tbl_Dogovor" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TuristService" Member="TuristServices">
+    <Type Name="TuristService">
+      <Column Name="TU_TUKEY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="TU_DLKEY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="TU_IDKEY" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Never" />
+      <Association Name="tbl_DogovorList_TuristService" Member="tbl_DogovorList" ThisKey="TU_DLKEY" OtherKey="DL_KEY" Type="tbl_DogovorList" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="tbl_Turist_TuristService" Member="tbl_Turist" ThisKey="TU_TUKEY" OtherKey="TU_KEY" Type="tbl_Turist" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.INS_INSURANCES" Member="INS_INSURANCEs">
+    <Type Name="INS_INSURANCE">
+      <Column Name="IN_KEY" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsReadOnly="true" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IN_NUMBER" Type="System.String" DbType="VarChar(50) not null" CanBeNull="false" />
+      <Column Name="IN_DATE" Type="System.DateTime" DbType="DateTime NOT NULL" IsReadOnly="true" CanBeNull="false" />
+      <Column Name="IN_DATESTART" Type="System.DateTime" DbType="DateTime not NULL" CanBeNull="false" />
+      <Column Name="IN_DATEEND" Type="System.DateTime" DbType="DateTime not NULL" CanBeNull="false" />
+      <Column Name="IN_DURATION" Type="System.Int32" DbType="Int not NULL" IsReadOnly="true" CanBeNull="false" />
+      <Column Name="IN_PRODUCT" Type="System.String" DbType="VarChar(50) NOT NULL" IsReadOnly="true" CanBeNull="false" />
+      <Column Name="IN_INSURED" Type="System.String" DbType="VarChar(254) not null" CanBeNull="false" />
+      <Column Name="IN_PREMIUMTOTAL" Type="System.Decimal" DbType="Money not null" IsReadOnly="true" CanBeNull="false" />
+      <Column Name="IN_PREMIUMTOTALRATE" Type="System.String" DbType="VarChar(3) not null" CanBeNull="false" />
+      <Column Name="IN_ANNULDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IN_NUMBERKEY" Type="System.Int32" DbType="Int not NULL" CanBeNull="false" />
+      <Column Name="IN_UseDGCode" Type="System.String" DbType="VarChar(10) not null" CanBeNull="false" />
+      <Column Name="IN_ParentINKey" Type="System.Int32" DbType="Int not NULL" IsReadOnly="true" CanBeNull="false" />
+      <Column Name="IN_IsPrintedByWeb" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IN_LastPrintDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IN_IsExport" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="INS_INSURANCE_INS_INSURANCE" Member="InsurancesChield" Storage="_INS_INSURANCEs" ThisKey="IN_KEY" OtherKey="IN_ParentINKey" Type="INS_INSURANCE" />
+      <Association Name="INS_INSURANCE_INS_CONDITION" Member="INS_CONDITIONs" ThisKey="IN_KEY" OtherKey="CO_INKEY" Type="INS_CONDITION" />
+      <Association Name="INS_INSURANCE_INS_TERRITORy" Member="INS_TERRITORies" ThisKey="IN_KEY" OtherKey="IT_INKEY" Type="INS_TERRITORy" />
+      <Association Name="INS_INSURANCE_INS_PERSON" Member="INS_PERSONs" ThisKey="IN_KEY" OtherKey="IP_INKEY" Type="INS_PERSON" />
+      <Association Name="INS_INSURANCE_INS_INSURANCE" Member="InsurancesParent" Storage="_INS_INSURANCE1" ThisKey="IN_ParentINKey" OtherKey="IN_KEY" Type="INS_INSURANCE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.INS_CONDITIONS" Member="INS_CONDITIONs">
+    <Type Name="INS_CONDITION">
+      <Column Name="CO_KEY" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CO_INKEY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CO_INSUREDSUM" Type="System.Decimal" DbType="Money no null" CanBeNull="false" />
+      <Column Name="CO_INSUREDRATE" Type="System.String" DbType="VarChar(3) no null" CanBeNull="false" />
+      <Column Name="CO_PREMIUMSUM" Type="System.Decimal" DbType="Money no null" CanBeNull="false" />
+      <Column Name="CO_FRANCHISE" Type="System.Single" DbType="Float no null" CanBeNull="false" />
+      <Column Name="CO_RSKEY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CO_COEF" Type="System.Single" DbType="Float not NULL" CanBeNull="false" />
+      <Association Name="INS_INSURANCE_INS_CONDITION" Member="INS_INSURANCE" ThisKey="CO_INKEY" OtherKey="IN_KEY" Type="INS_INSURANCE" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="INS_RISK_INS_CONDITION" Member="INS_RISK" ThisKey="CO_RSKEY" OtherKey="RS_KEY" Type="INS_RISK" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.INS_SL_REF" Member="INS_SL_REFs">
+    <Type Name="INS_SL_REF">
+      <Column Name="SLR_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SLR_RSKEY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SLR_INSUREDSUM" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="SLR_INSUREDRATE" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="SLR_FRANCHISE" Type="System.Double" DbType="Float not null" CanBeNull="false" />
+      <Column Name="SLR_SLKEY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SLR_SUBCODE1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SLR_SUBCODE2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SLR_COEF" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Association Name="INS_RISK_INS_SL_REF" Member="INS_RISK" ThisKey="SLR_RSKEY" OtherKey="RS_KEY" Type="INS_RISK" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.INS_RISKS" Member="INS_RISKs">
+    <Type Name="INS_RISK">
+      <Column Name="RS_KEY" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RS_NAME" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
+      <Column Name="RS_CODE " Member="RS_CODE" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="RS_CodeKey" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RS_XML" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RS_SumCoef" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="RS_AddsToName" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="RS_Caption" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="RS_DefaultCoef" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="RS_CalcOfDay" Type="System.Boolean" DbType="bit Not Null" CanBeNull="false" />
+      <Column Name="RS_CalcOfPremuim" Type="System.Boolean" DbType="bit Not Null" CanBeNull="false" />
+      <Column Name="RS_UseAgeCoef" Type="System.Boolean" DbType="bit Not Null" CanBeNull="false" />
+      <Association Name="INS_RISK_INS_CONDITION" Member="INS_CONDITIONs" ThisKey="RS_KEY" OtherKey="CO_RSKEY" Type="INS_CONDITION" />
+      <Association Name="INS_RISK_INS_SL_REF" Member="INS_SL_REFs" ThisKey="RS_KEY" OtherKey="SLR_RSKEY" Type="INS_SL_REF" />
+      <Association Name="INS_RISK_INS_TARIFF" Member="INS_TARIFFs" ThisKey="RS_CodeKey" OtherKey="TR_RSCodeKEY" Type="INS_TARIFF" />
+    </Type>
+  </Table>
+  <Table Name="dbo.INS_COUNTRY_REF" Member="INS_COUNTRY_REFs">
+    <Type Name="INS_COUNTRY_REF">
+      <Column Name="CR_KEY" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CR_CNKEY" Type="System.Int32" DbType="Int no null" CanBeNull="false" />
+      <Column Name="CR_CIKEY" Type="System.Int32" DbType="Int no null" CanBeNull="false" />
+      <Association Name="COUNTRY_INS_COUNTRY_REF" Member="COUNTRY" AccessModifier="Internal" ThisKey="CR_CNKEY" OtherKey="CN_KEY" Type="COUNTRY" IsForeignKey="true" />
+      <Association Name="INS_COUNTRIES_ING_INS_COUNTRY_REF" Member="INS_COUNTRIES_ING" ThisKey="CR_CIKEY" OtherKey="CI_KEY" Type="INS_COUNTRIES_ING" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.INS_TERRITORIES" Member="INS_TERRITORies">
+    <Type Name="INS_TERRITORy">
+      <Column Name="IT_INKEY" Type="System.Int32" DbType="Int no null" CanBeNull="false" />
+      <Column Name="IT_CIKEY" Type="System.Int32" DbType="Int no null" CanBeNull="false" />
+      <Column Name="IT_Key" AutoSync="Never" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Association Name="INS_INSURANCE_INS_TERRITORy" Member="INS_INSURANCE" ThisKey="IT_INKEY" OtherKey="IN_KEY" Type="INS_INSURANCE" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="INS_COUNTRIES_ING_INS_TERRITORy" Member="INS_COUNTRIES_ING" ThisKey="IT_CIKEY" OtherKey="CI_KEY" Type="INS_COUNTRIES_ING" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.INS_AgeCoef" Member="INS_AgeCoefs">
+    <Type Name="INS_AgeCoef">
+      <Column Name="AC_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AC_AgeFrom" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AC_AgeTo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AC_Coef" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.INS_PERSONS" Member="INS_PERSONs">
+    <Type Name="INS_PERSON">
+      <Column Name="IP_INKEY" Type="System.Int32" DbType="Int not null" IsReadOnly="true" CanBeNull="false" />
+      <Column Name="IP_TUKEY" Type="System.Int32" DbType="Int NOT NULL" IsReadOnly="true" CanBeNull="false" />
+      <Column Name="IP_NAME" Type="System.String" DbType="VarChar(35) not null" IsReadOnly="true" CanBeNull="false" />
+      <Column Name="IP_FNAME" Type="System.String" DbType="VarChar(15) not null" IsReadOnly="true" CanBeNull="false" />
+      <Column Name="IP_BIRTHDAY" Type="System.DateTime" DbType="DateTime not null" IsReadOnly="true" CanBeNull="false" />
+      <Column Name="IP_Key" AutoSync="Never" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Association Name="INS_INSURANCE_INS_PERSON" Member="INS_INSURANCE" ThisKey="IP_INKEY" OtherKey="IN_KEY" Type="INS_INSURANCE" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="tbl_Turist_INS_PERSON" Member="tbl_Turist" ThisKey="IP_TUKEY" OtherKey="TU_KEY" Type="tbl_Turist" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="COUNTRY" Member="COUNTRies">
+    <Type Name="COUNTRY">
+      <Column Name="CN_KEY" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="CN_NAME" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Association Name="COUNTRY_tbl_DogovorList" Member="tbl_DogovorLists" ThisKey="CN_KEY" OtherKey="DL_CNKEY" Type="tbl_DogovorList" />
+      <Association Name="COUNTRY_tbl_Dogovor" Member="tbl_Dogovors" ThisKey="CN_KEY" OtherKey="DG_CNKEY" Type="tbl_Dogovor" />
+      <Association Name="COUNTRY_INS_COUNTRY_REF" Member="INS_COUNTRY_REFs" ThisKey="CN_KEY" OtherKey="CR_CNKEY" Type="INS_COUNTRY_REF" />
+    </Type>
+  </Table>
+  <Table Name="dbo.INS_COUNTRIES_ING" Member="INS_COUNTRIES_INGs">
+    <Type Name="INS_COUNTRIES_ING">
+      <Column Name="CI_KEY" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CI_CODEREUTER" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="CI_NAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CI_MinimumRS1" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="CI_NotUseInGroup" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="INS_COUNTRIES_ING_INS_COUNTRY_REF" Member="INS_COUNTRY_REFs" ThisKey="CI_KEY" OtherKey="CR_CIKEY" Type="INS_COUNTRY_REF" />
+      <Association Name="INS_COUNTRIES_ING_INS_TERRITORy" Member="INS_TERRITORies" ThisKey="CI_KEY" OtherKey="IT_CIKEY" Type="INS_TERRITORy" />
+    </Type>
+  </Table>
+  <Table Name="dbo.INS_TARIFF" Member="INS_TARIFFs">
+    <Type Name="INS_TARIFF">
+      <Column Name="TR_KEY" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TR_RSCodeKEY" Type="System.Int32" DbType="Int not null" CanBeNull="false" />
+      <Column Name="TR_DAY1" Type="System.Int32" DbType="Int not null" CanBeNull="false" />
+      <Column Name="TR_DAY2" Type="System.Int32" DbType="Int not null" CanBeNull="false" />
+      <Column Name="TR_INSURSUM" Type="System.Int32" DbType="Int not null" CanBeNull="false" />
+      <Column Name="TR_SUM" Type="System.Decimal" DbType="Money not null" CanBeNull="false" />
+      <Column Name="TR_RATE" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="TR_FRANCHISE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TR_PERCENT" Type="System.Decimal" DbType="Decimal(8,2) NOT NULL" CanBeNull="false" />
+      <Column Name="TR_CIKey" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TR_NumCode" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
+      <Association Name="INS_RISK_INS_TARIFF" Member="INS_RISK" ThisKey="TR_RSCodeKEY" OtherKey="RS_CodeKey" Type="INS_RISK" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RealCourses" Member="RealCourses">
+    <Type Name="RealCourse">
+      <Column Name="RC_RCOD1" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="RC_COURSE" Type="System.Decimal" DbType="Decimal(19,6)" CanBeNull="true" />
+      <Column Name="RC_RCOD2" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="RC_DATEBEG" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RC_DATEEND" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ROWID" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Column Name="RC_KEY" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RC_COURSE_CB" Type="System.Decimal" DbType="Decimal(19,6)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

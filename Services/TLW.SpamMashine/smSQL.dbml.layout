@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="smSQL">
+  <DataContextMoniker Name="/smSQLDataContext" />
+  <nestedChildShapes>
+    <classShape Id="ec6ab71e-cebe-42af-b7fd-63708076fada" absoluteBounds="3.25, 1.75, 2, 2.5401025390624996">
+      <DataClassMoniker Name="/smSQLDataContext/LTS_SpamServer" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f312b51a-a687-431f-92f5-4e7034057918" absoluteBounds="3.265, 2.21, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6ce03324-09d5-4fcb-b71d-eff309cdfd71" absoluteBounds="6.5, 1.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/smSQLDataContext/LTS_SpamServerAttach" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3479ec8b-5bf3-489c-82e1-be46d77777bb" absoluteBounds="6.515, 2.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.25 : 2.53929768880208); (6.5 : 2.53929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/smSQLDataContext/LTS_SpamServer/LTS_SpamServer_LTS_SpamServerAttach" />
+      <nodes>
+        <classShapeMoniker Id="ec6ab71e-cebe-42af-b7fd-63708076fada" />
+        <classShapeMoniker Id="6ce03324-09d5-4fcb-b71d-eff309cdfd71" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

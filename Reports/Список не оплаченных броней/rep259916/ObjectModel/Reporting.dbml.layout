@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Reporting">
+  <DataContextMoniker Name="/ReportingDataContext" />
+  <nestedChildShapes>
+    <classShape Id="1e33dcc8-54b2-4edf-b890-c793277b1242" isExpanded="false" absoluteBounds="0.625, 1.875, 2, 0.45">
+      <DataClassMoniker Name="/ReportingDataContext/COUNTRY" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e994df73-78ca-46fd-8d99-f758797f8555" absoluteBounds="0.63999999999999968, 2.335, 1.9700000000000002, 4.2877197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="12bd6c75-52b1-4304-b3c1-ad4d1dd45ed1" isExpanded="false" absoluteBounds="3.25, 1.875, 2, 0.45">
+      <DataClassMoniker Name="/ReportingDataContext/tbl_Dogovor" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4bc4ab99-6ceb-4b20-baca-89de7b4346e0" absoluteBounds="3.2649999999999997, 2.335, 1.9700000000000002, 13.325887044270832" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="91b410fb-ea43-4d6c-ac7e-a8eb99bc835e" isExpanded="false" absoluteBounds="5.875, 1.875, 2, 0.45">
+      <DataClassMoniker Name="/ReportingDataContext/tbl_Partner" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1b68e5e0-af77-45d3-82c5-d70648e4bd0a" absoluteBounds="5.8900000000000006, 2.335, 1.9700000000000002, 12.9412841796875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.875 : 2.1); (5.25 : 2.1)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ReportingDataContext/tbl_Partner/tbl_Partner_tbl_Dogovor" />
+      <nodes>
+        <classShapeMoniker Id="91b410fb-ea43-4d6c-ac7e-a8eb99bc835e" />
+        <classShapeMoniker Id="12bd6c75-52b1-4304-b3c1-ad4d1dd45ed1" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.625 : 2.1); (3.25 : 2.1)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ReportingDataContext/COUNTRY/COUNTRY_tbl_Dogovor" />
+      <nodes>
+        <classShapeMoniker Id="1e33dcc8-54b2-4edf-b890-c793277b1242" />
+        <classShapeMoniker Id="12bd6c75-52b1-4304-b3c1-ad4d1dd45ed1" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="4a0b3eca-d88b-4999-b142-f015537c99ce" isExpanded="false" absoluteBounds="5.875, 2.875, 2, 0.45">
+      <DataClassMoniker Name="/ReportingDataContext/tbl_DogovorList" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a0ef1d29-856f-4d1a-919d-da5be8a61316" absoluteBounds="5.89, 3.335, 1.9700000000000002, 9.6721598307291661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.25 : 2.325); (5.875 : 2.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ReportingDataContext/tbl_Dogovor/tbl_Dogovor_tbl_DogovorList" />
+      <nodes>
+        <classShapeMoniker Id="12bd6c75-52b1-4304-b3c1-ad4d1dd45ed1" />
+        <classShapeMoniker Id="4a0b3eca-d88b-4999-b142-f015537c99ce" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="698b539d-b09b-428d-950d-a2020a5b501a" isExpanded="false" absoluteBounds="0.625, 0.5, 2, 0.45">
+      <DataClassMoniker Name="/ReportingDataContext/Lanta_NNT_Name" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fdadd064-2b09-4c43-a173-c1b3302f8940" absoluteBounds="0.64000000000000012, 0.96, 1.9700000000000002, 5.6338297526041661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.25 : 1.875); (4.25 : 0.725); (2.625 : 0.725)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ReportingDataContext/tbl_Dogovor/tbl_Dogovor_Lanta_NNT_Name" />
+      <nodes>
+        <classShapeMoniker Id="12bd6c75-52b1-4304-b3c1-ad4d1dd45ed1" />
+        <classShapeMoniker Id="698b539d-b09b-428d-950d-a2020a5b501a" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="d9bfea51-aeda-4894-a226-5713a5e397c7" isExpanded="false" absoluteBounds="5.875, 3.75, 2, 0.45">
+      <DataClassMoniker Name="/ReportingDataContext/HotelDictionary" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fcd72568-062f-406e-84be-ebef25eb3e2c" absoluteBounds="5.89, 4.21, 1.9700000000000002, 11.018269856770832" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6.875 : 3.75); (6.875 : 3.325)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ReportingDataContext/HotelDictionary/HotelDictionary_tbl_DogovorList" />
+      <nodes>
+        <classShapeMoniker Id="d9bfea51-aeda-4894-a226-5713a5e397c7" />
+        <classShapeMoniker Id="4a0b3eca-d88b-4999-b142-f015537c99ce" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="760e1056-6941-421d-9b62-1eea9fb0eed0" isExpanded="false" absoluteBounds="0.5, 3.375, 2, 0.45">
+      <DataClassMoniker Name="/ReportingDataContext/TipTur" />
+      <nestedChildShapes>
+        <elementListCompartment Id="351488a1-ba83-4881-a496-1177b02923ce" absoluteBounds="0.51500000000000012, 3.835, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(1.18419230769231 : 3.375); (1.18419230769231 : 3.125); (1.83084615384615 : 3.125); (1.83084615384615 : 3.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ReportingDataContext/TipTur/TipTur_TipTur" />
+      <nodes>
+        <classShapeMoniker Id="760e1056-6941-421d-9b62-1eea9fb0eed0" />
+        <classShapeMoniker Id="760e1056-6941-421d-9b62-1eea9fb0eed0" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="71fea680-39a2-4259-b773-406037901673" isExpanded="false" absoluteBounds="0.5, 6.5, 2, 0.45">
+      <DataClassMoniker Name="/ReportingDataContext/tbl_TurList" />
+      <nestedChildShapes>
+        <elementListCompartment Id="be579c93-16eb-4e57-8a57-1847e3fcf2b6" absoluteBounds="0.51500000000000012, 6.96, 1.9700000000000002, 8.1337483723958321" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(1.5 : 3.825); (1.5 : 6.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ReportingDataContext/TipTur/TipTur_tbl_TurList" />
+      <nodes>
+        <classShapeMoniker Id="760e1056-6941-421d-9b62-1eea9fb0eed0" />
+        <classShapeMoniker Id="71fea680-39a2-4259-b773-406037901673" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.5 : 6.725); (4.2187475 : 6.725); (4.2187475 : 2.325)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ReportingDataContext/tbl_TurList/tbl_TurList_tbl_Dogovor" />
+      <nodes>
+        <classShapeMoniker Id="71fea680-39a2-4259-b773-406037901673" />
+        <classShapeMoniker Id="12bd6c75-52b1-4304-b3c1-ad4d1dd45ed1" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
